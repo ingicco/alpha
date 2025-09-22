@@ -6,7 +6,10 @@ import { CTAButton } from '@/components/CTAButton'
 import { LogoStrip } from '@/components/LogoStrip'
 import { StatList } from '@/components/StatList'
 import { BarChart } from '@/components/BarChart'
+import { AnimatedBarChart } from '@/components/AnimatedBarChart'
+import { CountUp } from '@/components/CountUp'
 import { Reveal } from '@/components/Reveal'
+import { ScrollAnimation } from '@/components/ScrollAnimation'
 import { getAllPosts } from '@/lib/mdx'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -102,8 +105,8 @@ export default function HomePage() {
               <div className="mb-8">
                 {/* Mobile: Three-line gradient title */}
                 <h1 className="block sm:hidden text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
-                  <span className="block">Advisory.</span>
-                  <span className="block bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">Advisory.</span>
+                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
                     Investments.
                   </span>
                   <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
@@ -113,8 +116,8 @@ export default function HomePage() {
                 
                 {/* Desktop: Multi-line gradient title */}
                 <h1 className="hidden sm:block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white mb-6 sm:mb-8 leading-tight" style={{lineHeight: '1.1'}}>
-                  <span className="block">Advisory.</span>
-                  <span className="block bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">Advisory.</span>
+                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
                     Investments.
                   </span>
                   <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
@@ -204,7 +207,7 @@ export default function HomePage() {
         <div className="mobile-container">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {pillars.map((pillar, index) => (
-              <Reveal key={pillar.title} delay={index * 150}>
+              <ScrollAnimation key={pillar.title} animation="slideUp" delay={index * 200}>
                 <div className="group text-center">
                   {/* Mobile: Compact card */}
                   <div className="block sm:hidden bg-white rounded-lg border border-neutral-200 p-4 shadow-sm">
@@ -247,7 +250,7 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-              </Reveal>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
@@ -280,10 +283,14 @@ export default function HomePage() {
           {/* Mobile: 2x2 grid */}
           <div className="block sm:hidden grid grid-cols-2 gap-6 mb-8">
             {footprintStats.map((stat, index) => (
-              <Reveal key={stat.label} delay={index * 100}>
+              <ScrollAnimation key={stat.label} animation="scale" delay={index * 150}>
                 <div className="text-center">
                   <div className="text-xl font-bold text-white mb-1">
-                    {stat.value}
+                    <CountUp 
+                      end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
+                      suffix={stat.value.replace(/[0-9]/g, '')}
+                      duration={2000}
+                    />
                   </div>
                   <div className="text-accent-400 font-semibold text-xs mb-1 mobile-text-wrap">
                     {stat.label}
@@ -292,17 +299,21 @@ export default function HomePage() {
                     {stat.description}
                   </p>
                 </div>
-              </Reveal>
+              </ScrollAnimation>
             ))}
           </div>
           
           {/* Desktop: 4 column grid */}
           <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
             {footprintStats.map((stat, index) => (
-              <Reveal key={stat.label} delay={index * 100}>
+              <ScrollAnimation key={stat.label} animation="scale" delay={index * 150}>
                 <div className="text-center">
                   <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3">
-                    {stat.value}
+                    <CountUp 
+                      end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
+                      suffix={stat.value.replace(/[0-9]/g, '')}
+                      duration={2500}
+                    />
                   </div>
                   <div className="text-accent-400 font-semibold text-sm md:text-base lg:text-lg mb-2">
                     {stat.label}
@@ -311,7 +322,7 @@ export default function HomePage() {
                     {stat.description}
                   </p>
                 </div>
-              </Reveal>
+              </ScrollAnimation>
             ))}
           </div>
           
@@ -347,13 +358,17 @@ export default function HomePage() {
         title="Strategic Allocation"
         description="Our conviction across Pre-IPO, Secondary, and Startups."
       >
-        <BarChart className="mb-8" />
-        <div className="text-center">
-          <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
-            We deploy capital where conviction meets opportunity, leveraging our 
-            ecosystem advantage across all stages of company growth.
-          </p>
-        </div>
+        <ScrollAnimation animation="scale" className="mb-8">
+          <AnimatedBarChart />
+        </ScrollAnimation>
+        <ScrollAnimation animation="fadeIn" delay={300}>
+          <div className="text-center">
+            <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
+              We deploy capital where conviction meets opportunity, leveraging our 
+              ecosystem advantage across all stages of company growth.
+            </p>
+          </div>
+        </ScrollAnimation>
       </Section>
 
       {/* Advisory Mandates Teaser */}
@@ -503,10 +518,10 @@ export default function HomePage() {
         <div className="mobile-container">
           <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {insights.map((post, index) => (
-              <Reveal key={post.meta.slug} delay={index * 100}>
-                <article className="bg-transparent overflow-hidden">
+              <ScrollAnimation key={post.meta.slug} animation="slideUp" delay={index * 200}>
+                <article className="bg-transparent overflow-hidden group hover:transform hover:scale-105 transition-all duration-300">
                   {/* Mobile: Rounded square image */}
-                  <div className="w-full aspect-square sm:aspect-video sm:h-40 lg:h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl flex items-center justify-center">
+                  <div className="w-full aspect-square sm:aspect-video sm:h-40 lg:h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl flex items-center justify-center group-hover:shadow-lg transition-shadow">
                     <div className="text-center">
                       <div className="text-xs sm:text-sm text-neutral-400 font-medium">Article Image</div>
                     </div>
@@ -546,7 +561,7 @@ export default function HomePage() {
                     </Link>
                   </div>
                 </article>
-              </Reveal>
+              </ScrollAnimation>
             ))}
           </div>
           
