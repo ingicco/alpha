@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-600;
+  }
+
+  /* Smooth scrolling with reduced motion support */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-accent-500 text-white hover:bg-accent-600 focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 shadow-sm hover:shadow-md transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-accent-400 border border-accent-500 hover:bg-accent-500 hover:text-white hover:border-accent-500 focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  .btn-outline {
+    @apply border border-accent-500 text-accent-600 hover:bg-accent-500 hover:text-white focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  /* Mobile menu styles */
+  .mobile-menu-open {
+    overflow: hidden;
+  }
+
+  /* Mobile text utilities */
+  .mobile-text-wrap {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+  
+  .mobile-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .mobile-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .mobile-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  
+  /* Hide scrollbar for horizontal scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+
+  /* Infinite scroll animation */
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Pause animation on hover and when user prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll {
+      animation-play-state: paused;
+    }
+  }
+  
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+}

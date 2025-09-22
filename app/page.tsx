@@ -1,0 +1,606 @@
+import { VideoHero } from '@/components/VideoHero'
+import { PingPongVideo } from '@/components/PingPongVideo'
+import { Section } from '@/components/Section'
+import { Container } from '@/components/Container'
+import { CTAButton } from '@/components/CTAButton'
+import { LogoStrip } from '@/components/LogoStrip'
+import { StatList } from '@/components/StatList'
+import { BarChart } from '@/components/BarChart'
+import { Reveal } from '@/components/Reveal'
+import { getAllPosts } from '@/lib/mdx'
+import Link from 'next/link'
+import Image from 'next/image'
+
+const partnerLogos = [
+  { name: 'Kinetic', src: '/logos/kinetic.svg', width: 120, height: 40 },
+  { name: 'OKX', src: '/logos/okx.svg', width: 80, height: 40 },
+  { name: 'The Anomaly Network', src: '/logos/anomaly.svg', width: 140, height: 40 },
+  { name: 'NeosLegal', src: '/logos/neos.svg', width: 100, height: 40 },
+  { name: 'Chainforce.tech', src: '/logos/chainforce.svg', width: 130, height: 40 },
+]
+
+const footprintStats = [
+  {
+    value: '100+',
+    label: 'Ventures Reviewed',
+    description: 'Annually across all verticals'
+  },
+  {
+    value: '10+',
+    label: 'Global Partners',
+    description: 'Ecosystem collaborators'
+  },
+  {
+    value: '30+',
+    label: 'Years Experience',
+    description: 'Combined in emerging tech'
+  },
+  {
+    value: '3',
+    label: 'Core Pillars',
+    description: 'Advisory, Investments, Digital Assets'
+  },
+]
+
+const pillars = [
+  {
+    title: 'Advisory',
+    description: 'Institutional mandates with trusted legal & tech partners.',
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h4.125m0-15.75h8.25" />
+      </svg>
+    )
+  },
+  {
+    title: 'Investments',
+    description: 'Pre-IPO, secondary, and early-stage co-investments.',
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+      </svg>
+    )
+  },
+  {
+    title: 'Digital Assets',
+    description: 'Compliance & assurance frameworks for blockchain.',
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+      </svg>
+    )
+  },
+]
+
+export default function HomePage() {
+  const insights = getAllPosts('insights').slice(0, 3)
+
+  return (
+    <>
+      {/* Hero Section - Premium Institutional */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12">
+        {/* Video Background */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster="/media/hero-poster.jpg"
+          >
+            <source src="/media/hero.webm" type="video/webm" />
+            <source src="/media/hero.mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-primary-950/50"></div>
+        </div>
+        
+        <div className="relative z-10 mobile-container">
+          <div className="text-center py-8 sm:py-12">
+            <Reveal>
+              <div className="mb-8">
+                {/* Mobile: Three-line gradient title */}
+                <h1 className="block sm:hidden text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
+                  <span className="block">Advisory.</span>
+                  <span className="block bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent">
+                    Investments.
+                  </span>
+                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
+                    Digital Assets.
+                  </span>
+                </h1>
+                
+                {/* Desktop: Multi-line gradient title */}
+                <h1 className="hidden sm:block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white mb-6 sm:mb-8 leading-tight" style={{lineHeight: '1.1'}}>
+                  <span className="block">Advisory.</span>
+                  <span className="block bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent">
+                    Investments.
+                  </span>
+                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
+                    Digital Assets.
+                  </span>
+                </h1>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={200}>
+              <div className="mb-8">
+                {/* Mobile: Shorter, simpler text */}
+                <p className="block sm:hidden text-sm text-neutral-300 leading-relaxed mb-6" style={{hyphens: 'none', wordBreak: 'normal', overflowWrap: 'break-word'}}>
+                  Institutional-grade advisory, venture co-investments, and digital asset assurance for forward-thinking organizations.
+                </p>
+                
+                {/* Desktop: Full text */}
+                <p className="hidden sm:block text-lg md:text-xl lg:text-2xl text-neutral-300 leading-relaxed mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto font-light">
+                  Alpha Group Investment delivers institutional-grade advisory, venture co-investments, and digital asset assurance to forward-thinking organizations worldwide.
+                </p>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={400}>
+              <div className="mb-8 sm:mb-12 md:mb-16">
+                {/* Mobile: Side by side full width buttons */}
+                <div className="block sm:hidden flex gap-3">
+                  <CTAButton href="/advisory" variant="outline" className="flex-1 py-3 text-sm">
+                    Advisory Services
+                  </CTAButton>
+                  <CTAButton href="/investment" variant="outline" className="flex-1 py-3 text-sm">
+                    Investment Opportunities
+                  </CTAButton>
+                </div>
+                
+                {/* Desktop: Side by side buttons */}
+                <div className="hidden sm:flex flex-col sm:flex-row gap-4 justify-center">
+                  <CTAButton href="/advisory" variant="outline" size="lg" className="px-6 py-3">
+                    Explore Advisory Services
+                  </CTAButton>
+                  <CTAButton href="/investment" variant="outline" size="lg" className="px-6 py-3">
+                    Investment Opportunities
+                  </CTAButton>
+                </div>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={600}>
+              <div className="border-t border-white/10 pt-6 sm:pt-12">
+                <p className="text-neutral-400 text-xs sm:text-sm mb-4 sm:mb-6">Trusted by Industry Leaders</p>
+                <LogoStrip logos={partnerLogos} className="opacity-60" />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+        
+        {/* Premium Geometric Elements */}
+        <div className="absolute top-20 right-20 w-32 h-32 border border-white/10 rotate-45 hidden lg:block"></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 border border-accent-400/20 rotate-12 hidden lg:block"></div>
+        <div className="absolute top-1/2 right-10 w-2 h-16 bg-gradient-to-b from-accent-400/40 to-transparent hidden lg:block"></div>
+      </section>
+
+      {/* Strategic Pillars - Premium */}
+      <Section className="py-12 sm:py-24 lg:py-32">
+        <div className="mobile-container text-center mb-12 sm:mb-20">
+          <Reveal>
+            <div>
+              {/* Mobile: Simple title */}
+              <h2 className="block sm:hidden text-3xl font-bold text-primary-800 mb-4 mobile-text-wrap">
+                Three Pillars of Excellence
+              </h2>
+              <p className="block sm:hidden text-sm text-neutral-600 mb-8 mobile-text-wrap">
+                Our integrated approach delivers institutional-grade solutions across advisory, investments, and digital assets.
+              </p>
+              
+              {/* Desktop: Full title */}
+              <h2 className="hidden sm:block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary-800 mb-4 sm:mb-6">
+                Three Pillars of Excellence
+              </h2>
+              <p className="hidden sm:block text-base md:text-lg lg:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                Our integrated approach delivers institutional-grade solutions across advisory, investments, and digital asset expertise.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+        
+        <div className="mobile-container">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {pillars.map((pillar, index) => (
+              <Reveal key={pillar.title} delay={index * 150}>
+                <div className="group text-center">
+                  {/* Mobile: Compact card */}
+                  <div className="block sm:hidden bg-white rounded-lg border border-neutral-200 p-4 shadow-sm">
+                    <div className="w-full aspect-square mb-4 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl flex items-center justify-center">
+                      <div className="text-xs text-neutral-400">Image</div>
+                    </div>
+                    <h3 className="text-base font-bold text-accent-600 mb-2 mobile-text-wrap">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-xs text-neutral-600 leading-snug mb-3 mobile-text-wrap">
+                      {pillar.description}
+                    </p>
+                    <div className="text-primary-600 font-semibold text-xs">
+                      Learn More →
+                    </div>
+                  </div>
+                  
+                  {/* Desktop: Full card */}
+                  <div className="hidden sm:block h-full flex flex-col">
+                    <div className="flex-1 p-6 lg:p-8">
+                      <div className="w-full h-48 lg:h-64 mx-auto mb-6 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl border border-neutral-200 flex items-center justify-center transform transition-transform group-hover:scale-[1.02]">
+                        <div className="text-center">
+                          <div className="text-sm text-neutral-400 font-medium">Image Placeholder</div>
+                        </div>
+                      </div>
+                      <h3 className="text-xl lg:text-2xl font-bold text-accent-600 mb-4">
+                        {pillar.title}
+                      </h3>
+                      <p className="text-neutral-600 leading-relaxed text-sm lg:text-base">
+                        {pillar.description}
+                      </p>
+                    </div>
+                    <div className="mt-auto pt-4">
+                      <div className="flex items-center justify-center text-primary-600 font-bold group-hover:text-primary-700 transition-colors">
+                        <span className="text-sm">Learn More</span>
+                        <svg className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+
+      {/* Institutional Excellence */}
+      <Section background="primary" className="py-12 sm:py-24 lg:py-32">
+        <div className="mobile-container text-center">
+          <Reveal>
+            <div>
+              {/* Mobile: Simple title */}
+              <h2 className="block sm:hidden text-3xl font-bold text-white mb-4 mobile-text-wrap">
+                Trusted by Global Leaders
+              </h2>
+              <p className="block sm:hidden text-sm text-neutral-300 mb-8 mobile-text-wrap">
+                Our institutional-grade approach delivers measurable outcomes across advisory, investments, and digital assets.
+              </p>
+              
+              {/* Desktop: Full title */}
+              <h2 className="hidden sm:block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
+                Trusted by Global Leaders
+              </h2>
+              <p className="hidden sm:block text-base md:text-lg lg:text-xl text-neutral-300 leading-relaxed mb-12 lg:mb-16 max-w-4xl mx-auto">
+                Our institutional-grade approach delivers measurable outcomes across advisory mandates, strategic investments, and digital asset assurance.
+              </p>
+            </div>
+          </Reveal>
+          
+          {/* Mobile: 2x2 grid */}
+          <div className="block sm:hidden grid grid-cols-2 gap-6 mb-8">
+            {footprintStats.map((stat, index) => (
+              <Reveal key={stat.label} delay={index * 100}>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-white mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-accent-400 font-semibold text-xs mb-1 mobile-text-wrap">
+                    {stat.label}
+                  </div>
+                  <p className="text-neutral-400 text-xs leading-tight mobile-text-wrap">
+                    {stat.description}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          
+          {/* Desktop: 4 column grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
+            {footprintStats.map((stat, index) => (
+              <Reveal key={stat.label} delay={index * 100}>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3">
+                    {stat.value}
+                  </div>
+                  <div className="text-accent-400 font-semibold text-sm md:text-base lg:text-lg mb-2">
+                    {stat.label}
+                  </div>
+                  <p className="text-neutral-400 text-xs md:text-sm leading-relaxed">
+                    {stat.description}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          
+          <Reveal delay={400}>
+            <div className="border-t border-white/10 pt-6 sm:pt-12">
+              {/* Mobile: Stacked buttons */}
+              <div className="block sm:hidden space-y-3">
+                <CTAButton href="/about" variant="outline" className="w-full py-3 text-sm">
+                  Our Approach
+                </CTAButton>
+                <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm">
+                  Schedule Consultation
+                </CTAButton>
+              </div>
+              
+              {/* Desktop: Side by side buttons */}
+              <div className="hidden sm:flex flex-col sm:flex-row gap-4 justify-center">
+                <CTAButton href="/about" variant="outline" size="lg" className="px-6 py-3">
+                  Learn About Our Approach
+                </CTAButton>
+                <CTAButton href="/contact" variant="outline" size="lg" className="px-6 py-3">
+                  Schedule a Consultation
+                </CTAButton>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* Investment Focus */}
+      <Section
+        background="muted"
+        title="Strategic Allocation"
+        description="Our conviction across Pre-IPO, Secondary, and Startups."
+      >
+        <BarChart className="mb-8" />
+        <div className="text-center">
+          <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
+            We deploy capital where conviction meets opportunity, leveraging our 
+            ecosystem advantage across all stages of company growth.
+          </p>
+        </div>
+      </Section>
+
+      {/* Advisory Mandates Teaser */}
+      <Section className="py-12 sm:py-24">
+        <div className="mobile-container">
+          {/* Mobile: Single column layout */}
+          <div className="block lg:hidden space-y-6">
+            <Reveal>
+              <div>
+                <h2 className="text-3xl font-bold text-primary-900 mb-4 mobile-text-wrap">
+                  Advisory Mandates, Redefined
+                </h2>
+                <p className="text-sm text-neutral-600 leading-relaxed mb-6 mobile-text-wrap">
+                  We operate institutional mandates across compliance, governance, treasury, risk, and digital asset strategy with our trusted network of legal and technical partners.
+                </p>
+                <CTAButton href="/advisory" variant="outline" className="w-full py-3 text-sm">
+                  Explore Advisory Services
+                </CTAButton>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={200}>
+              <div className="w-full h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-lg flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-sm text-neutral-400 font-medium">Advisory services</div>
+                  <div className="text-xs text-neutral-500 mt-1">illustration</div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Desktop: Two column layout */}
+          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <Reveal>
+              <div>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-900 mb-6">
+                  Advisory Mandates, Redefined
+                </h2>
+                <p className="text-base md:text-lg text-neutral-600 leading-relaxed mb-8">
+                  We operate institutional mandates across compliance, governance, 
+                  treasury, risk, and digital asset strategy with our trusted network 
+                  of legal and technical partners. Clear deliverables, accountable 
+                  timelines, ongoing oversight.
+                </p>
+                <CTAButton href="/advisory" variant="outline" size="lg" className="px-6 py-3">
+                  Explore Advisory Services
+                </CTAButton>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={200}>
+              <div className="relative">
+                <Image
+                  src="/media/advisory-placeholder.jpg"
+                  alt="Advisory services illustration"
+                  width={600}
+                  height={400}
+                  className="rounded-xl shadow-lg"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </Section>
+
+      {/* Digital Assets Teaser */}
+      <Section background="primary" className="py-12 sm:py-24">
+        <div className="mobile-container">
+          {/* Mobile: Single column layout */}
+          <div className="block lg:hidden space-y-6">
+            <Reveal>
+              <div className="w-full h-48 bg-gradient-to-br from-primary-800 to-primary-700 rounded-lg flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-sm text-white/70 font-medium">Digital assets</div>
+                  <div className="text-xs text-white/50 mt-1">illustration</div>
+                </div>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={200}>
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4 mobile-text-wrap">
+                  Digital Asset Assurance
+                </h2>
+                <p className="text-sm text-neutral-200 leading-relaxed mb-6 mobile-text-wrap">
+                  Institutional-grade advisory and assurance for blockchain initiatives—controls, reporting, and oversight aligned with global standards.
+                </p>
+                <CTAButton href="/digital-assets" variant="outline" className="w-full py-3 text-sm">
+                  Explore Digital Assets
+                </CTAButton>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Desktop: Two column layout */}
+          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <Reveal>
+              <div className="relative lg:order-2">
+                <Image
+                  src="/media/digital-assets-placeholder.jpg"
+                  alt="Digital assets and blockchain illustration"
+                  width={600}
+                  height={400}
+                  className="rounded-xl shadow-lg"
+                />
+              </div>
+            </Reveal>
+            
+            <Reveal delay={200}>
+              <div className="lg:order-1">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
+                  Digital Asset Assurance
+                </h2>
+                <p className="text-base md:text-lg text-neutral-200 leading-relaxed mb-8">
+                  Institutional-grade advisory and assurance for blockchain initiatives—controls, 
+                  reporting, and oversight aligned with global standards. Future-oriented, 
+                  compliance-led approach to digital transformation.
+                </p>
+                <CTAButton href="/digital-assets" variant="outline" size="lg" className="px-6 py-3">
+                  Explore Digital Assets
+                </CTAButton>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </Section>
+
+      {/* Insights Preview */}
+      <Section className="py-12 sm:py-24">
+        <div className="mobile-container text-center mb-8 sm:mb-12 lg:mb-16">
+          {/* Mobile: Simple title */}
+          <h2 className="block sm:hidden text-3xl font-bold text-primary-800 mb-4 mobile-text-wrap">
+            Market Intelligence
+          </h2>
+          <p className="block sm:hidden text-sm text-neutral-600 mb-8 mobile-text-wrap">
+            Strategic perspectives on emerging technologies, market dynamics, and regulatory developments.
+          </p>
+          
+          {/* Desktop: Full title */}
+          <h2 className="hidden sm:block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary-800 mb-6">
+            Market Intelligence
+          </h2>
+          <p className="hidden sm:block text-base md:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
+            Strategic perspectives on emerging technologies, market dynamics, and regulatory developments.
+          </p>
+        </div>
+        <div className="mobile-container">
+          <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {insights.map((post, index) => (
+              <Reveal key={post.meta.slug} delay={index * 100}>
+                <article className="bg-transparent overflow-hidden">
+                  {/* Mobile: Rounded square image */}
+                  <div className="w-full aspect-square sm:aspect-video sm:h-40 lg:h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-xs sm:text-sm text-neutral-400 font-medium">Article Image</div>
+                    </div>
+                  </div>
+                  
+                  <div className="p-3 sm:p-4 lg:p-6">
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 mb-2 sm:mb-3">
+                      <time dateTime={post.meta.date}>
+                        {new Date(post.meta.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
+                      </time>
+                      <span>•</span>
+                      <span>{post.meta.readingTime}</span>
+                    </div>
+                    
+                    <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-primary-800 mb-2 sm:mb-3 mobile-text-wrap">
+                      <Link 
+                        href={`/insights/${post.meta.slug}`}
+                        className="hover:text-accent-600 transition-colors"
+                      >
+                        {post.meta.title}
+                      </Link>
+                    </h3>
+                    
+                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-3 sm:mb-4 mobile-text-wrap">
+                      {post.meta.description}
+                    </p>
+                    
+                    <Link 
+                      href={`/insights/${post.meta.slug}`}
+                      className="text-accent-600 font-semibold hover:text-accent-700 transition-colors text-xs sm:text-sm"
+                    >
+                      Read More →
+                    </Link>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          
+          <div className="text-center mt-8 sm:mt-12">
+            <CTAButton href="/insights" variant="outline" className="w-full sm:w-auto px-6 py-3 text-sm">
+              Read All Insights
+            </CTAButton>
+          </div>
+        </div>
+      </Section>
+
+      {/* CTA Banner */}
+      <Section background="primary" className="py-12 sm:py-24">
+        <div className="mobile-container text-center">
+          <Reveal>
+            {/* Mobile: Smaller text */}
+            <div className="block sm:hidden">
+              <h2 className="text-3xl font-bold text-white mb-4 mobile-text-wrap">
+                Ready to collaborate on mandates or co-investments?
+              </h2>
+              <p className="text-sm text-neutral-200 mb-6 mobile-text-wrap">
+                Join our ecosystem of institutional partners and portfolio companies driving the future of finance and technology.
+              </p>
+              <div className="space-y-3">
+                <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm">
+                  Start a Conversation
+                </CTAButton>
+                <CTAButton href="/investment" variant="outline" className="w-full py-3 text-sm">
+                  Explore Opportunities
+                </CTAButton>
+              </div>
+            </div>
+
+            {/* Desktop: Larger text */}
+            <div className="hidden sm:block">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
+                Ready to collaborate on mandates or co-investments?
+              </h2>
+              <p className="text-base md:text-lg lg:text-xl text-neutral-200 mb-8 lg:mb-10 max-w-3xl mx-auto">
+                Join our ecosystem of institutional partners and portfolio companies 
+                driving the future of finance and technology.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <CTAButton href="/contact" variant="outline" size="lg" className="px-6 py-3">
+                  Start a Conversation
+                </CTAButton>
+                <CTAButton href="/investment" variant="outline" size="lg" className="px-6 py-3">
+                  Explore Opportunities
+                </CTAButton>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+    </>
+  )
+}

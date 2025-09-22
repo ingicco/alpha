@@ -1,0 +1,44 @@
+{
+  "name": "alpha-investments",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "@next/mdx": "^14.2.5",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@types/mdx": "^2.0.13",
+    "next-sitemap": "^4.2.3",
+    "gray-matter": "^4.0.3",
+    "reading-time": "^1.5.0",
+    "clsx": "^2.1.1",
+    "next-mdx-remote": "^4.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6",
+    "@tailwindcss/typography": "^0.5.13",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1"
+  }
+}
