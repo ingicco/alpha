@@ -356,14 +356,14 @@ export default function AboutPage() {
             <Reveal>
               <div className="text-center p-4 sm:p-6">
                 {/* Mobile: Smaller icon */}
-                <div className="block sm:hidden mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-400 text-primary-900">
+                <div className="block sm:hidden mx-auto mb-4 flex h-12 w-12 items-center justify-center text-accent-400">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
                   </svg>
                 </div>
                 
                 {/* Desktop: Full size icon */}
-                <div className="hidden sm:flex mx-auto mb-6 h-16 w-16 items-center justify-center rounded-lg bg-accent-400 text-primary-900">
+                <div className="hidden sm:flex mx-auto mb-6 h-16 w-16 items-center justify-center text-accent-400">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
                   </svg>
@@ -381,14 +381,14 @@ export default function AboutPage() {
             <Reveal delay={100}>
               <div className="text-center p-4 sm:p-6">
                 {/* Mobile: Smaller icon */}
-                <div className="block sm:hidden mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-400 text-primary-900">
+                <div className="block sm:hidden mx-auto mb-4 flex h-12 w-12 items-center justify-center text-accent-400">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                   </svg>
                 </div>
                 
                 {/* Desktop: Full size icon */}
-                <div className="hidden sm:flex mx-auto mb-6 h-16 w-16 items-center justify-center rounded-lg bg-primary-400 text-primary-900">
+                <div className="hidden sm:flex mx-auto mb-6 h-16 w-16 items-center justify-center text-accent-400">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                   </svg>
@@ -406,14 +406,14 @@ export default function AboutPage() {
             <Reveal delay={200}>
               <div className="text-center p-4 sm:p-6 sm:col-span-2 lg:col-span-1">
                 {/* Mobile: Smaller icon */}
-                <div className="block sm:hidden mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-400 text-primary-900">
+                <div className="block sm:hidden mx-auto mb-4 flex h-12 w-12 items-center justify-center text-accent-400">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
                   </svg>
                 </div>
                 
                 {/* Desktop: Full size icon */}
-                <div className="hidden sm:flex mx-auto mb-6 h-16 w-16 items-center justify-center rounded-lg bg-accent-400 text-primary-900">
+                <div className="hidden sm:flex mx-auto mb-6 h-16 w-16 items-center justify-center text-accent-400">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
                   </svg>

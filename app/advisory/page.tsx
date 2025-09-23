@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { Section } from '@/components/Section'
 import { Container } from '@/components/Container'
 import { Reveal } from '@/components/Reveal'
+import { ScrollReveal } from '@/components/ScrollReveal'
 import { CTAButton } from '@/components/CTAButton'
 import Image from 'next/image'
 
@@ -185,30 +186,130 @@ export default function AdvisoryPage() {
       </Section>
 
       {/* Focus Areas */}
-      <Section
-        eyebrow="Focus Areas"
-        title="Comprehensive Mandate Coverage"
-        description="We operate across all critical areas of modern institutional finance, from traditional governance to digital asset innovation."
-      >
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {focusAreas.map((area, index) => (
-            <Reveal key={area.title} delay={index * 100}>
-              <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-8 hover:shadow-lg transition-shadow">
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-100 text-accent-600">
-                  {area.icon}
-                </div>
-                
-                <h3 className="text-xl font-semibold text-primary-900 mb-4">
-                  {area.title}
-                </h3>
-                
-                <p className="text-neutral-600 leading-relaxed">
-                  {area.description}
+      <Section background="white">
+        <Container>
+          <div className="text-center mb-16">
+            <Reveal>
+              <div>
+                <p className="text-sm uppercase tracking-wider text-accent-600 font-semibold mb-4">
+                  Focus Areas
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6">
+                  Comprehensive Mandate Coverage
+                </h2>
+                <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
+                  We operate across all critical areas of modern institutional finance, from traditional governance to digital asset innovation.
                 </p>
               </div>
             </Reveal>
-          ))}
-        </div>
+          </div>
+
+          <div className="hidden lg:block">
+            <div className="grid lg:grid-cols-5 lg:gap-12">
+              {/* Left Content - Scrollable Items */}
+              <div className="lg:col-span-3 space-y-32">
+                {[
+                  {
+                    title: "Regulatory Readiness",
+                    description: "Comprehensive compliance frameworks aligned with global regulatory standards and emerging digital asset regulations."
+                  },
+                  {
+                    title: "Token Economics & Governance",
+                    description: "Strategic design and implementation of token economic models, governance structures, and stakeholder alignment mechanisms."
+                  },
+                  {
+                    title: "Risk, Controls & Reporting",
+                    description: "Enterprise-grade risk management frameworks, internal controls design, and board-level reporting structures."
+                  },
+                  {
+                    title: "Vendor Selection & Technical DD",
+                    description: "Comprehensive vendor evaluation, technical due diligence, and partner selection across the digital asset ecosystem."
+                  },
+                  {
+                    title: "Treasury Operations & Custody",
+                    description: "Digital asset treasury management, custody solution evaluation, and operational framework implementation."
+                  }
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="transition-all duration-700 ease-out transform opacity-100 translate-y-0 scale-100"
+                    style={{ minHeight: '400px' }}
+                  >
+                    <div className="border-l-4 border-accent-500 pl-8 py-12">
+                      <h3 className="text-3xl lg:text-4xl font-bold text-primary-900 mb-8 leading-tight">
+                        {item.title}
+                      </h3>
+                      
+                      <p className="text-xl leading-relaxed text-neutral-700">
+                        {item.description}
+                      </p>
+                      
+                      {/* Active indicator */}
+                      <div className="mt-8 w-24 h-1 bg-accent-500" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right Content - Fixed Text */}
+              <div className="lg:col-span-2">
+                <div className="sticky top-32 z-10 h-screen flex items-start pt-24">
+                  <div className="w-full">
+                    <p className="text-3xl lg:text-4xl xl:text-5xl text-primary-900 leading-tight font-light">
+                      We operate across all critical areas of modern institutional finance, from traditional governance to digital asset innovation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Layout - Simple List */}
+          <div className="block lg:hidden">
+            <div className="space-y-12">
+              <div>
+                <p className="text-xl text-primary-900 leading-tight font-light mb-8">
+                  We operate across all critical areas of modern institutional finance, from traditional governance to digital asset innovation.
+                </p>
+              </div>
+              
+              <div className="space-y-8">
+                {[
+                  {
+                    title: "Regulatory Readiness",
+                    description: "Comprehensive compliance frameworks aligned with global regulatory standards and emerging digital asset regulations."
+                  },
+                  {
+                    title: "Token Economics & Governance",
+                    description: "Strategic design and implementation of token economic models, governance structures, and stakeholder alignment mechanisms."
+                  },
+                  {
+                    title: "Risk, Controls & Reporting",
+                    description: "Enterprise-grade risk management frameworks, internal controls design, and board-level reporting structures."
+                  },
+                  {
+                    title: "Vendor Selection & Technical DD",
+                    description: "Comprehensive vendor evaluation, technical due diligence, and partner selection across the digital asset ecosystem."
+                  },
+                  {
+                    title: "Treasury Operations & Custody",
+                    description: "Digital asset treasury management, custody solution evaluation, and operational framework implementation."
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="border-l-4 border-accent-500 pl-6 py-4">
+                    <h3 className="text-xl font-bold text-primary-900 mb-3 leading-tight">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-base text-neutral-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
       </Section>
 
       {/* Outcomes Section */}
@@ -242,50 +343,26 @@ export default function AdvisoryPage() {
           </Reveal>
           
           <Reveal delay={200}>
-            <div className="bg-primary-800 rounded-xl p-8">
-              <h4 className="text-xl font-semibold text-white mb-4">
-                Typical Mandate Timeline
-              </h4>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-accent-400 text-primary-900 rounded-full flex items-center justify-center text-sm font-semibold mr-4">
-                    1
-                  </div>
-                  <div>
-                    <div className="text-white font-medium">Discovery & Scoping</div>
-                    <div className="text-neutral-300 text-sm">2-3 weeks</div>
-                  </div>
+            <div className="bg-primary-800/50 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-accent-400 mb-2">12-16</div>
+                  <div className="text-white text-sm">Weeks Average</div>
+                  <div className="text-neutral-300 text-xs">Implementation</div>
                 </div>
                 
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-primary-400 text-primary-900 rounded-full flex items-center justify-center text-sm font-semibold mr-4">
-                    2
-                  </div>
-                  <div>
-                    <div className="text-white font-medium">Framework Development</div>
-                    <div className="text-neutral-300 text-sm">4-6 weeks</div>
-                  </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-accent-400 mb-2">100%</div>
+                  <div className="text-white text-sm">Compliance</div>
+                  <div className="text-neutral-300 text-xs">Validation</div>
                 </div>
-                
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-accent-400 text-primary-900 rounded-full flex items-center justify-center text-sm font-semibold mr-4">
-                    3
-                  </div>
-                  <div>
-                    <div className="text-white font-medium">Implementation & Testing</div>
-                    <div className="text-neutral-300 text-sm">6-8 weeks</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-primary-400 text-primary-900 rounded-full flex items-center justify-center text-sm font-semibold mr-4">
-                    4
-                  </div>
-                  <div>
-                    <div className="text-white font-medium">Ongoing Oversight</div>
-                    <div className="text-neutral-300 text-sm">Continuous</div>
-                  </div>
-                </div>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-white/10">
+                <p className="text-neutral-200 text-sm leading-relaxed">
+                  Every mandate follows our proven methodology: discovery, framework design, 
+                  implementation, and ongoing oversight with continuous improvement.
+                </p>
               </div>
             </div>
           </Reveal>
