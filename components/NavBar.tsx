@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { Container } from './Container'
@@ -58,27 +59,27 @@ export function NavBar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-neutral-200/50 shadow-sm">
+      <header className="sticky top-0 z-50 bg-primary-900/95 backdrop-blur-xl border-b border-primary-800/50 shadow-sm">
         <Container>
           <nav className="flex items-center justify-between py-6" aria-label="Global">
             <div className="flex lg:flex-1">
               <Link href="/" className="-m-1.5 p-1.5 group">
                 <span className="sr-only">Alpha Group Investment</span>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary-700 to-primary-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-lg">A</span>
-                  </div>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-primary-700 to-primary-600 bg-clip-text text-transparent group-hover:from-primary-800 group-hover:to-primary-700 transition-all">
-                    Alpha
-                  </span>
-                </div>
+                <Image
+                  src="/alpha-logo.png"
+                  alt="Alpha Group Investment"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto transition-opacity group-hover:opacity-80"
+                  priority
+                />
               </Link>
             </div>
             
             <div className="flex lg:hidden">
               <button
                 type="button"
-                className="-m-2.5 inline-flex items-center justify-center rounded-md p-3 text-neutral-700 hover:bg-neutral-100 hover:text-primary-700 transition-colors border border-transparent hover:border-neutral-200"
+                className="-m-2.5 inline-flex items-center justify-center rounded-md p-3 text-white hover:bg-primary-800 hover:text-accent-400 transition-colors border border-transparent hover:border-primary-700"
                 onClick={() => {
                   console.log('Hamburger clicked, current state:', mobileMenuOpen)
                   setMobileMenuOpen(!mobileMenuOpen)
@@ -101,13 +102,13 @@ export function NavBar() {
                   className={clsx(
                     'text-sm font-semibold leading-6 transition-all duration-200 relative group py-2',
                     pathname === item.href
-                      ? 'text-primary-700'
-                      : 'text-neutral-700 hover:text-primary-700'
+                      ? 'text-accent-400'
+                      : 'text-white hover:text-accent-400'
                   )}
                 >
                   {item.name}
                   <span className={clsx(
-                    'absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-700 to-primary-600 transform transition-transform duration-200',
+                    'absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent-400 to-accent-500 transform transition-transform duration-200',
                     pathname === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                   )} />
                 </Link>
@@ -136,16 +137,16 @@ export function NavBar() {
         
         {/* Mobile menu panel */}
         <div className={clsx(
-          'fixed inset-y-0 right-0 z-[70] w-3/4 max-w-sm overflow-y-auto bg-white shadow-2xl border-l border-neutral-100',
+          'fixed inset-y-0 right-0 z-[70] w-3/4 max-w-sm overflow-y-auto bg-primary-900 shadow-2xl border-l border-primary-800',
           'transform transition-all duration-300 ease-in-out',
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}>
           {/* Clean header */}
-          <div className="px-6 py-8 border-b border-neutral-100">
+          <div className="px-6 py-8 border-b border-primary-800">
             <div className="flex justify-end">
               <button
                 type="button"
-                className="p-2 rounded-full text-neutral-400 hover:text-neutral-600 hover:bg-neutral-100 transition-all duration-200"
+                className="p-2 rounded-full text-neutral-300 hover:text-white hover:bg-primary-800 transition-all duration-200"
                 onClick={() => {
                   console.log('Close button clicked')
                   setMobileMenuOpen(false)
@@ -167,11 +168,11 @@ export function NavBar() {
                   key={item.name}
                   href={item.href}
                   className={clsx(
-                    'block py-4 px-0 text-lg font-medium border-b border-neutral-100/50 transition-all duration-200',
-                    'hover:text-primary-600',
+                    'block py-4 px-0 text-lg font-medium border-b border-primary-800/50 transition-all duration-200',
+                    'hover:text-accent-400',
                     pathname === item.href
-                      ? 'text-primary-700 font-semibold'
-                      : 'text-neutral-900'
+                      ? 'text-accent-400 font-semibold'
+                      : 'text-white'
                   )}
                   onClick={() => {
                     console.log('Navigation clicked:', item.name)

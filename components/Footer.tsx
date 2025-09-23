@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Container } from './Container'
 
 const navigation = {
@@ -26,7 +27,15 @@ export function Footer() {
         {/* Mobile: Single column layout */}
         <div className="block lg:hidden space-y-6">
           <div>
-            <div className="text-xl sm:text-2xl font-bold mb-3">Alpha</div>
+            <div className="mb-3">
+              <Image
+                src="/alpha-logo.png"
+                alt="Alpha Group Investment"
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+              />
+            </div>
             <p className="text-sm text-neutral-300 mobile-text-wrap">
               Institutional-grade advisory, investments, and digital asset assurance for forward-thinking organizations.
             </p>
@@ -81,7 +90,15 @@ export function Footer() {
         <div className="hidden lg:block">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8 xl:col-span-1">
-              <div className="text-3xl font-bold">Alpha</div>
+              <div>
+                <Image
+                  src="/alpha-logo.png"
+                  alt="Alpha Group Investment"
+                  width={150}
+                  height={50}
+                  className="h-12 w-auto"
+                />
+              </div>
               <p className="text-base text-neutral-300 max-w-md">
                 Institutional-grade advisory, investments, and digital asset assurance 
                 for forward-thinking organizations.

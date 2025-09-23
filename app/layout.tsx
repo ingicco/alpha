@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Alpha Group Investment' }],
   creator: 'Alpha Group Investment',
   publisher: 'Alpha Group Investment',
+  icons: {
+    icon: '/alpha-logo.png',
+    shortcut: '/alpha-logo.png',
+    apple: '/alpha-logo.png',
+  },
   robots: {
     index: true,
     follow: true,

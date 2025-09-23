@@ -49,6 +49,7 @@ const pillars = [
   {
     title: 'Advisory',
     description: 'Institutional mandates with trusted legal & tech partners.',
+    image: '/media/advisory-pillar.webp',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h4.125m0-15.75h8.25" />
@@ -58,6 +59,7 @@ const pillars = [
   {
     title: 'Investments',
     description: 'Pre-IPO, secondary, and early-stage co-investments.',
+    image: '/media/investments-pillar.webp',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
@@ -67,6 +69,7 @@ const pillars = [
   {
     title: 'Digital Assets',
     description: 'Compliance & assurance frameworks for blockchain.',
+    image: '/media/digital-assets-pillar.webp',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
@@ -208,48 +211,52 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {pillars.map((pillar, index) => (
               <ScrollAnimation key={pillar.title} animation="slideUp" delay={index * 200}>
-                <div className="group text-center">
+                <Link href={
+                  pillar.title === 'Advisory' ? '/advisory' :
+                  pillar.title === 'Investments' ? '/investment' :
+                  pillar.title === 'Digital Assets' ? '/digital-assets' : 
+                  `/${pillar.title.toLowerCase()}`
+                } className="group text-center block cursor-pointer">
                   {/* Mobile: Compact card */}
-                  <div className="block sm:hidden bg-white rounded-lg border border-neutral-200 p-4 shadow-sm">
-                    <div className="w-full aspect-square mb-4 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl flex items-center justify-center">
-                      <div className="text-xs text-neutral-400">Image</div>
+                  <div className="block sm:hidden bg-transparent p-4">
+                    <div className="w-full aspect-square mb-4 rounded-xl overflow-hidden">
+                      <Image
+                        src={pillar.image}
+                        alt={pillar.title}
+                        width={300}
+                        height={300}
+                        className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                      />
                     </div>
-                    <h3 className="text-base font-bold text-accent-600 mb-2 mobile-text-wrap">
+                    <h3 className="text-base font-bold text-accent-600 mb-2 mobile-text-wrap group-hover:text-accent-700 transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs text-neutral-600 leading-snug mb-3 mobile-text-wrap">
+                    <p className="text-xs text-neutral-600 leading-snug mobile-text-wrap">
                       {pillar.description}
                     </p>
-                    <div className="text-primary-600 font-semibold text-xs">
-                      Learn More →
-                    </div>
                   </div>
                   
                   {/* Desktop: Full card */}
-                  <div className="hidden sm:block h-full flex flex-col">
+                  <div className="hidden sm:block h-full flex flex-col bg-transparent">
                     <div className="flex-1 p-6 lg:p-8">
-                      <div className="w-full h-48 lg:h-64 mx-auto mb-6 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl border border-neutral-200 flex items-center justify-center transform transition-transform group-hover:scale-[1.02]">
-                        <div className="text-center">
-                          <div className="text-sm text-neutral-400 font-medium">Image Placeholder</div>
-                        </div>
+                      <div className="w-full h-48 lg:h-64 mx-auto mb-6 rounded-xl overflow-hidden transform transition-transform group-hover:scale-[1.02]">
+                        <Image
+                          src={pillar.image}
+                          alt={pillar.title}
+                          width={400}
+                          height={256}
+                          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                        />
                       </div>
-                      <h3 className="text-xl lg:text-2xl font-bold text-accent-600 mb-4">
+                      <h3 className="text-xl lg:text-2xl font-bold text-accent-600 mb-4 group-hover:text-accent-700 transition-colors">
                         {pillar.title}
                       </h3>
                       <p className="text-neutral-600 leading-relaxed text-sm lg:text-base">
                         {pillar.description}
                       </p>
                     </div>
-                    <div className="mt-auto pt-4">
-                      <div className="flex items-center justify-center text-primary-600 font-bold group-hover:text-primary-700 transition-colors">
-                        <span className="text-sm">Learn More</span>
-                        <svg className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    </div>
                   </div>
-                </div>
+                </Link>
               </ScrollAnimation>
             ))}
           </div>
@@ -422,7 +429,7 @@ export default function HomePage() {
             <Reveal delay={200}>
               <div className="relative">
                 <Image
-                  src="/media/advisory-placeholder.jpg"
+                  src="/media/advisory-approach-placeholder.webp"
                   alt="Advisory services illustration"
                   width={600}
                   height={400}
@@ -468,7 +475,7 @@ export default function HomePage() {
             <Reveal>
               <div className="relative lg:order-2">
                 <Image
-                  src="/media/digital-assets-placeholder.jpg"
+                  src="/media/digital-assets-placeholder.webp"
                   alt="Digital assets and blockchain illustration"
                   width={600}
                   height={400}
