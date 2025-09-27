@@ -15,100 +15,92 @@ interface ScrollRevealProps {
 export function ScrollReveal({ leftContent, rightItems, className = '' }: ScrollRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let highestIndex = -1
-        
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.getAttribute('data-index') || '0')
-            if (index > highestIndex) {
-              highestIndex = index
-            }
-          }
-        })
-        
-        if (highestIndex >= 0) {
-          setActiveIndex(highestIndex)
-        }
-      },
-      {
-        root: null,
-        rootMargin: '-30% 0px -30% 0px',
-        threshold: 0.3,
-      }
-    )
+    const handleScroll = () => {
+      const containerRect = container.getBoundingClientRect()
+      const containerTop = containerRect.top
+      const containerHeight = containerRect.height
+      const windowHeight = window.innerHeight
+      
+      // Calculate scroll progress through the container
+      const scrolled = Math.max(0, Math.min(1, -containerTop / (containerHeight - windowHeight)))
+      setScrollProgress(scrolled)
+      
+      // Calculate which item should be active based on scroll position
+      const totalItems = rightItems.length
+      const progressPerItem = 1 / totalItems
+      const currentIndex = Math.floor(scrolled / progressPerItem)
+      const clampedIndex = Math.max(0, Math.min(totalItems - 1, currentIndex))
+      
+      setActiveIndex(clampedIndex)
+    }
 
-    // Wait for DOM to be ready, then observe
-    setTimeout(() => {
-      const rightElements = container.querySelectorAll('[data-index]')
-      console.log('Found elements to observe:', rightElements.length)
-      rightElements.forEach((el) => observer.observe(el))
-    }, 100)
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Initial call
 
-    return () => observer.disconnect()
-  }, [])
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [rightItems.length])
 
   return (
     <div ref={containerRef} className={`${className}`}>
       {/* Desktop Layout */}
       <div className="hidden lg:block">
-        <div className="grid lg:grid-cols-5 lg:gap-12">
-          {/* Left Content - Fixed Position */}
-          <div className="lg:col-span-2">
-            <div className="sticky top-32 z-10 h-screen flex items-start pt-32">
-              <div className="w-full">
+        <div className="relative flex min-h-screen">
+          {/* Left Content - Sticky Position */}
+          <div className="w-2/5 pr-12">
+            <div className="sticky top-32 z-10 py-20">
+              <div 
+                className="transition-all duration-500 ease-out"
+                style={{ 
+                  opacity: scrollProgress < 0.85 ? 1 - (scrollProgress * 0.2) : Math.max(0.4, 1 - ((scrollProgress - 0.85) / 0.15)),
+                  transform: `translateY(${scrollProgress * 10}px)`
+                }}
+              >
                 {leftContent}
               </div>
             </div>
           </div>
 
           {/* Right Content - Scrollable Items */}
-          <div className="lg:col-span-3 space-y-32">
-            {rightItems.map((item, index) => (
-              <div
-                key={index}
-                data-index={index}
-                className={`transition-all duration-700 ease-out transform ${
-                  activeIndex >= index
-                    ? 'opacity-100 translate-y-0 scale-100'
-                    : 'opacity-20 translate-y-8 scale-95'
-                }`}
-                style={{ minHeight: '400px' }}
-              >
-                <div className="relative pl-8 py-16 transition-all duration-700">
-                  {/* Clean number indicator - no line through */}
-                  <div className={`absolute -left-6 top-16 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-700 border-2 ${
-                    activeIndex >= index 
-                      ? 'bg-accent-500 text-white border-accent-500' 
-                      : 'bg-white text-neutral-400 border-neutral-300'
-                  }`}>
-                    {String(index + 1).padStart(2, '0')}
+          <div className="w-3/5 pl-12">
+            {rightItems.map((item, index) => {
+              const isActive = activeIndex === index
+              const isPassed = activeIndex > index
+              
+              return (
+                <div
+                  key={index}
+                  className="flex items-center py-20"
+                  style={{ 
+                    minHeight: '60vh',
+                    opacity: isActive ? 1 : 0.3,
+                    transform: `translateY(${isPassed ? -10 : 0}px)`,
+                    transition: 'all 0.5s ease-out'
+                  }}
+                >
+                  <div className="w-full">
+                    <div className="border-l-4 border-accent-500 pl-8">
+                      <h3 className={`text-3xl lg:text-4xl font-bold mb-6 leading-tight transition-all duration-500 ${
+                        isActive ? 'text-primary-900' : 'text-neutral-500'
+                      }`}>
+                        {item.title}
+                      </h3>
+                      
+                      <p className={`text-xl lg:text-2xl leading-relaxed transition-all duration-500 ${
+                        isActive ? 'text-neutral-700' : 'text-neutral-400'
+                      }`}>
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  
-                  <h3 className={`text-3xl lg:text-4xl font-bold mb-6 leading-tight transition-all duration-700 ${
-                    activeIndex >= index 
-                      ? 'text-primary-900' 
-                      : 'text-neutral-400'
-                  }`}>
-                    {item.title}
-                  </h3>
-                  
-                  <p className={`text-xl leading-relaxed max-w-2xl transition-all duration-700 ${
-                    activeIndex >= index 
-                      ? 'text-neutral-700' 
-                      : 'text-neutral-400'
-                  }`}>
-                    {item.description}
-                  </p>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
@@ -116,9 +108,11 @@ export function ScrollReveal({ leftContent, rightItems, className = '' }: Scroll
       {/* Mobile Layout - Simple List */}
       <div className="block lg:hidden">
         <div className="space-y-12">
-          <div>{leftContent}</div>
+          <div className="px-4">
+            {leftContent}
+          </div>
           
-          <div className="space-y-8">
+          <div className="space-y-8 px-4">
             {rightItems.map((item, index) => (
               <div key={index} className="border-l-4 border-accent-500 pl-6 py-4">
                 <h3 className="text-xl font-bold text-primary-900 mb-3 leading-tight">

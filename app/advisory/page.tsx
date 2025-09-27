@@ -206,111 +206,35 @@ export default function AdvisoryPage() {
             </Reveal>
           </div>
 
-          <div className="hidden lg:block">
-            <div className="grid lg:grid-cols-5 lg:gap-12">
-              {/* Left Content - Scrollable Items */}
-              <div className="lg:col-span-3 space-y-32">
-                {[
-                  {
-                    title: "Regulatory Readiness",
-                    description: "Comprehensive compliance frameworks aligned with global regulatory standards and emerging digital asset regulations."
-                  },
-                  {
-                    title: "Token Economics & Governance",
-                    description: "Strategic design and implementation of token economic models, governance structures, and stakeholder alignment mechanisms."
-                  },
-                  {
-                    title: "Risk, Controls & Reporting",
-                    description: "Enterprise-grade risk management frameworks, internal controls design, and board-level reporting structures."
-                  },
-                  {
-                    title: "Vendor Selection & Technical DD",
-                    description: "Comprehensive vendor evaluation, technical due diligence, and partner selection across the digital asset ecosystem."
-                  },
-                  {
-                    title: "Treasury Operations & Custody",
-                    description: "Digital asset treasury management, custody solution evaluation, and operational framework implementation."
-                  }
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="transition-all duration-700 ease-out transform opacity-100 translate-y-0 scale-100"
-                    style={{ minHeight: '400px' }}
-                  >
-                    <div className="border-l-4 border-accent-500 pl-8 py-12">
-                      <h3 className="text-3xl lg:text-4xl font-bold text-primary-900 mb-8 leading-tight">
-                        {item.title}
-                      </h3>
-                      
-                      <p className="text-xl leading-relaxed text-neutral-700">
-                        {item.description}
-                      </p>
-                      
-                      {/* Active indicator */}
-                      <div className="mt-8 w-24 h-1 bg-accent-500" />
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Right Content - Fixed Text */}
-              <div className="lg:col-span-2">
-                <div className="sticky top-32 z-10 h-screen flex items-start pt-24">
-                  <div className="w-full">
-                    <p className="text-3xl lg:text-4xl xl:text-5xl text-primary-900 leading-tight font-light">
-                      We operate across all critical areas of modern institutional finance, from traditional governance to digital asset innovation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Layout - Simple List */}
-          <div className="block lg:hidden">
-            <div className="space-y-12">
-              <div>
-                <p className="text-xl text-primary-900 leading-tight font-light mb-8">
-                  We operate across all critical areas of modern institutional finance, from traditional governance to digital asset innovation.
-                </p>
-              </div>
-              
-              <div className="space-y-8">
-                {[
-                  {
-                    title: "Regulatory Readiness",
-                    description: "Comprehensive compliance frameworks aligned with global regulatory standards and emerging digital asset regulations."
-                  },
-                  {
-                    title: "Token Economics & Governance",
-                    description: "Strategic design and implementation of token economic models, governance structures, and stakeholder alignment mechanisms."
-                  },
-                  {
-                    title: "Risk, Controls & Reporting",
-                    description: "Enterprise-grade risk management frameworks, internal controls design, and board-level reporting structures."
-                  },
-                  {
-                    title: "Vendor Selection & Technical DD",
-                    description: "Comprehensive vendor evaluation, technical due diligence, and partner selection across the digital asset ecosystem."
-                  },
-                  {
-                    title: "Treasury Operations & Custody",
-                    description: "Digital asset treasury management, custody solution evaluation, and operational framework implementation."
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="border-l-4 border-accent-500 pl-6 py-4">
-                    <h3 className="text-xl font-bold text-primary-900 mb-3 leading-tight">
-                      {item.title}
-                    </h3>
-                    
-                    <p className="text-base text-neutral-600 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <ScrollReveal
+            leftContent={
+              <p className="text-3xl lg:text-4xl xl:text-5xl text-primary-900 leading-tight font-light">
+                We operate across all critical areas of modern institutional finance, from traditional governance to digital asset innovation.
+              </p>
+            }
+            rightItems={[
+              {
+                title: "Regulatory Readiness",
+                description: "Comprehensive compliance frameworks aligned with global regulatory standards and emerging digital asset regulations."
+              },
+              {
+                title: "Token Economics & Governance",
+                description: "Strategic design and implementation of token economic models, governance structures, and stakeholder alignment mechanisms."
+              },
+              {
+                title: "Risk, Controls & Reporting",
+                description: "Enterprise-grade risk management frameworks, internal controls design, and board-level reporting structures."
+              },
+              {
+                title: "Vendor Selection & Technical DD",
+                description: "Comprehensive vendor evaluation, technical due diligence, and partner selection across the digital asset ecosystem."
+              },
+              {
+                title: "Treasury Operations & Custody",
+                description: "Digital asset treasury management, custody solution evaluation, and operational framework implementation."
+              }
+            ]}
+          />
         </Container>
       </Section>
 
@@ -346,40 +270,40 @@ export default function AdvisoryPage() {
                     </div>
                     
                     {/* Content - Right Side */}
-                    <div className="order-1 lg:order-2 space-y-6">
+                    <div className="order-1 lg:order-2 space-y-5 px-4 lg:px-8">
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-primary-900 mb-4 leading-tight">
+                        <h2 className="text-xl lg:text-2xl font-bold text-primary-900 mb-3 leading-tight">
                           Tokenization Advisory
                         </h2>
-                        <p className="text-base lg:text-lg text-neutral-600 leading-relaxed">
+                        <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
                           End-to-end advisory on tokenization of real-world assets — from structuring funds and securities to designing compliant issuance frameworks.
                         </p>
                       </div>
                       
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         <div>
-                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
                             Tokenization of Funds & Capital Markets
                           </h3>
-                          <p className="text-sm text-neutral-600 leading-relaxed">
+                          <p className="text-xs text-neutral-600 leading-relaxed">
                             Comprehensive fund structuring and capital market tokenization strategies for institutional asset classes.
                           </p>
                         </div>
                         
                         <div>
-                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
                             Commodity & Real Estate Tokenization
                           </h3>
-                          <p className="text-sm text-neutral-600 leading-relaxed">
+                          <p className="text-xs text-neutral-600 leading-relaxed">
                             Specialized frameworks for tokenizing physical assets and real estate portfolios.
                           </p>
                         </div>
                         
                         <div>
-                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
                             Lifecycle Structuring
                           </h3>
-                          <p className="text-sm text-neutral-600 leading-relaxed">
+                          <p className="text-xs text-neutral-600 leading-relaxed">
                             Complete lifecycle management from issuance through distribution to custody solutions.
                           </p>
                         </div>
@@ -405,40 +329,40 @@ export default function AdvisoryPage() {
                 <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
                   <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
                     {/* Content - Left Side */}
-                    <div className="order-1 space-y-6">
+                    <div className="order-1 space-y-5 px-4 lg:px-8">
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight">
+                        <h2 className="text-xl lg:text-2xl font-bold text-white mb-3 leading-tight">
                           Stablecoin & Yield Strategy
                         </h2>
-                        <p className="text-base lg:text-lg text-neutral-200 leading-relaxed">
+                        <p className="text-sm lg:text-base text-neutral-200 leading-relaxed">
                           Helping leading stablecoin and yield projects achieve institutional readiness — advising across issuance, risk management, and scaling mandates.
                         </p>
                       </div>
                       
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         <div>
-                          <h3 className="text-base font-semibold text-white mb-2">
+                          <h3 className="text-sm font-semibold text-white mb-1">
                             Institutional Onboarding
                           </h3>
-                          <p className="text-sm text-neutral-300 leading-relaxed">
+                          <p className="text-xs text-neutral-300 leading-relaxed">
                             Comprehensive onboarding frameworks for institutional adoption and compliance readiness.
                           </p>
                         </div>
                         
                         <div>
-                          <h3 className="text-base font-semibold text-white mb-2">
+                          <h3 className="text-sm font-semibold text-white mb-1">
                             Treasury Yield Solutions
                           </h3>
-                          <p className="text-sm text-neutral-300 leading-relaxed">
+                          <p className="text-xs text-neutral-300 leading-relaxed">
                             Strategic treasury management and yield optimization for stablecoin reserves and operations.
                           </p>
                         </div>
                         
                         <div>
-                          <h3 className="text-base font-semibold text-white mb-2">
+                          <h3 className="text-sm font-semibold text-white mb-1">
                             Regulatory Assurance
                           </h3>
-                          <p className="text-sm text-neutral-300 leading-relaxed">
+                          <p className="text-xs text-neutral-300 leading-relaxed">
                             Comprehensive regulatory compliance frameworks and ongoing assurance for global markets.
                           </p>
                         </div>
@@ -492,40 +416,40 @@ export default function AdvisoryPage() {
                     </div>
                     
                     {/* Content - Right Side */}
-                    <div className="order-1 lg:order-2 space-y-6">
+                    <div className="order-1 lg:order-2 space-y-5 px-4 lg:px-8">
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-primary-900 mb-4 leading-tight">
+                        <h2 className="text-xl lg:text-2xl font-bold text-primary-900 mb-3 leading-tight">
                           Digital Corporate Finance
                         </h2>
-                        <p className="text-base lg:text-lg text-neutral-600 leading-relaxed">
+                        <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
                           Structuring and executing complex cross-border corporate finance transactions — including Reverse Mergers, Reverse Swaps, and PIPE deals.
                         </p>
                       </div>
                       
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         <div>
-                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
                             Deal Structuring and Execution
                           </h3>
-                          <p className="text-sm text-neutral-600 leading-relaxed">
+                          <p className="text-xs text-neutral-600 leading-relaxed">
                             Expert structuring and execution of complex M&A, reverse merger, and PIPE transactions.
                           </p>
                         </div>
                         
                         <div>
-                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
                             Distribution and Syndication Support
                           </h3>
-                          <p className="text-sm text-neutral-600 leading-relaxed">
+                          <p className="text-xs text-neutral-600 leading-relaxed">
                             Comprehensive distribution networks and syndication support for successful transaction completion.
                           </p>
                         </div>
                         
                         <div>
-                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
                             Strategic Alignment with Public Markets
                           </h3>
-                          <p className="text-sm text-neutral-600 leading-relaxed">
+                          <p className="text-xs text-neutral-600 leading-relaxed">
                             Strategic positioning and alignment for successful public market listings and compliance.
                           </p>
                         </div>
