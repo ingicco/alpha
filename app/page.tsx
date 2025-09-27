@@ -10,6 +10,7 @@ import { AnimatedBarChart } from '@/components/AnimatedBarChart'
 import { CountUp } from '@/components/CountUp'
 import { Reveal } from '@/components/Reveal'
 import { ScrollAnimation } from '@/components/ScrollAnimation'
+import { ScrollReveal } from '@/components/ScrollReveal'
 import { getAllPosts } from '@/lib/mdx'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -197,103 +198,31 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div className="hidden lg:block">
-            <div className="grid lg:grid-cols-5 lg:gap-12">
-              {/* Left Content - Fixed Text */}
-              <div className="lg:col-span-2">
-                <div className="sticky top-32 z-10 h-screen flex items-center">
-                  <div className="w-full">
-                    <p className="text-3xl lg:text-4xl xl:text-5xl text-primary-900 leading-tight font-light">
-                      Alpha Group Investment focuses on four critical areas of institutional finance and digital asset innovation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Content - Scrollable Items */}
-              <div className="lg:col-span-3 space-y-32">
-                {[
-                  {
-                    title: "Tokenization of Real World Assets",
-                    description: "Funds, Commodities, Securities, Real Estate - comprehensive tokenization strategies for institutional asset classes."
-                  },
-                  {
-                    title: "Stablecoin Growth & Institutional Adoption",
-                    description: "Strategic frameworks for stablecoin integration, regulatory compliance, and institutional-grade adoption pathways."
-                  },
-                  {
-                    title: "M&A, Reverse Mergers & PIPE Transactions",
-                    description: "Expert advisory on mergers & acquisitions, reverse merger structures, and private investment in public equity deals."
-                  },
-                  {
-                    title: "Institutional Structuring & Capital Solutions",
-                    description: "Comprehensive capital structuring, institutional fund formation, and sophisticated financing solutions."
-                  }
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="transition-all duration-700 ease-out transform opacity-100 translate-y-0 scale-100"
-                    style={{ minHeight: '400px' }}
-                  >
-                    <div className="border-l-4 border-accent-500 pl-8 py-12">
-                      <h3 className="text-3xl lg:text-4xl font-bold text-primary-900 mb-8 leading-tight">
-                        {item.title}
-                      </h3>
-                      
-                      <p className="text-xl leading-relaxed text-neutral-700">
-                        {item.description}
-                      </p>
-                      
-                      {/* Active indicator */}
-                      <div className="mt-8 w-24 h-1 bg-accent-500" />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Layout - Simple List */}
-          <div className="block lg:hidden">
-            <div className="space-y-12">
-              <div>
-                <p className="text-xl text-primary-900 leading-tight font-light mb-8">
-                  Alpha Group Investment focuses on four critical areas of institutional finance and digital asset innovation.
-                </p>
-              </div>
-              
-              <div className="space-y-8">
-                {[
-                  {
-                    title: "Tokenization of Real World Assets",
-                    description: "Funds, Commodities, Securities, Real Estate - comprehensive tokenization strategies for institutional asset classes."
-                  },
-                  {
-                    title: "Stablecoin Growth & Institutional Adoption",
-                    description: "Strategic frameworks for stablecoin integration, regulatory compliance, and institutional-grade adoption pathways."
-                  },
-                  {
-                    title: "M&A, Reverse Mergers & PIPE Transactions",
-                    description: "Expert advisory on mergers & acquisitions, reverse merger structures, and private investment in public equity deals."
-                  },
-                  {
-                    title: "Institutional Structuring & Capital Solutions",
-                    description: "Comprehensive capital structuring, institutional fund formation, and sophisticated financing solutions."
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="border-l-4 border-accent-500 pl-6 py-4">
-                    <h3 className="text-xl font-bold text-primary-900 mb-3 leading-tight">
-                      {item.title}
-                    </h3>
-                    
-                    <p className="text-base text-neutral-600 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <ScrollReveal
+            leftContent={
+              <p className="text-3xl lg:text-4xl xl:text-5xl text-primary-900 leading-tight font-light">
+                Alpha Group Investment focuses on four critical areas of institutional finance and digital asset innovation.
+              </p>
+            }
+            rightItems={[
+              {
+                title: "Tokenization of Real World Assets",
+                description: "Funds, Commodities, Securities, Real Estate - comprehensive tokenization strategies for institutional asset classes."
+              },
+              {
+                title: "Stablecoin Growth & Institutional Adoption",
+                description: "Strategic frameworks for stablecoin integration, regulatory compliance, and institutional-grade adoption pathways."
+              },
+              {
+                title: "M&A, Reverse Mergers & PIPE Transactions",
+                description: "Expert advisory on mergers & acquisitions, reverse merger structures, and private investment in public equity deals."
+              },
+              {
+                title: "Institutional Structuring & Capital Solutions",
+                description: "Comprehensive capital structuring, institutional fund formation, and sophisticated financing solutions."
+              }
+            ]}
+          />
         </div>
       </Section>
 

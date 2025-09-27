@@ -3,6 +3,8 @@ import { Section } from '@/components/Section'
 import { Container } from '@/components/Container'
 import { Reveal } from '@/components/Reveal'
 import { ScrollReveal } from '@/components/ScrollReveal'
+import { HorizontalScrollReveal } from '@/components/HorizontalScrollReveal'
+import { HorizontalCarousel } from '@/components/HorizontalCarousel'
 import { CTAButton } from '@/components/CTAButton'
 import Image from 'next/image'
 
@@ -312,214 +314,230 @@ export default function AdvisoryPage() {
         </Container>
       </Section>
 
-      {/* Specialized Advisory Subsections */}
-      
-      {/* A. Tokenization Advisory */}
-      <Section className="py-16 sm:py-20 lg:py-24">
-        <div className="mobile-container">
-          <Reveal>
-            <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-wider text-accent-600 font-semibold mb-4">
-                Tokenization Advisory
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-900 mb-6">
-                End-to-End Tokenization Solutions
-              </h2>
-              <p className="text-lg text-neutral-600 max-w-4xl mx-auto leading-relaxed">
-                Alpha provides end-to-end advisory on tokenization of real-world assets — from structuring funds and securities to designing compliant issuance frameworks for commodities and real estate.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
-            <Reveal delay={100}>
-              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200 hover:border-accent-300 transition-colors">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.05.218-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
-                  </svg>
+      {/* Specialized Advisory Subsections - Horizontal Carousel */}
+      <HorizontalCarousel
+        sections={[
+          {
+            id: 'tokenization',
+            content: (
+              <div className="w-full h-full bg-white flex items-center justify-center relative overflow-hidden">
+                {/* Subtle background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: 'radial-gradient(circle at 25% 25%, #1a3c5e 2px, transparent 2px)',
+                    backgroundSize: '60px 60px'
+                  }}></div>
                 </div>
-                <h3 className="text-lg font-bold text-primary-900 mb-3">
-                  Tokenization of Funds & Capital Markets
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Comprehensive fund structuring and capital market tokenization strategies for institutional asset classes.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={200}>
-              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200 hover:border-accent-300 transition-colors">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-                  </svg>
+                
+                <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+                    {/* Image - Left Side */}
+                    <div className="order-2 lg:order-1 flex justify-center">
+                      <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl shadow-2xl flex items-center justify-center transform transition-all duration-700 hover:scale-105 relative overflow-hidden">
+                        {/* Subtle inner pattern */}
+                        <div className="absolute inset-0 opacity-10">
+                          <div className="w-full h-full bg-gradient-to-br from-primary-500 to-accent-500"></div>
+                        </div>
+                        <div className="relative text-center">
+                          <div className="text-lg text-primary-700 font-bold mb-2">Tokenization</div>
+                          <div className="text-sm text-primary-500">Advisory Services</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Content - Right Side */}
+                    <div className="order-1 lg:order-2 space-y-6">
+                      <div>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-primary-900 mb-4 leading-tight">
+                          Tokenization Advisory
+                        </h2>
+                        <p className="text-base lg:text-lg text-neutral-600 leading-relaxed">
+                          End-to-end advisory on tokenization of real-world assets — from structuring funds and securities to designing compliant issuance frameworks.
+                        </p>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                            Tokenization of Funds & Capital Markets
+                          </h3>
+                          <p className="text-sm text-neutral-600 leading-relaxed">
+                            Comprehensive fund structuring and capital market tokenization strategies for institutional asset classes.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                            Commodity & Real Estate Tokenization
+                          </h3>
+                          <p className="text-sm text-neutral-600 leading-relaxed">
+                            Specialized frameworks for tokenizing physical assets and real estate portfolios.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                            Lifecycle Structuring
+                          </h3>
+                          <p className="text-sm text-neutral-600 leading-relaxed">
+                            Complete lifecycle management from issuance through distribution to custody solutions.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-primary-900 mb-3">
-                  Commodity & Real Estate Tokenization
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Specialized frameworks for tokenizing physical assets including commodities and real estate portfolios.
-                </p>
               </div>
-            </Reveal>
-
-            <Reveal delay={300}>
-              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200 hover:border-accent-300 transition-colors">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                  </svg>
+            )
+          },
+          {
+            id: 'stablecoin',
+            content: (
+              <div className="w-full h-full bg-primary-900 flex items-center justify-center relative overflow-hidden">
+                {/* Subtle background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: 'radial-gradient(circle at 75% 75%, #c8b572 2px, transparent 2px)',
+                    backgroundSize: '60px 60px'
+                  }}></div>
                 </div>
-                <h3 className="text-lg font-bold text-primary-900 mb-3">
-                  Lifecycle Structuring: Issuance → Distribution → Custody
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Complete lifecycle management from initial issuance through distribution channels to custody solutions.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </Section>
-
-      {/* B. Stablecoin & Yield Strategy Advisory */}
-      <Section className="py-16 sm:py-20 lg:py-24" background="primary">
-        <div className="mobile-container">
-          <Reveal>
-            <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-wider text-accent-400 font-semibold mb-4">
-                Stablecoin & Yield Strategy
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
-                Institutional Readiness for Stablecoin Projects
-              </h2>
-              <p className="text-lg text-neutral-200 max-w-4xl mx-auto leading-relaxed">
-                We help leading stablecoin and yield projects achieve institutional readiness — advising across issuance, risk management, and scaling mandates.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
-            <Reveal delay={100}>
-              <div className="text-center p-6 bg-primary-800/50 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent-400/50 transition-colors">
-                <div className="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-                  </svg>
+                
+                <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+                    {/* Content - Left Side */}
+                    <div className="order-1 space-y-6">
+                      <div>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight">
+                          Stablecoin & Yield Strategy
+                        </h2>
+                        <p className="text-base lg:text-lg text-neutral-200 leading-relaxed">
+                          Helping leading stablecoin and yield projects achieve institutional readiness — advising across issuance, risk management, and scaling mandates.
+                        </p>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h3 className="text-base font-semibold text-white mb-2">
+                            Institutional Onboarding
+                          </h3>
+                          <p className="text-sm text-neutral-300 leading-relaxed">
+                            Comprehensive onboarding frameworks for institutional adoption and compliance readiness.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-base font-semibold text-white mb-2">
+                            Treasury Yield Solutions
+                          </h3>
+                          <p className="text-sm text-neutral-300 leading-relaxed">
+                            Strategic treasury management and yield optimization for stablecoin reserves and operations.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-base font-semibold text-white mb-2">
+                            Regulatory Assurance
+                          </h3>
+                          <p className="text-sm text-neutral-300 leading-relaxed">
+                            Comprehensive regulatory compliance frameworks and ongoing assurance for global markets.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Image - Right Side */}
+                    <div className="order-2 flex justify-center">
+                      <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-accent-500/30 to-primary-700 rounded-3xl shadow-2xl flex items-center justify-center transform transition-all duration-700 hover:scale-105 relative overflow-hidden border border-white/10">
+                        {/* Subtle inner pattern */}
+                        <div className="absolute inset-0 opacity-10">
+                          <div className="w-full h-full bg-gradient-to-br from-accent-500 to-white"></div>
+                        </div>
+                        <div className="relative text-center">
+                          <div className="text-lg text-accent-300 font-bold mb-2">Stablecoin Strategy</div>
+                          <div className="text-sm text-accent-200">Advisory Services</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">
-                  Institutional Onboarding
-                </h3>
-                <p className="text-sm text-neutral-300 leading-relaxed">
-                  Comprehensive onboarding frameworks for institutional adoption and compliance readiness.
-                </p>
               </div>
-            </Reveal>
-
-            <Reveal delay={200}>
-              <div className="text-center p-6 bg-primary-800/50 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent-400/50 transition-colors">
-                <div className="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+            )
+          },
+          {
+            id: 'corporate-finance',
+            content: (
+              <div className="w-full h-full bg-white flex items-center justify-center relative overflow-hidden">
+                {/* Subtle background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: 'radial-gradient(circle at 50% 50%, #1a3c5e 2px, transparent 2px)',
+                    backgroundSize: '60px 60px'
+                  }}></div>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">
-                  Treasury Yield Solutions
-                </h3>
-                <p className="text-sm text-neutral-300 leading-relaxed">
-                  Strategic treasury management and yield optimization for stablecoin reserves and operations.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={300}>
-              <div className="text-center p-6 bg-primary-800/50 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent-400/50 transition-colors">
-                <div className="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
+                
+                <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+                    {/* Image - Left Side */}
+                    <div className="order-2 lg:order-1 flex justify-center">
+                      <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-accent-100 to-primary-100 rounded-3xl shadow-2xl flex items-center justify-center transform transition-all duration-700 hover:scale-105 relative overflow-hidden">
+                        {/* Subtle inner pattern */}
+                        <div className="absolute inset-0 opacity-10">
+                          <div className="w-full h-full bg-gradient-to-br from-accent-500 to-primary-500"></div>
+                        </div>
+                        <div className="relative text-center">
+                          <div className="text-lg text-primary-700 font-bold mb-2">Corporate Finance</div>
+                          <div className="text-sm text-primary-500">Advisory Services</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Content - Right Side */}
+                    <div className="order-1 lg:order-2 space-y-6">
+                      <div>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-primary-900 mb-4 leading-tight">
+                          Digital Corporate Finance
+                        </h2>
+                        <p className="text-base lg:text-lg text-neutral-600 leading-relaxed">
+                          Structuring and executing complex cross-border corporate finance transactions — including Reverse Mergers, Reverse Swaps, and PIPE deals.
+                        </p>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                            Deal Structuring and Execution
+                          </h3>
+                          <p className="text-sm text-neutral-600 leading-relaxed">
+                            Expert structuring and execution of complex M&A, reverse merger, and PIPE transactions.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                            Distribution and Syndication Support
+                          </h3>
+                          <p className="text-sm text-neutral-600 leading-relaxed">
+                            Comprehensive distribution networks and syndication support for successful transaction completion.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-base font-semibold text-primary-900 mb-2">
+                            Strategic Alignment with Public Markets
+                          </h3>
+                          <p className="text-sm text-neutral-600 leading-relaxed">
+                            Strategic positioning and alignment for successful public market listings and compliance.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">
-                  Regulatory Assurance
-                </h3>
-                <p className="text-sm text-neutral-300 leading-relaxed">
-                  Comprehensive regulatory compliance frameworks and ongoing assurance for global markets.
-                </p>
               </div>
-            </Reveal>
-          </div>
-        </div>
-      </Section>
-
-      {/* C. Digital Corporate Finance */}
-      <Section className="py-16 sm:py-20 lg:py-24">
-        <div className="mobile-container">
-          <Reveal>
-            <div className="text-center mb-16">
-              <p className="text-sm uppercase tracking-wider text-accent-600 font-semibold mb-4">
-                Digital Corporate Finance
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-900 mb-6">
-                M&A / Reverse Mergers / PIPE Transactions
-              </h2>
-              <p className="text-lg text-neutral-600 max-w-4xl mx-auto leading-relaxed">
-                We structure and execute complex cross-border corporate finance transactions — including Reverse Mergers, Reverse Swaps, and PIPE deals for digital asset treasuries and exchange-listed entities.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
-            <Reveal delay={100}>
-              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200 hover:border-accent-300 transition-colors">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-primary-900 mb-3">
-                  Deal Structuring and Execution
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Expert structuring and execution of complex M&A, reverse merger, and PIPE transactions.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={200}>
-              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200 hover:border-accent-300 transition-colors">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-primary-900 mb-3">
-                  Distribution and Syndication Support
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Comprehensive distribution networks and syndication support for successful transaction completion.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={300}>
-              <div className="text-center p-6 bg-white rounded-xl border border-neutral-200 hover:border-accent-300 transition-colors">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l-1-3m1 3l-1-3m-16.5-3h9v-2.25" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-primary-900 mb-3">
-                  Strategic Alignment with Public Markets (NASDAQ / NYSE)
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  Strategic positioning and alignment for successful public market listings and compliance.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </Section>
+            )
+          }
+        ]}
+      />
 
       {/* Outcomes Section */}
       <Section
