@@ -61,7 +61,7 @@ export function ScrollReveal({ leftContent, rightItems, className = '' }: Scroll
         <div className="grid lg:grid-cols-5 lg:gap-12">
           {/* Left Content - Fixed Position */}
           <div className="lg:col-span-2">
-            <div className="sticky top-32 z-10 h-screen flex items-start pt-24">
+            <div className="sticky top-32 z-10 h-screen flex items-start pt-32">
               <div className="w-full">
                 {leftContent}
               </div>
@@ -81,33 +81,31 @@ export function ScrollReveal({ leftContent, rightItems, className = '' }: Scroll
                 }`}
                 style={{ minHeight: '400px' }}
               >
-                <div className={`border-l-4 pl-8 py-12 transition-all duration-700 ${
-                  activeIndex >= index 
-                    ? 'border-accent-500' 
-                    : 'border-neutral-200'
-                }`}>
-                  <h3 className={`text-3xl lg:text-4xl font-bold mb-8 leading-tight transition-all duration-700 ${
+                <div className="relative pl-8 py-16 transition-all duration-700">
+                  {/* Clean number indicator - no line through */}
+                  <div className={`absolute -left-6 top-16 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-700 border-2 ${
+                    activeIndex >= index 
+                      ? 'bg-accent-500 text-white border-accent-500' 
+                      : 'bg-white text-neutral-400 border-neutral-300'
+                  }`}>
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  
+                  <h3 className={`text-3xl lg:text-4xl font-bold mb-6 leading-tight transition-all duration-700 ${
                     activeIndex >= index 
                       ? 'text-primary-900' 
-                      : 'text-neutral-300'
+                      : 'text-neutral-400'
                   }`}>
                     {item.title}
                   </h3>
                   
-                  <p className={`text-xl leading-relaxed transition-all duration-700 ${
+                  <p className={`text-xl leading-relaxed max-w-2xl transition-all duration-700 ${
                     activeIndex >= index 
                       ? 'text-neutral-700' 
-                      : 'text-neutral-300'
+                      : 'text-neutral-400'
                   }`}>
                     {item.description}
                   </p>
-                  
-                  {/* Active indicator */}
-                  <div className={`mt-8 h-1 transition-all duration-700 ${
-                    activeIndex >= index 
-                      ? 'w-24 bg-accent-500' 
-                      : 'w-8 bg-neutral-200'
-                  }`} />
                 </div>
               </div>
             ))}
