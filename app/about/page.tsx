@@ -13,49 +13,56 @@ const leadership = [
     role: 'Chairman of the Board',
     bio: 'Sheikh Salim has a long-tenured career of corporate governance across several industries. He spent over 15 years on the board of Bank Muscat and has served on the boards of prominent companies including Oman Air, Commercial Bank of Oman and Oman International Bank.',
     linkedin: 'https://linkedin.com/in/placeholder',
-    image: '/team/sheikh-salim-placeholder.jpg'
+    image: '/team/sheikh-salim-taman-al-maashani.webp'
   },
   {
     name: 'Tim Underdown',
     role: 'Portfolio Advisor',
     bio: 'Tim has over 25 years of experience in energy, power and commodities. After practicing as an energy lawyer for 13 years he led the management buy-out of Enron UK to establish Px Group, becoming its Chairman and CEO. He established Px International and Forthside Group in the UAE where he is currently CEO and Chairman.',
     linkedin: 'https://linkedin.com/in/placeholder',
-    image: '/team/tim-underdown-placeholder.jpg'
+    image: '/team/tim-underdown.webp'
   },
   {
     name: 'Pradeep Baddam',
     role: 'Investment Director',
     bio: 'Pradeep has a decade of expertise in banking and investment management with a track record in evaluating private and public businesses globally. He worked with Hyundai Motors and ICICI Bank, holding senior posts including Investment Director at several funds. He holds an Masters in Finance from London Business School, MBA from Indian Institute of Foreign Trade, and is a CFA and FRM charterholder.',
     linkedin: 'https://linkedin.com/in/placeholder',
-    image: '/team/pradeep-baddam-placeholder.jpg'
+    image: '/team/pradeep-baddam.webp'
   },
   {
     name: 'Abdul Rafey',
     role: 'Operations Director',
     bio: 'Abdul has over 15 years in Banking and Finance, focusing on Corporate Banking for 12 years in Dubai, UAE. He demonstrates proficiency in Operations Management and investment strategies with outstanding leadership qualities and profound understanding of financial markets, regulations, and compliance standards. He holds an MBA in Marketing & Finance.',
     linkedin: 'https://linkedin.com/in/placeholder',
-    image: '/team/abdul-rafey-placeholder.jpg'
+    image: '/team/abdul-rafey.webp'
   },
   {
     name: 'Karthik Subramanian',
     role: 'Investment Manager',
     bio: 'Karthik is a seasoned finance professional with over a decade of experience in global investment management and banking. He has worked with prominent organizations, driving strategic growth initiatives and overseeing investment strategies. He holds an MS in Finance from NYU Stern School of Business and is a CFA charterholder.',
     linkedin: 'https://linkedin.com/in/placeholder',
-    image: '/team/karthik-subramanian-placeholder.jpg'
+    image: '/team/karthik-subramanian.webp'
   },
   {
     name: 'Ghassan Mahmoud',
     role: 'Private Equity Manager',
     bio: 'Ghassan is a seasoned finance professional with expertise in private equity management. He possesses strong qualifications and a proven track record of driving growth and strategic investments. With extensive experience in navigating complex financial markets, he excels in identifying opportunities and optimizing portfolio performance.',
     linkedin: 'https://linkedin.com/in/placeholder',
-    image: '/team/ghassan-mahmoud-placeholder.jpg'
+    image: '/team/ghassan-mahmoud.webp'
   },
   {
     name: 'Nadia Alamilla',
     role: 'Client Relations Director',
     bio: 'Nadia is a seasoned customer service and relationship expert with extensive experience in international private banking. She excels in delivering personalized service, building strong relationships, and meeting the unique needs of high-net-worth clients with a deep understanding of global banking solutions.',
     linkedin: 'https://linkedin.com/in/placeholder',
-    image: '/team/nadia-alamilla-placeholder.jpg'
+    image: '/team/nadia-alamilla.webp'
+  },
+  {
+    name: 'Abhimanyu Kashyap',
+    role: 'Chief Operating Officer, Kinetic Asset Management',
+    bio: 'Abhimanyu Kashyap serves as the Chief Operating Officer of Kinetic Asset Management, overseeing the firm\'s operational strategy, regulatory frameworks, and custodian partnerships. With a career spanning fintech innovation and asset management, he brings a rare blend of entrepreneurial drive and institutional discipline. Before joining Kinetic, Abhimanyu built and led several pioneering ventures in digital assets, lending technology, and blockchain infrastructure, establishing himself as a key contributor to the evolving financial ecosystem in the region.',
+    linkedin: 'https://linkedin.com/in/placeholder',
+    image: '/team/abhimanyu-kashyap.webp'
   }
 ]
 
