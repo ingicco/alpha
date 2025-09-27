@@ -237,9 +237,13 @@ export default function AboutPage() {
                       className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-3 cursor-pointer"
                       onClick={() => setSelectedLeader(leader)}
                     >
-                      <div className="w-full h-full bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                        <div className="text-xs text-neutral-500 font-medium">Photo</div>
-                      </div>
+                      <Image
+                        src={leader.image}
+                        alt={leader.name}
+                        width={96}
+                        height={96}
+                        className="w-full h-full object-cover rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300"
+                      />
                       
                       {/* Hover overlay */}
                       <div className="absolute inset-0 bg-primary-900/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -278,9 +282,13 @@ export default function AboutPage() {
                           className="relative w-32 h-32 mx-auto mb-4 cursor-pointer"
                           onClick={() => setSelectedLeader(leader)}
                         >
-                          <div className="w-full h-full bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                            <div className="text-sm text-neutral-500 font-medium">Photo</div>
-                          </div>
+                          <Image
+                            src={leader.image}
+                            alt={leader.name}
+                            width={128}
+                            height={128}
+                            className="w-full h-full object-cover rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300"
+                          />
                           
                           {/* Hover overlay */}
                           <div className="absolute inset-0 bg-primary-900/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -508,9 +516,13 @@ export default function AboutPage() {
 
               {/* Large Profile Photo */}
               <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6">
-                <div className="w-full h-full bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-full flex items-center justify-center shadow-lg">
-                  <div className="text-sm sm:text-base text-neutral-500 font-medium">Photo</div>
-                </div>
+                <Image
+                  src={selectedLeader.image}
+                  alt={selectedLeader.name}
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover rounded-full shadow-lg"
+                />
               </div>
               
               {/* Name and Role */}
