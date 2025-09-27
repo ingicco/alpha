@@ -183,92 +183,116 @@ export default function HomePage() {
         <div className="absolute top-1/2 right-10 w-2 h-16 bg-gradient-to-b from-accent-400/40 to-transparent hidden lg:block"></div>
       </section>
 
-      {/* Key Focus Areas - Scrolling Highlights */}
-      <Section className="py-8 sm:py-12 lg:py-16 bg-primary-50">
+      {/* Specialized Expertise - Vanguard Scroll Effect */}
+      <Section className="py-16 sm:py-20 lg:py-24">
         <div className="mobile-container">
           <Reveal>
-            <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-900 mb-4">
-                Key Focus Areas
+            <div className="text-center mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-900 mb-6">
+                Specialized Expertise
               </h2>
-              <p className="text-sm sm:text-base md:text-lg text-neutral-600 max-w-2xl mx-auto">
-                Specialized expertise across institutional finance and digital asset innovation
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                Alpha Group Investment focuses on four critical areas of institutional finance
               </p>
             </div>
           </Reveal>
-          
-          {/* Scrolling Container */}
-          <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex gap-6 sm:gap-8 w-max px-4 pb-4">
-              <Reveal delay={100}>
-                <div className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-xl p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.05.218-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-semibold text-primary-900">Tokenization of Real World Assets</h3>
+
+          <div className="hidden lg:block">
+            <div className="grid lg:grid-cols-5 lg:gap-12">
+              {/* Left Content - Fixed Text */}
+              <div className="lg:col-span-2">
+                <div className="sticky top-32 z-10 h-screen flex items-center">
+                  <div className="w-full">
+                    <p className="text-3xl lg:text-4xl xl:text-5xl text-primary-900 leading-tight font-light">
+                      Alpha Group Investment focuses on four critical areas of institutional finance and digital asset innovation.
+                    </p>
                   </div>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
-                    Funds, Commodities, Securities, Real Estate - comprehensive tokenization strategies for institutional asset classes.
-                  </p>
                 </div>
-              </Reveal>
-              
-              <Reveal delay={200}>
-                <div className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-xl p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+              </div>
+
+              {/* Right Content - Scrollable Items */}
+              <div className="lg:col-span-3 space-y-32">
+                {[
+                  {
+                    title: "Tokenization of Real World Assets",
+                    description: "Funds, Commodities, Securities, Real Estate - comprehensive tokenization strategies for institutional asset classes."
+                  },
+                  {
+                    title: "Stablecoin Growth & Institutional Adoption",
+                    description: "Strategic frameworks for stablecoin integration, regulatory compliance, and institutional-grade adoption pathways."
+                  },
+                  {
+                    title: "M&A, Reverse Mergers & PIPE Transactions",
+                    description: "Expert advisory on mergers & acquisitions, reverse merger structures, and private investment in public equity deals."
+                  },
+                  {
+                    title: "Institutional Structuring & Capital Solutions",
+                    description: "Comprehensive capital structuring, institutional fund formation, and sophisticated financing solutions."
+                  }
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="transition-all duration-700 ease-out transform opacity-100 translate-y-0 scale-100"
+                    style={{ minHeight: '400px' }}
+                  >
+                    <div className="border-l-4 border-accent-500 pl-8 py-12">
+                      <h3 className="text-3xl lg:text-4xl font-bold text-primary-900 mb-8 leading-tight">
+                        {item.title}
+                      </h3>
+                      
+                      <p className="text-xl leading-relaxed text-neutral-700">
+                        {item.description}
+                      </p>
+                      
+                      {/* Active indicator */}
+                      <div className="mt-8 w-24 h-1 bg-accent-500" />
                     </div>
-                    <h3 className="text-lg font-semibold text-primary-900">Stablecoin Growth & Institutional Adoption</h3>
                   </div>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
-                    Strategic frameworks for stablecoin integration, regulatory compliance, and institutional-grade adoption pathways.
-                  </p>
-                </div>
-              </Reveal>
-              
-              <Reveal delay={300}>
-                <div className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-xl p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-semibold text-primary-900">M&A, Reverse Mergers & PIPE Transactions</h3>
-                  </div>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
-                    Expert advisory on mergers & acquisitions, reverse merger structures, and private investment in public equity deals.
-                  </p>
-                </div>
-              </Reveal>
-              
-              <Reveal delay={400}>
-                <div className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-xl p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-semibold text-primary-900">Institutional Structuring & Capital Solutions</h3>
-                  </div>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
-                    Comprehensive capital structuring, institutional fund formation, and sophisticated financing solutions.
-                  </p>
-                </div>
-              </Reveal>
+                ))}
+              </div>
             </div>
           </div>
-          
-          {/* Scroll Indicator */}
-          <div className="text-center mt-6 sm:hidden">
-            <p className="text-xs text-neutral-500">← Scroll to explore all focus areas →</p>
+
+          {/* Mobile Layout - Simple List */}
+          <div className="block lg:hidden">
+            <div className="space-y-12">
+              <div>
+                <p className="text-xl text-primary-900 leading-tight font-light mb-8">
+                  Alpha Group Investment focuses on four critical areas of institutional finance and digital asset innovation.
+                </p>
+              </div>
+              
+              <div className="space-y-8">
+                {[
+                  {
+                    title: "Tokenization of Real World Assets",
+                    description: "Funds, Commodities, Securities, Real Estate - comprehensive tokenization strategies for institutional asset classes."
+                  },
+                  {
+                    title: "Stablecoin Growth & Institutional Adoption",
+                    description: "Strategic frameworks for stablecoin integration, regulatory compliance, and institutional-grade adoption pathways."
+                  },
+                  {
+                    title: "M&A, Reverse Mergers & PIPE Transactions",
+                    description: "Expert advisory on mergers & acquisitions, reverse merger structures, and private investment in public equity deals."
+                  },
+                  {
+                    title: "Institutional Structuring & Capital Solutions",
+                    description: "Comprehensive capital structuring, institutional fund formation, and sophisticated financing solutions."
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="border-l-4 border-accent-500 pl-6 py-4">
+                    <h3 className="text-xl font-bold text-primary-900 mb-3 leading-tight">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-base text-neutral-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </Section>
