@@ -254,23 +254,22 @@ export default function AdvisoryPage() {
                 </div>
                 
                 <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
-                  <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+                  <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
                     {/* Image - Left Side */}
                     <div className="order-2 lg:order-1 flex justify-center">
-                      <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl shadow-2xl flex items-center justify-center transform transition-all duration-700 hover:scale-105 relative overflow-hidden">
-                        {/* Subtle inner pattern */}
-                        <div className="absolute inset-0 opacity-10">
-                          <div className="w-full h-full bg-gradient-to-br from-primary-500 to-accent-500"></div>
-                        </div>
-                        <div className="relative text-center">
-                          <div className="text-lg text-primary-700 font-bold mb-2">Tokenization</div>
-                          <div className="text-sm text-primary-500">Advisory Services</div>
-                        </div>
+                      <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
+                        <Image
+                          src="/media/tokenization-advisory.webp"
+                          alt="Tokenization Advisory Services"
+                          width={384}
+                          height={384}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                     
                     {/* Content - Right Side */}
-                    <div className="order-1 lg:order-2 space-y-5 px-4 lg:px-8">
+                    <div className="order-1 lg:order-2 space-y-5 px-4 lg:px-6">
                       <div>
                         <h2 className="text-xl lg:text-2xl font-bold text-primary-900 mb-3 leading-tight">
                           Tokenization Advisory
@@ -327,9 +326,9 @@ export default function AdvisoryPage() {
                 </div>
                 
                 <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
-                  <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+                  <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
                     {/* Content - Left Side */}
-                    <div className="order-1 space-y-5 px-4 lg:px-8">
+                    <div className="order-1 space-y-5 px-4 lg:px-6">
                       <div>
                         <h2 className="text-xl lg:text-2xl font-bold text-white mb-3 leading-tight">
                           Stablecoin & Yield Strategy
@@ -371,15 +370,14 @@ export default function AdvisoryPage() {
                     
                     {/* Image - Right Side */}
                     <div className="order-2 flex justify-center">
-                      <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-accent-500/30 to-primary-700 rounded-3xl shadow-2xl flex items-center justify-center transform transition-all duration-700 hover:scale-105 relative overflow-hidden border border-white/10">
-                        {/* Subtle inner pattern */}
-                        <div className="absolute inset-0 opacity-10">
-                          <div className="w-full h-full bg-gradient-to-br from-accent-500 to-white"></div>
-                        </div>
-                        <div className="relative text-center">
-                          <div className="text-lg text-accent-300 font-bold mb-2">Stablecoin Strategy</div>
-                          <div className="text-sm text-accent-200">Advisory Services</div>
-                        </div>
+                      <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
+                        <Image
+                          src="/media/stablecoin-advisory.webp"
+                          alt="Stablecoin & Yield Strategy Advisory"
+                          width={384}
+                          height={384}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                   </div>
@@ -400,23 +398,22 @@ export default function AdvisoryPage() {
                 </div>
                 
                 <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
-                  <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+                  <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
                     {/* Image - Left Side */}
                     <div className="order-2 lg:order-1 flex justify-center">
-                      <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-accent-100 to-primary-100 rounded-3xl shadow-2xl flex items-center justify-center transform transition-all duration-700 hover:scale-105 relative overflow-hidden">
-                        {/* Subtle inner pattern */}
-                        <div className="absolute inset-0 opacity-10">
-                          <div className="w-full h-full bg-gradient-to-br from-accent-500 to-primary-500"></div>
-                        </div>
-                        <div className="relative text-center">
-                          <div className="text-lg text-primary-700 font-bold mb-2">Corporate Finance</div>
-                          <div className="text-sm text-primary-500">Advisory Services</div>
-                        </div>
+                      <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
+                        <Image
+                          src="/media/corporate-finance-advisory.webp"
+                          alt="Digital Corporate Finance Advisory"
+                          width={384}
+                          height={384}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                     
                     {/* Content - Right Side */}
-                    <div className="order-1 lg:order-2 space-y-5 px-4 lg:px-8">
+                    <div className="order-1 lg:order-2 space-y-5 px-4 lg:px-6">
                       <div>
                         <h2 className="text-xl lg:text-2xl font-bold text-primary-900 mb-3 leading-tight">
                           Digital Corporate Finance
