@@ -168,12 +168,12 @@ export default function AdvisoryPage() {
             <Reveal delay={200}>
               <div>
                 <div className="relative w-full max-w-md mx-auto lg:max-w-none">
-                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                     <Image
                       src="/media/advisory-consulting.webp"
                       alt="Professional advisory consultation"
                       fill
-                      className="object-cover"
+                      className="object-cover rounded-2xl"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
@@ -411,12 +411,9 @@ export default function AdvisoryPage() {
                 Let's discuss how our integrated mandate approach can deliver the outcomes 
                 your organization needs in today's complex regulatory environment.
               </p>
-              <div className="flex flex-col gap-3 justify-center">
-                <CTAButton href="/contact" variant="outline" size="lg" className="px-4 py-3 w-full max-w-xs mx-auto text-sm font-medium">
+              <div className="flex justify-center">
+                <CTAButton href="/contact" variant="outline" size="lg" className="px-6 py-3 text-base font-medium">
                   Request a Mandate
-                </CTAButton>
-                <CTAButton href="/insights" variant="outline" size="lg" className="px-4 py-3 w-full max-w-xs mx-auto text-sm font-medium">
-                  Read Our Insights
                 </CTAButton>
               </div>
             </div>

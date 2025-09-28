@@ -101,9 +101,9 @@ export default function OndoStyleCards() {
   const activeService = services.find(s => s.id === activeCard)
 
   return (
-    <div className="absolute bottom-8 left-8 right-8">
-      {/* Single Row of Cards at Bottom */}
-      <div className="flex gap-4 items-end mb-6">
+    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-8">
+      {/* Single Row of Cards at Bottom - Centered */}
+      <div className="flex gap-4 items-end justify-center mb-6">
         {services.map((service, index) => {
           const isActive = activeCard === service.id
           
@@ -120,7 +120,7 @@ export default function OndoStyleCards() {
               <div
                 className={`relative overflow-hidden transition-all duration-500 ease-out ${
                   isActive 
-                    ? 'bg-white rounded-3xl shadow-2xl h-64 p-8' 
+                    ? 'bg-white rounded-3xl shadow-2xl h-72 p-6' 
                     : 'bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl h-16 p-4 hover:bg-white/20'
                 }`}
               >
@@ -137,32 +137,30 @@ export default function OndoStyleCards() {
                     </div>
                   </div>
                 ) : (
-                  // Expanded Card State
-                  <div className="h-full flex flex-col justify-between">
-                    {/* Header */}
-                    <div className="flex items-start space-x-3 mb-4">
+                  // Expanded Card State - Better Layout
+                  <div className="h-full flex flex-col">
+                    {/* Header - Icon and Title Aligned */}
+                    <div className="flex items-center space-x-4 mb-6">
                       <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 flex-shrink-0">
                         {service.icon}
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-primary-900 leading-tight">
-                          {service.title}
-                        </h3>
-                      </div>
+                      <h3 className="text-lg font-bold text-primary-900 leading-tight flex-1">
+                        {service.title}
+                      </h3>
                     </div>
                     
-                    {/* Description */}
-                    <div className="flex-1 mb-4">
+                    {/* Description - More Space */}
+                    <div className="mb-6">
                       <p className="text-neutral-700 text-sm leading-relaxed">
                         {service.description}
                       </p>
                     </div>
                     
-                    {/* Bullet Points */}
-                    <div className="space-y-2 pt-3 border-t border-neutral-100">
+                    {/* Bullet Points - Better Spacing from Bottom */}
+                    <div className="space-y-3 pt-4 border-t border-neutral-100 mt-auto">
                       {service.points.map((point, pointIndex) => (
-                        <div key={pointIndex} className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0 mt-1.5"></div>
+                        <div key={pointIndex} className="flex items-start space-x-3">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0 mt-2"></div>
                           <p className="text-xs text-neutral-600 leading-relaxed">
                             {point}
                           </p>
@@ -177,8 +175,8 @@ export default function OndoStyleCards() {
         })}
       </div>
 
-      {/* Progress Bar */}
-      <div className="flex items-center space-x-4">
+      {/* Progress Bar - Centered */}
+      <div className="flex items-center justify-center space-x-4 max-w-md mx-auto">
         <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
           <div 
             className="h-full bg-white transition-all duration-100 ease-linear rounded-full"
