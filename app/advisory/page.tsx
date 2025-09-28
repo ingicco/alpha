@@ -239,7 +239,8 @@ export default function AdvisoryPage() {
       </Section>
 
       {/* Specialized Advisory Subsections - Horizontal Carousel */}
-      <HorizontalCarousel
+      <div className="mt-16 lg:mt-24">
+        <HorizontalCarousel
         sections={[
           {
             id: 'tokenization',
@@ -257,54 +258,56 @@ export default function AdvisoryPage() {
                   <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
                     {/* Image - Left Side */}
                     <div className="order-2 lg:order-1 flex justify-center">
-                      <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
+                      <div className="w-96 h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
                         <Image
                           src="/media/tokenization-advisory.webp"
                           alt="Tokenization Advisory Services"
-                          width={384}
-                          height={384}
+                          width={512}
+                          height={512}
                           className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
                     
                     {/* Content - Right Side */}
-                    <div className="order-1 lg:order-2 space-y-5 px-4 lg:px-6">
+                    <div className="order-1 lg:order-2 space-y-6 px-4 lg:px-6">
                       <div>
-                        <h2 className="text-xl lg:text-2xl font-bold text-primary-900 mb-3 leading-tight">
+                        <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-primary-900 mb-4 leading-tight">
                           Tokenization Advisory
                         </h2>
-                        <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
+                        <p className="text-base lg:text-lg text-neutral-600 leading-relaxed font-light">
                           End-to-end advisory on tokenization of real-world assets — from structuring funds and securities to designing compliant issuance frameworks.
                         </p>
                       </div>
                       
-                      <div className="space-y-3">
-                        <div>
-                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
-                            Tokenization of Funds & Capital Markets
-                          </h3>
-                          <p className="text-xs text-neutral-600 leading-relaxed">
-                            Comprehensive fund structuring and capital market tokenization strategies for institutional asset classes.
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
-                            Commodity & Real Estate Tokenization
-                          </h3>
-                          <p className="text-xs text-neutral-600 leading-relaxed">
-                            Specialized frameworks for tokenizing physical assets and real estate portfolios.
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
-                            Lifecycle Structuring
-                          </h3>
-                          <p className="text-xs text-neutral-600 leading-relaxed">
-                            Complete lifecycle management from issuance through distribution to custody solutions.
-                          </p>
+                      <div className="border-l-4 border-accent-400 pl-6 py-6 flex flex-col justify-between h-80">
+                        <div className="space-y-6">
+                          <div>
+                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
+                              Tokenization of Funds & Capital Markets
+                            </h4>
+                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
+                              Comprehensive fund structuring and capital market tokenization strategies for institutional asset classes.
+                            </p>
+                          </div>
+                          
+                          <div>
+                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
+                              Commodity & Real Estate Tokenization
+                            </h4>
+                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
+                              Specialized frameworks for tokenizing physical assets and real estate portfolios.
+                            </p>
+                          </div>
+                          
+                          <div>
+                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
+                              Lifecycle Structuring
+                            </h4>
+                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
+                              Complete lifecycle management from issuance through distribution to custody solutions.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -328,54 +331,56 @@ export default function AdvisoryPage() {
                 <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
                   <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
                     {/* Content - Left Side */}
-                    <div className="order-1 space-y-5 px-4 lg:px-6">
+                    <div className="order-1 space-y-8 px-4 lg:px-6">
                       <div>
-                        <h2 className="text-xl lg:text-2xl font-bold text-white mb-3 leading-tight">
+                        <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
                           Stablecoin & Yield Strategy
                         </h2>
-                        <p className="text-sm lg:text-base text-neutral-200 leading-relaxed">
+                        <p className="text-base lg:text-lg text-neutral-200 leading-relaxed font-light">
                           Helping leading stablecoin and yield projects achieve institutional readiness — advising across issuance, risk management, and scaling mandates.
                         </p>
                       </div>
                       
-                      <div className="space-y-3">
-                        <div>
-                          <h3 className="text-sm font-semibold text-white mb-1">
-                            Institutional Onboarding
-                          </h3>
-                          <p className="text-xs text-neutral-300 leading-relaxed">
-                            Comprehensive onboarding frameworks for institutional adoption and compliance readiness.
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-sm font-semibold text-white mb-1">
-                            Treasury Yield Solutions
-                          </h3>
-                          <p className="text-xs text-neutral-300 leading-relaxed">
-                            Strategic treasury management and yield optimization for stablecoin reserves and operations.
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-sm font-semibold text-white mb-1">
-                            Regulatory Assurance
-                          </h3>
-                          <p className="text-xs text-neutral-300 leading-relaxed">
-                            Comprehensive regulatory compliance frameworks and ongoing assurance for global markets.
-                          </p>
+                      <div className="border-l-4 border-accent-400 pl-6 py-6 flex flex-col justify-between h-80">
+                        <div className="space-y-6">
+                          <div>
+                            <h4 className="font-bold text-white text-sm lg:text-base mb-2">
+                              Institutional Onboarding
+                            </h4>
+                            <p className="text-xs lg:text-sm text-neutral-300 leading-relaxed">
+                              Comprehensive onboarding frameworks for institutional adoption and compliance readiness.
+                            </p>
+                          </div>
+                          
+                          <div>
+                            <h4 className="font-bold text-white text-sm lg:text-base mb-2">
+                              Treasury Yield Solutions
+                            </h4>
+                            <p className="text-xs lg:text-sm text-neutral-300 leading-relaxed">
+                              Strategic treasury management and yield optimization for stablecoin reserves and operations.
+                            </p>
+                          </div>
+                          
+                          <div>
+                            <h4 className="font-bold text-white text-sm lg:text-base mb-2">
+                              Regulatory Assurance
+                            </h4>
+                            <p className="text-xs lg:text-sm text-neutral-300 leading-relaxed">
+                              Comprehensive regulatory compliance frameworks and ongoing assurance for global markets.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                     
                     {/* Image - Right Side */}
                     <div className="order-2 flex justify-center">
-                      <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
+                      <div className="w-96 h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
                         <Image
                           src="/media/stablecoin-advisory.webp"
                           alt="Stablecoin & Yield Strategy Advisory"
-                          width={384}
-                          height={384}
+                          width={512}
+                          height={512}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -401,54 +406,56 @@ export default function AdvisoryPage() {
                   <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
                     {/* Image - Left Side */}
                     <div className="order-2 lg:order-1 flex justify-center">
-                      <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
+                      <div className="w-96 h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
                         <Image
                           src="/media/corporate-finance-advisory.webp"
                           alt="Digital Corporate Finance Advisory"
-                          width={384}
-                          height={384}
+                          width={512}
+                          height={512}
                           className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
                     
                     {/* Content - Right Side */}
-                    <div className="order-1 lg:order-2 space-y-5 px-4 lg:px-6">
+                    <div className="order-1 lg:order-2 space-y-8 px-4 lg:px-6">
                       <div>
-                        <h2 className="text-xl lg:text-2xl font-bold text-primary-900 mb-3 leading-tight">
+                        <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-primary-900 mb-4 leading-tight">
                           Digital Corporate Finance
                         </h2>
-                        <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
+                        <p className="text-base lg:text-lg text-neutral-600 leading-relaxed font-light">
                           Structuring and executing complex cross-border corporate finance transactions — including Reverse Mergers, Reverse Swaps, and PIPE deals.
                         </p>
                       </div>
                       
-                      <div className="space-y-3">
-                        <div>
-                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
-                            Deal Structuring and Execution
-                          </h3>
-                          <p className="text-xs text-neutral-600 leading-relaxed">
-                            Expert structuring and execution of complex M&A, reverse merger, and PIPE transactions.
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
-                            Distribution and Syndication Support
-                          </h3>
-                          <p className="text-xs text-neutral-600 leading-relaxed">
-                            Comprehensive distribution networks and syndication support for successful transaction completion.
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-sm font-semibold text-primary-900 mb-1">
-                            Strategic Alignment with Public Markets
-                          </h3>
-                          <p className="text-xs text-neutral-600 leading-relaxed">
-                            Strategic positioning and alignment for successful public market listings and compliance.
-                          </p>
+                      <div className="border-l-4 border-accent-400 pl-6 py-6 flex flex-col justify-between h-80">
+                        <div className="space-y-6">
+                          <div>
+                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
+                              Deal Structuring and Execution
+                            </h4>
+                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
+                              Expert structuring and execution of complex M&A, reverse merger, and PIPE transactions.
+                            </p>
+                          </div>
+                          
+                          <div>
+                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
+                              Distribution and Syndication Support
+                            </h4>
+                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
+                              Comprehensive distribution networks and syndication support for successful transaction completion.
+                            </p>
+                          </div>
+                          
+                          <div>
+                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
+                              Strategic Alignment with Public Markets
+                            </h4>
+                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
+                              Strategic positioning and alignment for successful public market listings and compliance.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -458,7 +465,8 @@ export default function AdvisoryPage() {
             )
           }
         ]}
-      />
+        />
+      </div>
 
       {/* Outcomes Section */}
       <Section
