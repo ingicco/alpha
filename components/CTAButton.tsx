@@ -24,15 +24,15 @@ export function CTAButton({
     'focus:outline-none focus:ring-2 focus:ring-offset-2',
     'disabled:opacity-50 disabled:cursor-not-allowed',
     {
-      // Sizes
-      'px-4 py-2 text-sm rounded-md': size === 'sm',
-      'px-6 py-3 text-base rounded-lg': size === 'md',
-      'px-8 py-4 text-lg rounded-xl': size === 'lg',
+      // Sizes - Clean and minimal
+      'px-6 py-3 text-sm rounded-lg': size === 'sm',
+      'px-8 py-3 text-base rounded-lg': size === 'md', 
+      'px-10 py-4 text-lg rounded-lg': size === 'lg',
       
-      // Variants
-      'bg-accent-500 text-white hover:bg-accent-600 focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 shadow-sm hover:shadow-md transition-all duration-200': variant === 'primary',
-      'bg-transparent text-accent-400 border border-accent-500 hover:bg-accent-500 hover:text-white hover:border-accent-500 focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 shadow-sm hover:shadow-md transition-all duration-200': variant === 'secondary',
-      'border border-accent-500 text-accent-600 hover:bg-accent-500 hover:text-white focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 transition-all duration-200': variant === 'outline',
+      // Variants - Minimal designs
+      'bg-primary-900 text-white hover:bg-primary-800 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2': variant === 'primary',
+      'bg-white text-primary-900 border border-primary-200 hover:border-primary-300 hover:bg-neutral-50 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2': variant === 'secondary',
+      'border border-accent-500 text-accent-600 hover:bg-accent-500 hover:text-white focus:ring-2 focus:ring-accent-500 focus:ring-offset-2': variant === 'outline',
     },
     className
   )

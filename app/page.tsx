@@ -11,7 +11,6 @@ import { CountUp } from '@/components/CountUp'
 import { Reveal } from '@/components/Reveal'
 import { ScrollAnimation } from '@/components/ScrollAnimation'
 import { ScrollReveal } from '@/components/ScrollReveal'
-import { getAllPosts } from '@/lib/mdx'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -80,7 +79,6 @@ const pillars = [
 ]
 
 export default function HomePage() {
-  const insights = getAllPosts('insights').slice(0, 3)
 
   return (
     <>
@@ -107,25 +105,19 @@ export default function HomePage() {
           <div className="text-center py-8 sm:py-12">
             <Reveal>
               <div className="mb-8">
-                {/* Mobile: Three-line gradient title */}
-                <h1 className="block sm:hidden text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
-                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">Advisory.</span>
-                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
-                    Investments.
-                  </span>
-                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
-                    Digital Assets.
+                {/* Mobile: Clean bold title */}
+                <h1 className="block sm:hidden text-5xl font-bold tracking-tight text-white mb-4 leading-[0.9]">
+                  Institutional Grade
+                  <span className="block text-3xl bg-gradient-to-r from-accent-400 to-accent-500 bg-clip-text text-transparent font-light mt-1">
+                    In All We Do
                   </span>
                 </h1>
                 
-                {/* Desktop: Multi-line gradient title */}
-                <h1 className="hidden sm:block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white mb-6 sm:mb-8 leading-tight" style={{lineHeight: '1.1'}}>
-                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">Advisory.</span>
-                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
-                    Investments.
-                  </span>
-                  <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
-                    Digital Assets.
+                {/* Desktop: Large impactful title */}
+                <h1 className="hidden sm:block text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white mb-6 sm:mb-8 leading-[0.9]">
+                  Institutional Grade
+                  <span className="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-accent-400 to-accent-500 bg-clip-text text-transparent font-light mt-2">
+                    In All We Do
                   </span>
                 </h1>
               </div>
@@ -251,7 +243,7 @@ export default function HomePage() {
         </div>
         
         <div className="mobile-container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {pillars.map((pillar, index) => (
               <ScrollAnimation key={pillar.title} animation="slideUp" delay={index * 200}>
                 <Link href={
@@ -259,45 +251,23 @@ export default function HomePage() {
                   pillar.title === 'Investments' ? '/investment' :
                   pillar.title === 'Digital Assets' ? '/digital-assets' : 
                   `/${pillar.title.toLowerCase()}`
-                } className="group text-center block cursor-pointer">
-                  {/* Mobile: Compact card */}
-                  <div className="block sm:hidden bg-transparent p-4">
-                    <div className="w-full aspect-square mb-4 rounded-xl overflow-hidden">
-                      <Image
-                        src={pillar.image}
-                        alt={pillar.title}
-                        width={300}
-                        height={300}
-                        className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                      />
+                } className="group block cursor-pointer text-center">
+                  {/* Minimal Clean Design */}
+                  <div className="p-6 lg:p-8">
+                    {/* Icon */}
+                    <div className="mb-6">
+                      <div className="w-16 h-16 mx-auto text-primary-600 group-hover:text-accent-600 transition-colors duration-300">
+                        {pillar.icon}
+                      </div>
                     </div>
-                    <h3 className="text-base font-bold text-accent-600 mb-2 mobile-text-wrap group-hover:text-accent-700 transition-colors">
+                    
+                    {/* Content */}
+                    <h3 className="text-xl lg:text-2xl font-bold text-primary-900 mb-4 group-hover:text-accent-600 transition-colors duration-300">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs text-neutral-600 leading-snug mobile-text-wrap">
+                    <p className="text-neutral-600 leading-relaxed text-sm lg:text-base">
                       {pillar.description}
                     </p>
-                  </div>
-                  
-                  {/* Desktop: Full card */}
-                  <div className="hidden sm:block h-full flex flex-col bg-transparent">
-                    <div className="flex-1 p-6 lg:p-8">
-                      <div className="w-full h-48 lg:h-64 mx-auto mb-6 rounded-xl overflow-hidden transform transition-transform group-hover:scale-[1.02]">
-                        <Image
-                          src={pillar.image}
-                          alt={pillar.title}
-                          width={400}
-                          height={256}
-                          className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                        />
-                      </div>
-                      <h3 className="text-xl lg:text-2xl font-bold text-accent-600 mb-4 group-hover:text-accent-700 transition-colors">
-                        {pillar.title}
-                      </h3>
-                      <p className="text-neutral-600 leading-relaxed text-sm lg:text-base">
-                        {pillar.description}
-                      </p>
-                    </div>
                   </div>
                 </Link>
               </ScrollAnimation>
@@ -330,45 +300,22 @@ export default function HomePage() {
             </div>
           </Reveal>
           
-          {/* Mobile: 2x2 grid */}
-          <div className="block sm:hidden grid grid-cols-2 gap-6 mb-8">
+          {/* Simple Stats - Minimal */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
             {footprintStats.map((stat, index) => (
               <ScrollAnimation key={stat.label} animation="scale" delay={index * 150}>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-white mb-1">
-                    <CountUp 
-                      end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
-                      suffix={stat.value.replace(/[0-9]/g, '')}
-                      duration={2000}
-                    />
-                  </div>
-                  <div className="text-accent-400 font-semibold text-xs mb-1 mobile-text-wrap">
-                    {stat.label}
-                  </div>
-                  <p className="text-neutral-400 text-xs leading-tight mobile-text-wrap">
-                    {stat.description}
-                  </p>
-                </div>
-              </ScrollAnimation>
-            ))}
-          </div>
-          
-          {/* Desktop: 4 column grid */}
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
-            {footprintStats.map((stat, index) => (
-              <ScrollAnimation key={stat.label} animation="scale" delay={index * 150}>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3">
                     <CountUp 
                       end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
                       suffix={stat.value.replace(/[0-9]/g, '')}
                       duration={2500}
                     />
                   </div>
-                  <div className="text-accent-400 font-semibold text-sm md:text-base lg:text-lg mb-2">
+                  <div className="text-accent-400 font-semibold text-sm lg:text-base mb-2">
                     {stat.label}
                   </div>
-                  <p className="text-neutral-400 text-xs md:text-sm leading-relaxed">
+                  <p className="text-neutral-300 text-xs lg:text-sm leading-relaxed">
                     {stat.description}
                   </p>
                 </div>
@@ -546,82 +493,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Insights Preview */}
-      <Section className="py-12 sm:py-24">
-        <div className="mobile-container text-center mb-8 sm:mb-12 lg:mb-16">
-          {/* Mobile: Simple title */}
-          <h2 className="block sm:hidden text-3xl font-bold text-primary-800 mb-4 mobile-text-wrap">
-            Market Intelligence
-          </h2>
-          <p className="block sm:hidden text-sm text-neutral-600 mb-8 mobile-text-wrap">
-            Strategic perspectives on emerging technologies, market dynamics, and regulatory developments.
-          </p>
-          
-          {/* Desktop: Full title */}
-          <h2 className="hidden sm:block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary-800 mb-6">
-            Market Intelligence
-          </h2>
-          <p className="hidden sm:block text-base md:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
-            Strategic perspectives on emerging technologies, market dynamics, and regulatory developments.
-          </p>
-        </div>
-        <div className="mobile-container">
-          <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {insights.map((post, index) => (
-              <ScrollAnimation key={post.meta.slug} animation="slideUp" delay={index * 200}>
-                <article className="bg-transparent overflow-hidden group hover:transform hover:scale-105 transition-all duration-300">
-                  {/* Mobile: Rounded square image */}
-                  <div className="w-full aspect-square sm:aspect-video sm:h-40 lg:h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                    <div className="text-center">
-                      <div className="text-xs sm:text-sm text-neutral-400 font-medium">Article Image</div>
-                    </div>
-                  </div>
-                  
-                  <div className="p-3 sm:p-4 lg:p-6">
-                    <div className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 mb-2 sm:mb-3">
-                      <time dateTime={post.meta.date}>
-                        {new Date(post.meta.date).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })}
-                      </time>
-                      <span>•</span>
-                      <span>{post.meta.readingTime}</span>
-                    </div>
-                    
-                    <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-primary-800 mb-2 sm:mb-3 mobile-text-wrap">
-                      <Link 
-                        href={`/insights/${post.meta.slug}`}
-                        className="hover:text-accent-600 transition-colors"
-                      >
-                        {post.meta.title}
-                      </Link>
-                    </h3>
-                    
-                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-3 sm:mb-4 mobile-text-wrap">
-                      {post.meta.description}
-                    </p>
-                    
-                    <Link 
-                      href={`/insights/${post.meta.slug}`}
-                      className="text-accent-600 font-semibold hover:text-accent-700 transition-colors text-xs sm:text-sm"
-                    >
-                      Read More →
-                    </Link>
-                  </div>
-                </article>
-              </ScrollAnimation>
-            ))}
-          </div>
-          
-          <div className="text-center mt-8 sm:mt-12">
-            <CTAButton href="/insights" variant="outline" className="w-full sm:w-auto px-6 py-3 text-sm">
-              Read All Insights
-            </CTAButton>
-          </div>
-        </div>
-      </Section>
 
       {/* CTA Banner */}
       <Section background="primary" className="py-12 sm:py-24">

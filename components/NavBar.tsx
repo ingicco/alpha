@@ -12,8 +12,8 @@ const navigation = [
   { name: 'Advisory', href: '/advisory' },
   { name: 'Investment', href: '/investment' },
   { name: 'Digital Assets', href: '/digital-assets' },
-  { name: 'Partners', href: '/partners' },
-  { name: 'Insights', href: '/insights' },
+  // { name: 'Partners', href: '/partners' }, // Hidden temporarily
+  // { name: 'Insights', href: '/insights' }, // Hidden temporarily
   { name: 'Contact', href: '/contact' },
 ]
 
