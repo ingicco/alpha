@@ -163,33 +163,65 @@ export default function HomePage() {
             
             <Reveal delay={600}>
               <div className="border-t border-white/10 pt-6 sm:pt-12">
-                <p className="text-neutral-400 text-xs sm:text-sm mb-4 sm:mb-6">Trusted by Industry Leaders</p>
                 <LogoStrip logos={partnerLogos} className="opacity-60" />
               </div>
             </Reveal>
           </div>
         </div>
-        
-        {/* Premium Geometric Elements */}
-        <div className="absolute top-20 right-20 w-32 h-32 border border-white/10 rotate-45 hidden lg:block"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 border border-accent-400/20 rotate-12 hidden lg:block"></div>
-        <div className="absolute top-1/2 right-10 w-2 h-16 bg-gradient-to-b from-accent-400/40 to-transparent hidden lg:block"></div>
       </section>
+
+      {/* Institutional Excellence */}
+      <Section className="py-12 sm:py-24 lg:py-32">
+        <div className="mobile-container text-center">
+          <Reveal>
+            <div>
+              {/* Mobile: Simple title */}
+              <h2 className="block sm:hidden text-3xl font-bold text-primary-900 mb-4 mobile-text-wrap">
+                Trusted by Global Leaders
+              </h2>
+              <p className="block sm:hidden text-sm text-neutral-600 mb-8 mobile-text-wrap">
+                Our institutional-grade approach delivers measurable outcomes across advisory, investments, and digital assets.
+              </p>
+              
+              {/* Desktop: Full title */}
+              <h2 className="hidden sm:block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary-900 mb-6">
+                Trusted by Global Leaders
+              </h2>
+              <p className="hidden sm:block text-base md:text-lg lg:text-xl text-neutral-600 leading-relaxed mb-12 lg:mb-16 max-w-4xl mx-auto">
+                Our institutional-grade approach delivers measurable outcomes across advisory mandates, strategic investments, and digital asset assurance.
+              </p>
+            </div>
+          </Reveal>
+          
+          {/* Simple Stats - Minimal */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
+            {footprintStats.map((stat, index) => (
+              <ScrollAnimation key={stat.label} animation="scale" delay={index * 150}>
+                <div className="text-center">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-900 mb-3">
+                    <CountUp 
+                      end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
+                      suffix={stat.value.replace(/[0-9]/g, '')}
+                      duration={2500}
+                    />
+                  </div>
+                  <div className="text-accent-600 font-semibold text-sm lg:text-base mb-2">
+                    {stat.label}
+                  </div>
+                  <p className="text-neutral-600 text-xs lg:text-sm leading-relaxed">
+                    {stat.description}
+                  </p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+          
+        </div>
+      </Section>
 
       {/* Specialized Expertise - Vanguard Scroll Effect */}
       <Section className="py-16 sm:py-20 lg:py-24">
         <div className="mobile-container">
-          <Reveal>
-            <div className="text-center mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-900 mb-6">
-                Specialized Expertise
-              </h2>
-              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                Alpha Group Investment focuses on four critical areas of institutional finance
-              </p>
-            </div>
-          </Reveal>
-
           <ScrollReveal
             leftContent={
               <p className="text-3xl lg:text-4xl xl:text-5xl text-primary-900 leading-tight font-light">
@@ -276,98 +308,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-
-      {/* Institutional Excellence */}
-      <Section background="primary" className="py-12 sm:py-24 lg:py-32">
-        <div className="mobile-container text-center">
-          <Reveal>
-            <div>
-              {/* Mobile: Simple title */}
-              <h2 className="block sm:hidden text-3xl font-bold text-white mb-4 mobile-text-wrap">
-                Trusted by Global Leaders
-              </h2>
-              <p className="block sm:hidden text-sm text-neutral-300 mb-8 mobile-text-wrap">
-                Our institutional-grade approach delivers measurable outcomes across advisory, investments, and digital assets.
-              </p>
-              
-              {/* Desktop: Full title */}
-              <h2 className="hidden sm:block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
-                Trusted by Global Leaders
-              </h2>
-              <p className="hidden sm:block text-base md:text-lg lg:text-xl text-neutral-300 leading-relaxed mb-12 lg:mb-16 max-w-4xl mx-auto">
-                Our institutional-grade approach delivers measurable outcomes across advisory mandates, strategic investments, and digital asset assurance.
-              </p>
-            </div>
-          </Reveal>
-          
-          {/* Simple Stats - Minimal */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
-            {footprintStats.map((stat, index) => (
-              <ScrollAnimation key={stat.label} animation="scale" delay={index * 150}>
-                <div className="text-center">
-                  <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3">
-                    <CountUp 
-                      end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
-                      suffix={stat.value.replace(/[0-9]/g, '')}
-                      duration={2500}
-                    />
-                  </div>
-                  <div className="text-accent-400 font-semibold text-sm lg:text-base mb-2">
-                    {stat.label}
-                  </div>
-                  <p className="text-neutral-300 text-xs lg:text-sm leading-relaxed">
-                    {stat.description}
-                  </p>
-                </div>
-              </ScrollAnimation>
-            ))}
-          </div>
-          
-          <Reveal delay={400}>
-            <div className="border-t border-white/10 pt-6 sm:pt-12">
-              {/* Mobile: Stacked buttons */}
-              <div className="block sm:hidden space-y-3">
-                <CTAButton href="/about" variant="outline" className="w-full py-3 text-sm">
-                  Our Approach
-                </CTAButton>
-                <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm">
-                  Schedule Consultation
-                </CTAButton>
-              </div>
-              
-              {/* Desktop: Side by side buttons */}
-              <div className="hidden sm:flex flex-col sm:flex-row gap-4 justify-center">
-                <CTAButton href="/about" variant="outline" size="lg" className="px-6 py-3">
-                  Learn About Our Approach
-                </CTAButton>
-                <CTAButton href="/contact" variant="outline" size="lg" className="px-6 py-3">
-                  Schedule a Consultation
-                </CTAButton>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </Section>
-
-      {/* Investment Focus */}
-      <Section
-        background="muted"
-        title="Strategic Allocation"
-        description="Our conviction across Pre-IPO, Secondary, and Startups."
-      >
-        <ScrollAnimation animation="scale" className="mb-8">
-          <AnimatedBarChart />
-        </ScrollAnimation>
-        <ScrollAnimation animation="fadeIn" delay={300}>
-          <div className="text-center">
-            <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
-              We deploy capital where conviction meets opportunity, leveraging our 
-              ecosystem advantage across all stages of company growth.
-            </p>
-          </div>
-        </ScrollAnimation>
-      </Section>
-
       {/* Advisory Mandates Teaser */}
       <Section className="py-12 sm:py-24">
         <div className="mobile-container">
@@ -431,26 +371,45 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Investment Focus */}
+      <Section
+        background="muted"
+        title="Strategic Allocation"
+        description="Our conviction across Pre-IPO, Secondary, and Startups."
+      >
+        <ScrollAnimation animation="scale" className="mb-8">
+          <AnimatedBarChart />
+        </ScrollAnimation>
+        <ScrollAnimation animation="fadeIn" delay={300}>
+          <div className="text-center">
+            <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
+              We deploy capital where conviction meets opportunity, leveraging our 
+              ecosystem advantage across all stages of company growth.
+            </p>
+          </div>
+        </ScrollAnimation>
+      </Section>
+
       {/* Digital Assets Teaser */}
-      <Section background="primary" className="py-12 sm:py-24">
+      <Section className="py-12 sm:py-24">
         <div className="mobile-container">
           {/* Mobile: Single column layout */}
           <div className="block lg:hidden space-y-6">
             <Reveal>
-              <div className="w-full h-48 bg-gradient-to-br from-primary-800 to-primary-700 rounded-lg flex items-center justify-center">
+              <div className="w-full h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-lg flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-sm text-white/70 font-medium">Digital assets</div>
-                  <div className="text-xs text-white/50 mt-1">illustration</div>
+                  <div className="text-sm text-neutral-500 font-medium">Digital assets</div>
+                  <div className="text-xs text-neutral-400 mt-1">illustration</div>
                 </div>
               </div>
             </Reveal>
             
             <Reveal delay={200}>
               <div>
-                <h2 className="text-3xl font-bold text-white mb-4 mobile-text-wrap">
+                <h2 className="text-3xl font-bold text-primary-900 mb-4 mobile-text-wrap">
                   Digital Asset Assurance
                 </h2>
-                <p className="text-sm text-neutral-200 leading-relaxed mb-6 mobile-text-wrap">
+                <p className="text-sm text-neutral-600 leading-relaxed mb-6 mobile-text-wrap">
                   Institutional-grade advisory and assurance for blockchain initiatives—controls, reporting, and oversight aligned with global standards.
                 </p>
                 <CTAButton href="/digital-assets" variant="outline" className="w-full py-3 text-sm">
@@ -476,10 +435,10 @@ export default function HomePage() {
             
             <Reveal delay={200}>
               <div className="lg:order-1">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-900 mb-6">
                   Digital Asset Assurance
                 </h2>
-                <p className="text-base md:text-lg text-neutral-200 leading-relaxed mb-8">
+                <p className="text-base md:text-lg text-neutral-600 leading-relaxed mb-8">
                   Institutional-grade advisory and assurance for blockchain initiatives—controls, 
                   reporting, and oversight aligned with global standards. Future-oriented, 
                   compliance-led approach to digital transformation.
@@ -495,42 +454,36 @@ export default function HomePage() {
 
 
       {/* CTA Banner */}
-      <Section background="primary" className="py-12 sm:py-24">
+      <Section className="py-12 sm:py-24">
         <div className="mobile-container text-center">
           <Reveal>
             {/* Mobile: Smaller text */}
             <div className="block sm:hidden">
-              <h2 className="text-3xl font-bold text-white mb-4 mobile-text-wrap">
+              <h2 className="text-3xl font-bold text-primary-900 mb-4 mobile-text-wrap">
                 Ready to collaborate on mandates or co-investments?
               </h2>
-              <p className="text-sm text-neutral-200 mb-6 mobile-text-wrap">
+              <p className="text-sm text-neutral-600 mb-6 mobile-text-wrap">
                 Join our ecosystem of institutional partners and portfolio companies driving the future of finance and technology.
               </p>
-              <div className="space-y-3">
+              <div>
                 <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm">
                   Start a Conversation
-                </CTAButton>
-                <CTAButton href="/investment" variant="outline" className="w-full py-3 text-sm">
-                  Explore Opportunities
                 </CTAButton>
               </div>
             </div>
 
             {/* Desktop: Larger text */}
             <div className="hidden sm:block">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-900 mb-6">
                 Ready to collaborate on mandates or co-investments?
               </h2>
-              <p className="text-base md:text-lg lg:text-xl text-neutral-200 mb-8 lg:mb-10 max-w-3xl mx-auto">
+              <p className="text-base md:text-lg lg:text-xl text-neutral-600 mb-8 lg:mb-10 max-w-3xl mx-auto">
                 Join our ecosystem of institutional partners and portfolio companies 
                 driving the future of finance and technology.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <CTAButton href="/contact" variant="outline" size="lg" className="px-6 py-3">
                   Start a Conversation
-                </CTAButton>
-                <CTAButton href="/investment" variant="outline" size="lg" className="px-6 py-3">
-                  Explore Opportunities
                 </CTAButton>
               </div>
             </div>
