@@ -73,20 +73,22 @@ const outcomes = [
 export default function AdvisoryPage() {
   return (
     <>
-      {/* Hero Section with Full Background Image */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/media/advisory-hero-bg.webp"
-            alt="Advisory services background"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-primary-900/60"></div>
+      {/* Hero Section with Padded Background Image */}
+      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden px-6 md:px-12 lg:px-16 pt-4 pb-4">
+        {/* Background Image with Padding */}
+        <div className="absolute left-6 right-6 md:left-12 md:right-12 lg:left-16 lg:right-16 top-4 bottom-4">
+          <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
+            <Image
+              src="/media/advisory-hero-bg.webp"
+              alt="Advisory services background"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-primary-900/60"></div>
+          </div>
         </div>
 
         {/* Hero Content */}
@@ -121,23 +123,17 @@ export default function AdvisoryPage() {
           
           <Reveal delay={400}>
             <div>
-              {/* Mobile: Full width stacked buttons */}
-              <div className="block sm:hidden space-y-3">
+              {/* Mobile: Single centered button */}
+              <div className="block sm:hidden">
                 <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm backdrop-blur-sm">
                   Request a Mandate
                 </CTAButton>
-                <CTAButton href="/partners" variant="outline" className="w-full py-3 text-sm backdrop-blur-sm">
-                  Meet Our Partners
-                </CTAButton>
               </div>
               
-              {/* Desktop: Side by side buttons */}
-              <div className="hidden sm:flex flex-col sm:flex-row gap-4 justify-center">
+              {/* Desktop: Single centered button */}
+              <div className="hidden sm:flex justify-center">
                 <CTAButton href="/contact" variant="outline" size="lg" className="px-8 py-4 backdrop-blur-sm">
                   Request a Mandate
-                </CTAButton>
-                <CTAButton href="/partners" variant="outline" size="lg" className="px-8 py-4 backdrop-blur-sm">
-                  Meet Our Partners
                 </CTAButton>
               </div>
             </div>

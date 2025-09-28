@@ -11,6 +11,7 @@ import { CountUp } from '@/components/CountUp'
 import { Reveal } from '@/components/Reveal'
 import { ScrollAnimation } from '@/components/ScrollAnimation'
 import { ScrollReveal } from '@/components/ScrollReveal'
+import { SimpleScrollSection } from '@/components/SimpleScrollSection'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -219,36 +220,33 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Specialized Expertise - Vanguard Scroll Effect */}
-      <Section className="py-16 sm:py-20 lg:py-24">
-        <div className="mobile-container">
-          <ScrollReveal
-            leftContent={
-              <p className="text-3xl lg:text-4xl xl:text-5xl text-primary-900 leading-tight font-light">
-                Alpha Group Investment focuses on four critical areas of institutional finance and digital asset innovation.
-              </p>
-            }
-            rightItems={[
-              {
-                title: "Tokenization of Real World Assets",
-                description: "Funds, Commodities, Securities, Real Estate - comprehensive tokenization strategies for institutional asset classes."
-              },
-              {
-                title: "Stablecoin Growth & Institutional Adoption",
-                description: "Strategic frameworks for stablecoin integration, regulatory compliance, and institutional-grade adoption pathways."
-              },
-              {
-                title: "M&A, Reverse Mergers & PIPE Transactions",
-                description: "Expert advisory on mergers & acquisitions, reverse merger structures, and private investment in public equity deals."
-              },
-              {
-                title: "Institutional Structuring & Capital Solutions",
-                description: "Comprehensive capital structuring, institutional fund formation, and sophisticated financing solutions."
-              }
-            ]}
-          />
-        </div>
-      </Section>
+      {/* Specialized Expertise - Simple Scroll Section */}
+      <SimpleScrollSection
+        backgroundImage="/media/specialized-expertise-bg.webp"
+        leftContent={
+          <p className="text-3xl lg:text-4xl xl:text-5xl text-white leading-tight font-light">
+            Alpha Group Investment focuses on four critical areas of institutional finance and digital asset innovation.
+          </p>
+        }
+        rightItems={[
+          {
+            title: "Tokenization of Real World Assets",
+            description: "Funds, Commodities, Securities, Real Estate - comprehensive tokenization strategies for institutional asset classes."
+          },
+          {
+            title: "Stablecoin Growth & Institutional Adoption",
+            description: "Strategic frameworks for stablecoin integration, regulatory compliance, and institutional-grade adoption pathways."
+          },
+          {
+            title: "M&A, Reverse Mergers & PIPE Transactions",
+            description: "Expert advisory on mergers & acquisitions, reverse merger structures, and private investment in public equity deals."
+          },
+          {
+            title: "Institutional Structuring & Capital Solutions",
+            description: "Comprehensive capital structuring, institutional fund formation, and sophisticated financing solutions."
+          }
+        ]}
+      />
 
       {/* Strategic Pillars - Premium */}
       <Section className="py-12 sm:py-24 lg:py-32">

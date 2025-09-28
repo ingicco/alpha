@@ -10,9 +10,10 @@ interface ScrollRevealProps {
     icon?: React.ReactNode
   }>
   className?: string
+  theme?: 'light' | 'dark'
 }
 
-export function ScrollReveal({ leftContent, rightItems, className = '' }: ScrollRevealProps) {
+export function ScrollReveal({ leftContent, rightItems, className = '', theme = 'light' }: ScrollRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -86,13 +87,17 @@ export function ScrollReveal({ leftContent, rightItems, className = '' }: Scroll
                   <div className="w-full">
                     <div className="border-l-4 border-accent-500 pl-8">
                       <h3 className={`text-3xl lg:text-4xl font-bold mb-6 leading-tight transition-all duration-500 ${
-                        isActive ? 'text-primary-900' : 'text-neutral-500'
+                        theme === 'dark' 
+                          ? (isActive ? 'text-white' : 'text-neutral-300')
+                          : (isActive ? 'text-primary-900' : 'text-neutral-500')
                       }`}>
                         {item.title}
                       </h3>
                       
                       <p className={`text-xl lg:text-2xl leading-relaxed transition-all duration-500 ${
-                        isActive ? 'text-neutral-700' : 'text-neutral-400'
+                        theme === 'dark'
+                          ? (isActive ? 'text-neutral-200' : 'text-neutral-400')
+                          : (isActive ? 'text-neutral-700' : 'text-neutral-400')
                       }`}>
                         {item.description}
                       </p>
