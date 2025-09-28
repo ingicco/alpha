@@ -237,20 +237,26 @@ export default function AboutPage() {
             
             <Reveal delay={200}>
               <div className="relative">
-                {/* Mobile: Smaller image */}
-                <div className="block lg:hidden w-full h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl shadow-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-sm text-neutral-400 font-medium">Vision &</div>
-                    <div className="text-xs text-neutral-500 mt-1">Innovation</div>
-                  </div>
+                {/* Mobile: Portrait image */}
+                <div className="block lg:hidden w-full aspect-[4/5] rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/media/about-vision.webp"
+                    alt="Vision and Innovation"
+                    fill
+                    className="object-cover rounded-xl"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
                 
-                {/* Desktop: Full image */}
-                <div className="hidden lg:block w-full h-80 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl shadow-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-base text-neutral-400 font-medium">Vision and Innovation</div>
-                    <div className="text-sm text-neutral-500 mt-1">illustration</div>
-                  </div>
+                {/* Desktop: Moderate portrait image */}
+                <div className="hidden lg:block w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/media/about-vision.webp"
+                    alt="Vision and Innovation"
+                    fill
+                    className="object-cover rounded-xl"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
               </div>
             </Reveal>

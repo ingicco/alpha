@@ -254,9 +254,9 @@ export default function HomePage() {
                 } className="group block cursor-pointer text-center">
                   {/* Minimal Clean Design */}
                   <div className="p-6 lg:p-8">
-                    {/* Icon */}
-                    <div className="mb-6">
-                      <div className="w-16 h-16 mx-auto text-primary-600 group-hover:text-accent-600 transition-colors duration-300">
+                    {/* Icon - Larger and Centered */}
+                    <div className="mb-6 flex justify-center">
+                      <div className="w-20 h-20 lg:w-24 lg:h-24 flex items-center justify-center text-primary-600 group-hover:text-accent-600 transition-colors duration-300">
                         {pillar.icon}
                       </div>
                     </div>
