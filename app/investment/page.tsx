@@ -85,34 +85,77 @@ const stages = [
 export default function InvestmentPage() {
   return (
     <>
-      {/* Hero Section */}
-      <Section className="pt-24">
-        <div className="text-center max-w-4xl mx-auto">
+      {/* Hero Section with Full Background Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/media/investment-hero-bg.webp"
+            alt="Investment opportunities background"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-primary-900/60"></div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 mobile-container text-center">
           <Reveal>
-            <h1 className="text-4xl font-bold tracking-tight text-primary-900 sm:text-5xl lg:text-6xl mb-6">
-              Venture & <span className="text-accent-600">Co-Investment</span>
-            </h1>
+            <div className="mb-6">
+              {/* Mobile: Proper sized title */}
+              <h1 className="block sm:hidden text-3xl font-bold text-white mb-4 mobile-text-wrap drop-shadow-lg">
+                Venture & Co-Investment
+              </h1>
+              
+              {/* Desktop: Larger title with styling */}
+              <h1 className="hidden sm:block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg">
+                Venture & <span className="text-accent-400">Co-Investment</span>
+              </h1>
+            </div>
           </Reveal>
           
           <Reveal delay={200}>
-            <p className="text-xl text-neutral-600 leading-8 mb-10">
-              We co-invest across pre-IPO, secondary markets, and early-stage startups 
-              where conviction and ecosystem advantage align.
-            </p>
+            <div className="mb-8">
+              {/* Mobile: Shorter, clearer text */}
+              <p className="block sm:hidden text-sm text-neutral-200 leading-relaxed mb-4 mobile-text-wrap drop-shadow">
+                We co-invest across pre-IPO, secondary markets, and early-stage startups where conviction and ecosystem advantage align.
+              </p>
+              
+              {/* Desktop: Full description */}
+              <p className="hidden sm:block text-lg md:text-xl text-neutral-200 leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto drop-shadow">
+                We co-invest across pre-IPO, secondary markets, and early-stage startups where conviction and ecosystem advantage align.
+              </p>
+            </div>
           </Reveal>
           
           <Reveal delay={400}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton href="/contact" variant="outline" size="lg">
-                Co-Invest With Alpha
-              </CTAButton>
-              <CTAButton href="/insights" variant="outline" size="lg">
-                Read Our Thesis
-              </CTAButton>
+            <div>
+              {/* Mobile: Full width stacked buttons */}
+              <div className="block sm:hidden space-y-3">
+                <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm backdrop-blur-sm">
+                  Co-Invest With Alpha
+                </CTAButton>
+                <CTAButton href="/advisory" variant="outline" className="w-full py-3 text-sm backdrop-blur-sm">
+                  Advisory Services
+                </CTAButton>
+              </div>
+              
+              {/* Desktop: Side by side buttons */}
+              <div className="hidden sm:flex flex-col sm:flex-row gap-4 justify-center">
+                <CTAButton href="/contact" variant="outline" size="lg" className="px-8 py-4 backdrop-blur-sm">
+                  Co-Invest With Alpha
+                </CTAButton>
+                <CTAButton href="/advisory" variant="outline" size="lg" className="px-8 py-4 backdrop-blur-sm">
+                  Advisory Services
+                </CTAButton>
+              </div>
             </div>
           </Reveal>
         </div>
-      </Section>
+      </section>
 
       {/* Investment Approach */}
       <Section background="muted">

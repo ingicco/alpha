@@ -4,8 +4,8 @@ import { Container } from '@/components/Container'
 import { Reveal } from '@/components/Reveal'
 import { ScrollReveal } from '@/components/ScrollReveal'
 import { HorizontalScrollReveal } from '@/components/HorizontalScrollReveal'
-import { HorizontalCarousel } from '@/components/HorizontalCarousel'
 import { CTAButton } from '@/components/CTAButton'
+import OndoStyleCards from '@/components/OndoStyleCards'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
@@ -73,32 +73,47 @@ const outcomes = [
 export default function AdvisoryPage() {
   return (
     <>
-      {/* Hero Section */}
-      <Section className="pt-24">
-        <div className="mobile-container text-center">
+      {/* Hero Section with Full Background Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/media/advisory-hero-bg.webp"
+            alt="Advisory services background"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-primary-900/60"></div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 mobile-container text-center">
           <Reveal>
             <div className="mb-6">
               {/* Mobile: Proper sized title */}
-              <h1 className="block sm:hidden text-xl font-bold text-primary-900 mb-4 mobile-text-wrap">
+              <h1 className="block sm:hidden text-3xl font-bold text-white mb-4 mobile-text-wrap drop-shadow-lg">
                 Advisory Mandates, Redefined
               </h1>
               
               {/* Desktop: Larger title with styling */}
-              <h1 className="hidden sm:block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary-900 mb-4 sm:mb-6">
-                Advisory Mandates, <span className="text-accent-600">Redefined</span>
+              <h1 className="hidden sm:block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg">
+                Advisory Mandates, <span className="text-accent-400">Redefined</span>
               </h1>
             </div>
           </Reveal>
           
           <Reveal delay={200}>
-            <div className="mb-6">
+            <div className="mb-8">
               {/* Mobile: Shorter, clearer text */}
-              <p className="block sm:hidden text-sm text-neutral-600 leading-relaxed mb-4 mobile-text-wrap">
+              <p className="block sm:hidden text-sm text-neutral-200 leading-relaxed mb-4 mobile-text-wrap drop-shadow">
                 We operate institutional mandates across compliance, governance, treasury, risk, and digital asset strategy.
               </p>
               
               {/* Desktop: Full description */}
-              <p className="hidden sm:block text-base md:text-lg text-neutral-600 leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
+              <p className="hidden sm:block text-lg md:text-xl text-neutral-200 leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto drop-shadow">
                 We operate institutional mandates across compliance, governance, treasury, risk, and digital asset strategy with our trusted network of legal and technical partners.
               </p>
             </div>
@@ -108,83 +123,65 @@ export default function AdvisoryPage() {
             <div>
               {/* Mobile: Full width stacked buttons */}
               <div className="block sm:hidden space-y-3">
-                <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm">
+                <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm backdrop-blur-sm">
                   Request a Mandate
                 </CTAButton>
-                <CTAButton href="/partners" variant="outline" className="w-full py-3 text-sm">
+                <CTAButton href="/partners" variant="outline" className="w-full py-3 text-sm backdrop-blur-sm">
                   Meet Our Partners
                 </CTAButton>
               </div>
               
               {/* Desktop: Side by side buttons */}
               <div className="hidden sm:flex flex-col sm:flex-row gap-4 justify-center">
-                <CTAButton href="/contact" variant="outline" size="lg" className="px-6 py-3">
+                <CTAButton href="/contact" variant="outline" size="lg" className="px-8 py-4 backdrop-blur-sm">
                   Request a Mandate
                 </CTAButton>
-                <CTAButton href="/partners" variant="outline" size="lg" className="px-6 py-3">
+                <CTAButton href="/partners" variant="outline" size="lg" className="px-8 py-4 backdrop-blur-sm">
                   Meet Our Partners
                 </CTAButton>
               </div>
             </div>
           </Reveal>
         </div>
-      </Section>
+      </section>
 
-      {/* Introduction */}
+      {/* Beyond Traditional Consulting - Ondo Style Layout */}
       <Section background="muted">
-        <div className="mobile-container">
-          {/* Mobile: Single column layout */}
-          <div className="block lg:hidden space-y-8">
+        <Container>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Side - Content */}
             <Reveal>
               <div>
-                <h2 className="text-lg sm:text-xl font-bold text-primary-900 mb-4 mobile-text-wrap">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6 leading-tight">
                   Beyond Traditional Consulting
                 </h2>
-                <p className="text-sm text-neutral-600 leading-relaxed mb-4 mobile-text-wrap">
+                <p className="text-lg text-neutral-600 leading-relaxed mb-6">
                   Traditional advisory falls short in the digital asset era. Organizations need partners who understand both institutional rigor and blockchain innovation.
                 </p>
-                <p className="text-sm text-neutral-600 leading-relaxed mobile-text-wrap">
-                  Our approach combines deep institutional experience with cutting-edge digital asset expertise.
-                </p>
-              </div>
-            </Reveal>
-            
-            <Reveal delay={200}>
-              <div className="w-full h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl shadow-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-sm text-neutral-400 font-medium">Advisory services</div>
-                  <div className="text-xs text-neutral-500 mt-1">illustration</div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-          
-          {/* Desktop: Two column layout */}
-          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <Reveal>
-              <div>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-900 mb-6">
-                  Beyond Traditional Consulting
-                </h2>
-                <p className="text-base md:text-lg text-neutral-600 leading-relaxed mb-6">
-                  Traditional advisory falls short in the digital asset era. Organizations need partners who understand both institutional rigor and blockchain innovation.
-                </p>
-                <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
+                <p className="text-lg text-neutral-600 leading-relaxed">
                   Our approach combines deep institutional experience with cutting-edge digital asset expertise, supported by a curated network of best-in-class partners.
                 </p>
               </div>
             </Reveal>
-            
+
+            {/* Right Side - Portrait Image */}
             <Reveal delay={200}>
-              <div className="w-full h-80 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl shadow-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-sm text-neutral-400 font-medium">Advisory services</div>
-                  <div className="text-xs text-neutral-500 mt-1">illustration</div>
+              <div>
+                <div className="relative w-full max-w-md mx-auto lg:max-w-none">
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                    <Image
+                      src="/media/advisory-consulting.webp"
+                      alt="Professional advisory consultation"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
                 </div>
               </div>
             </Reveal>
           </div>
-        </div>
+        </Container>
       </Section>
 
       {/* Focus Areas */}
@@ -238,235 +235,39 @@ export default function AdvisoryPage() {
         </Container>
       </Section>
 
-      {/* Specialized Advisory Subsections - Horizontal Carousel */}
-      <div className="mt-16 lg:mt-24">
-        <HorizontalCarousel
-        sections={[
-          {
-            id: 'tokenization',
-            content: (
-              <div className="w-full h-full bg-white flex items-center justify-center relative overflow-hidden">
-                {/* Subtle background pattern */}
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute inset-0" style={{
-                    backgroundImage: 'radial-gradient(circle at 25% 25%, #1a3c5e 2px, transparent 2px)',
-                    backgroundSize: '60px 60px'
-                  }}></div>
-                </div>
-                
-                <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
-                  <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
-                    {/* Image - Left Side */}
-                    <div className="order-2 lg:order-1 flex justify-center">
-                      <div className="w-96 h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
-                        <Image
-                          src="/media/tokenization-advisory.webp"
-                          alt="Tokenization Advisory Services"
-                          width={512}
-                          height={512}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                    
-                    {/* Content - Right Side */}
-                    <div className="order-1 lg:order-2 space-y-6 px-4 lg:px-6">
-                      <div>
-                        <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-primary-900 mb-4 leading-tight">
-                          Tokenization Advisory
-                        </h2>
-                        <p className="text-base lg:text-lg text-neutral-600 leading-relaxed font-light">
-                          End-to-end advisory on tokenization of real-world assets — from structuring funds and securities to designing compliant issuance frameworks.
-                        </p>
-                      </div>
-                      
-                      <div className="border-l-4 border-accent-400 pl-6 py-6 flex flex-col justify-between h-80">
-                        <div className="space-y-6">
-                          <div>
-                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
-                              Tokenization of Funds & Capital Markets
-                            </h4>
-                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
-                              Comprehensive fund structuring and capital market tokenization strategies for institutional asset classes.
-                            </p>
-                          </div>
-                          
-                          <div>
-                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
-                              Commodity & Real Estate Tokenization
-                            </h4>
-                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
-                              Specialized frameworks for tokenizing physical assets and real estate portfolios.
-                            </p>
-                          </div>
-                          
-                          <div>
-                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
-                              Lifecycle Structuring
-                            </h4>
-                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
-                              Complete lifecycle management from issuance through distribution to custody solutions.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          },
-          {
-            id: 'stablecoin',
-            content: (
-              <div className="w-full h-full bg-primary-900 flex items-center justify-center relative overflow-hidden">
-                {/* Subtle background pattern */}
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute inset-0" style={{
-                    backgroundImage: 'radial-gradient(circle at 75% 75%, #c8b572 2px, transparent 2px)',
-                    backgroundSize: '60px 60px'
-                  }}></div>
-                </div>
-                
-                <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
-                  <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
-                    {/* Content - Left Side */}
-                    <div className="order-1 space-y-8 px-4 lg:px-6">
-                      <div>
-                        <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
-                          Stablecoin & Yield Strategy
-                        </h2>
-                        <p className="text-base lg:text-lg text-neutral-200 leading-relaxed font-light">
-                          Helping leading stablecoin and yield projects achieve institutional readiness — advising across issuance, risk management, and scaling mandates.
-                        </p>
-                      </div>
-                      
-                      <div className="border-l-4 border-accent-400 pl-6 py-6 flex flex-col justify-between h-80">
-                        <div className="space-y-6">
-                          <div>
-                            <h4 className="font-bold text-white text-sm lg:text-base mb-2">
-                              Institutional Onboarding
-                            </h4>
-                            <p className="text-xs lg:text-sm text-neutral-300 leading-relaxed">
-                              Comprehensive onboarding frameworks for institutional adoption and compliance readiness.
-                            </p>
-                          </div>
-                          
-                          <div>
-                            <h4 className="font-bold text-white text-sm lg:text-base mb-2">
-                              Treasury Yield Solutions
-                            </h4>
-                            <p className="text-xs lg:text-sm text-neutral-300 leading-relaxed">
-                              Strategic treasury management and yield optimization for stablecoin reserves and operations.
-                            </p>
-                          </div>
-                          
-                          <div>
-                            <h4 className="font-bold text-white text-sm lg:text-base mb-2">
-                              Regulatory Assurance
-                            </h4>
-                            <p className="text-xs lg:text-sm text-neutral-300 leading-relaxed">
-                              Comprehensive regulatory compliance frameworks and ongoing assurance for global markets.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Image - Right Side */}
-                    <div className="order-2 flex justify-center">
-                      <div className="w-96 h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
-                        <Image
-                          src="/media/stablecoin-advisory.webp"
-                          alt="Stablecoin & Yield Strategy Advisory"
-                          width={512}
-                          height={512}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          },
-          {
-            id: 'corporate-finance',
-            content: (
-              <div className="w-full h-full bg-white flex items-center justify-center relative overflow-hidden">
-                {/* Subtle background pattern */}
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute inset-0" style={{
-                    backgroundImage: 'radial-gradient(circle at 50% 50%, #1a3c5e 2px, transparent 2px)',
-                    backgroundSize: '60px 60px'
-                  }}></div>
-                </div>
-                
-                <div className="relative z-10 mobile-container max-w-6xl mx-auto px-8">
-                  <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
-                    {/* Image - Left Side */}
-                    <div className="order-2 lg:order-1 flex justify-center">
-                      <div className="w-96 h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105">
-                        <Image
-                          src="/media/corporate-finance-advisory.webp"
-                          alt="Digital Corporate Finance Advisory"
-                          width={512}
-                          height={512}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                    
-                    {/* Content - Right Side */}
-                    <div className="order-1 lg:order-2 space-y-8 px-4 lg:px-6">
-                      <div>
-                        <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-primary-900 mb-4 leading-tight">
-                          Digital Corporate Finance
-                        </h2>
-                        <p className="text-base lg:text-lg text-neutral-600 leading-relaxed font-light">
-                          Structuring and executing complex cross-border corporate finance transactions — including Reverse Mergers, Reverse Swaps, and PIPE deals.
-                        </p>
-                      </div>
-                      
-                      <div className="border-l-4 border-accent-400 pl-6 py-6 flex flex-col justify-between h-80">
-                        <div className="space-y-6">
-                          <div>
-                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
-                              Deal Structuring and Execution
-                            </h4>
-                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
-                              Expert structuring and execution of complex M&A, reverse merger, and PIPE transactions.
-                            </p>
-                          </div>
-                          
-                          <div>
-                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
-                              Distribution and Syndication Support
-                            </h4>
-                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
-                              Comprehensive distribution networks and syndication support for successful transaction completion.
-                            </p>
-                          </div>
-                          
-                          <div>
-                            <h4 className="font-bold text-primary-900 text-sm lg:text-base mb-2">
-                              Strategic Alignment with Public Markets
-                            </h4>
-                            <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed">
-                              Strategic positioning and alignment for successful public market listings and compliance.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          }
-        ]}
-        />
-      </div>
+      {/* Specialized Advisory Services - True Ondo Style */}
+      <section className="relative py-16 px-6 md:px-12 lg:px-16">
+        {/* Large Rounded Background Image with Padding */}
+        <div className="relative w-full h-[85vh] rounded-3xl overflow-hidden">
+          <Image
+            src="/media/advisory-services-bg.webp"
+            alt="Advisory services background"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-900/50 via-primary-900/70 to-primary-900/80"></div>
+          
+          {/* Content Container */}
+          <div className="relative z-10 h-full flex flex-col">
+            {/* Header at Top */}
+            <div className="text-center pt-16 pb-8">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
+                Specialized Advisory Services
+              </h2>
+              <p className="text-xl text-neutral-200 max-w-4xl mx-auto leading-relaxed">
+                Comprehensive expertise across tokenization, stablecoins, and digital corporate finance
+              </p>
+            </div>
+
+            {/* Cards Positioned at Bottom */}
+            <div className="flex-1 relative">
+              <OndoStyleCards />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Outcomes Section */}
       <Section
@@ -625,3 +426,4 @@ export default function AdvisoryPage() {
     </>
   )
 }
+

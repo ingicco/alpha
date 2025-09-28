@@ -76,34 +76,77 @@ const regulatoryFrameworks = [
 export default function DigitalAssetsPage() {
   return (
     <>
-      {/* Hero Section */}
-      <Section className="pt-24">
-        <div className="text-center max-w-4xl mx-auto">
+      {/* Hero Section with Full Background Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/media/digital-assets-hero-bg.webp"
+            alt="Digital assets and blockchain background"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-primary-900/60"></div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 mobile-container text-center">
           <Reveal>
-            <h1 className="text-4xl font-bold tracking-tight text-primary-900 sm:text-5xl lg:text-6xl mb-6">
-              Digital Asset <span className="text-accent-600">Assurance</span>
-            </h1>
+            <div className="mb-6">
+              {/* Mobile: Proper sized title */}
+              <h1 className="block sm:hidden text-3xl font-bold text-white mb-4 mobile-text-wrap drop-shadow-lg">
+                Digital Asset Assurance
+              </h1>
+              
+              {/* Desktop: Larger title with styling */}
+              <h1 className="hidden sm:block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg">
+                Digital Asset <span className="text-accent-400">Assurance</span>
+              </h1>
+            </div>
           </Reveal>
           
           <Reveal delay={200}>
-            <p className="text-xl text-neutral-600 leading-8 mb-10">
-              Institutional-grade advisory and assurance for blockchain initiatives—controls, 
-              reporting, and oversight aligned with global standards.
-            </p>
+            <div className="mb-8">
+              {/* Mobile: Shorter, clearer text */}
+              <p className="block sm:hidden text-sm text-neutral-200 leading-relaxed mb-4 mobile-text-wrap drop-shadow">
+                Institutional-grade advisory and assurance for blockchain initiatives—controls, reporting, and oversight aligned with global standards.
+              </p>
+              
+              {/* Desktop: Full description */}
+              <p className="hidden sm:block text-lg md:text-xl text-neutral-200 leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto drop-shadow">
+                Institutional-grade advisory and assurance for blockchain initiatives—controls, reporting, and oversight aligned with global standards.
+              </p>
+            </div>
           </Reveal>
           
           <Reveal delay={400}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton href="/contact" variant="outline" size="lg">
-                Explore Digital Asset Advisory
-              </CTAButton>
-              <CTAButton href="/partners" variant="outline" size="lg">
-                Meet Our Technical Partners
-              </CTAButton>
+            <div>
+              {/* Mobile: Full width stacked buttons */}
+              <div className="block sm:hidden space-y-3">
+                <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm backdrop-blur-sm">
+                  Explore Digital Asset Advisory
+                </CTAButton>
+                <CTAButton href="/advisory" variant="outline" className="w-full py-3 text-sm backdrop-blur-sm">
+                  Meet Our Technical Partners
+                </CTAButton>
+              </div>
+              
+              {/* Desktop: Side by side buttons */}
+              <div className="hidden sm:flex flex-col sm:flex-row gap-4 justify-center">
+                <CTAButton href="/contact" variant="outline" size="lg" className="px-8 py-4 backdrop-blur-sm">
+                  Explore Digital Asset Advisory
+                </CTAButton>
+                <CTAButton href="/advisory" variant="outline" size="lg" className="px-8 py-4 backdrop-blur-sm">
+                  Meet Our Technical Partners
+                </CTAButton>
+              </div>
             </div>
           </Reveal>
         </div>
-      </Section>
+      </section>
 
       {/* Introduction */}
       <Section background="muted">
