@@ -8,20 +8,24 @@ interface AnimatedBarChartProps {
 
 export function AnimatedBarChart({ className }: AnimatedBarChartProps) {
   const [isVisible, setIsVisible] = useState(false)
-  const [animatedValues, setAnimatedValues] = useState([0, 0, 0])
+  const [animatedValues, setAnimatedValues] = useState([0, 0, 0, 0])
   const elementRef = useRef<HTMLDivElement>(null)
 
   const data = [
     { 
-      label: 'Pre-IPO', 
-      value: 55,
+      label: 'AI Infrastructure', 
+      value: 40,
     },
     { 
-      label: 'Secondary', 
-      value: 30,
+      label: 'Quantum Computing', 
+      value: 25,
     },
     { 
-      label: 'Early Stage', 
+      label: 'Biotechnology', 
+      value: 20,
+    },
+    { 
+      label: 'Sustainable Energy', 
       value: 15,
     },
   ]
@@ -78,8 +82,8 @@ export function AnimatedBarChart({ className }: AnimatedBarChartProps) {
     <div ref={elementRef} className={className}>
       <div className="p-4 sm:p-8">
         <div className="mb-6 sm:mb-8">
-          <h3 className="text-lg sm:text-xl font-semibold text-accent-600 mb-2">Investment Allocation</h3>
-          <p className="text-sm sm:text-base text-neutral-600">Portfolio distribution across investment stages</p>
+          <h3 className="text-lg sm:text-xl font-semibold text-accent-600 mb-2">Strategic Focus Areas</h3>
+          <p className="text-sm sm:text-base text-neutral-600">Investment allocation across transformative technology sectors</p>
         </div>
         
         <div className="space-y-4 sm:space-y-6">

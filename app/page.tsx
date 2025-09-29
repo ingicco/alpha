@@ -49,7 +49,7 @@ const footprintStats = [
 const pillars = [
   {
     title: 'Advisory',
-    description: 'Institutional mandates with trusted legal & tech partners.',
+    description: 'Strategic guidance across compliance, governance, and digital innovation.',
     image: '/media/advisory-pillar.webp',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -59,7 +59,7 @@ const pillars = [
   },
   {
     title: 'Investments',
-    description: 'Pre-IPO, secondary, and early-stage co-investments.',
+    description: 'Strategic capital deployment in transformative technology sectors.',
     image: '/media/investments-pillar.webp',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -69,7 +69,7 @@ const pillars = [
   },
   {
     title: 'Digital Assets',
-    description: 'Compliance & assurance frameworks for blockchain.',
+    description: 'Institutional-grade digital asset strategies and solutions.',
     image: '/media/digital-assets-pillar.webp',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -261,7 +261,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <h3 className="text-lg lg:text-xl font-bold text-primary-900 leading-tight group-hover:text-accent-600 transition-colors duration-300">
-                      Tokenization of Real World Assets
+                      Access to Tokenization Opportunities
                     </h3>
                   </div>
                 </ScrollAnimation>
@@ -277,7 +277,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <h3 className="text-lg lg:text-xl font-bold text-primary-900 leading-tight group-hover:text-accent-600 transition-colors duration-300">
-                      Stablecoin Growth & Institutional Adoption
+                      Institutional-Grade Digital Asset Solutions
                     </h3>
                   </div>
                 </ScrollAnimation>
@@ -293,7 +293,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <h3 className="text-lg lg:text-xl font-bold text-primary-900 leading-tight group-hover:text-accent-600 transition-colors duration-300">
-                      M&A, Reverse Mergers & PIPE Transactions
+                      Strategic M&A and Corporate Finance Access
                     </h3>
                   </div>
                 </ScrollAnimation>
@@ -309,7 +309,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <h3 className="text-lg lg:text-xl font-bold text-primary-900 leading-tight group-hover:text-accent-600 transition-colors duration-300">
-                      Institutional Structuring & Capital Solutions
+                      Premium Network and Partnership Benefits
                     </h3>
                   </div>
                 </ScrollAnimation>
@@ -319,6 +319,23 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* Strategic Investment Focus */}
+      <Section
+        title="Strategic Investment Focus"
+        description="Targeted capital deployment across transformative technology sectors."
+      >
+        <ScrollAnimation animation="scale" className="mb-8">
+          <AnimatedBarChart />
+        </ScrollAnimation>
+        <ScrollAnimation animation="fadeIn" delay={300}>
+          <div className="text-center">
+            <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
+              We strategically invest in breakthrough technologies across AI infrastructure, 
+              quantum computing, biotechnology, and sustainable energy sectors.
+            </p>
+          </div>
+        </ScrollAnimation>
+      </Section>
 
       {/* Advisory Mandates Teaser */}
       <Section className="py-12 sm:py-24">
@@ -383,24 +400,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Investment Focus */}
-      <Section
-        background="muted"
-        title="Strategic Allocation"
-        description="Our conviction across Pre-IPO, Secondary, and Startups."
-      >
-        <ScrollAnimation animation="scale" className="mb-8">
-          <AnimatedBarChart />
-        </ScrollAnimation>
-        <ScrollAnimation animation="fadeIn" delay={300}>
-          <div className="text-center">
-            <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
-              We deploy capital where conviction meets opportunity, leveraging our 
-              ecosystem advantage across all stages of company growth.
-            </p>
-          </div>
-        </ScrollAnimation>
-      </Section>
 
       {/* Digital Assets Teaser */}
       <Section className="py-12 sm:py-24">
