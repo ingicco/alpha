@@ -94,30 +94,22 @@ export default function AdvisoryPage() {
         {/* Hero Content */}
         <div className="relative z-10 mobile-container text-center">
           <Reveal>
-            <div className="mb-6">
-              {/* Mobile: Proper sized title */}
-              <h1 className="block sm:hidden text-3xl font-bold text-white mb-4 mobile-text-wrap drop-shadow-lg">
-                Advisory Mandates, Redefined
-              </h1>
-              
-              {/* Desktop: Larger title with styling */}
-              <h1 className="hidden sm:block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg">
-                Advisory Mandates, <span className="text-accent-400">Redefined</span>
-              </h1>
-            </div>
-          </Reveal>
-          
-          <Reveal delay={200}>
             <div className="mb-8">
-              {/* Mobile: Shorter, clearer text */}
-              <p className="block sm:hidden text-sm text-neutral-200 leading-relaxed mb-4 mobile-text-wrap drop-shadow">
-                We operate institutional mandates across compliance, governance, treasury, risk, and digital asset strategy.
-              </p>
+              {/* Mobile: Action-focused title */}
+              <h1 className="block sm:hidden text-4xl font-bold tracking-tight text-white mb-4 leading-tight drop-shadow-lg">
+                Redefining institutional advisory.
+                <span className="block text-lg text-neutral-300 font-light mt-3 leading-relaxed">
+                  Where regulatory expertise meets digital asset innovation—delivering compliant growth at institutional scale.
+                </span>
+              </h1>
               
-              {/* Desktop: Full description */}
-              <p className="hidden sm:block text-lg md:text-xl text-neutral-200 leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto drop-shadow">
-                We operate institutional mandates across compliance, governance, treasury, risk, and digital asset strategy with our trusted network of legal and technical partners.
-              </p>
+              {/* Desktop: Action-focused title */}
+              <h1 className="hidden sm:block text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-lg">
+                Redefining institutional advisory.
+                <span className="block text-xl md:text-2xl lg:text-3xl text-neutral-300 font-light mt-6 leading-relaxed max-w-4xl mx-auto">
+                  Where regulatory expertise meets digital asset innovation—delivering compliant growth at institutional scale.
+                </span>
+              </h1>
             </div>
           </Reveal>
           
@@ -208,23 +200,48 @@ export default function AdvisoryPage() {
             rightItems={[
               {
                 title: "Regulatory Readiness",
-                description: "Comprehensive compliance frameworks aligned with global regulatory standards and emerging digital asset regulations."
+                description: "Comprehensive compliance frameworks aligned with global regulatory standards and emerging digital asset regulations.",
+                icon: (
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                )
               },
               {
                 title: "Token Economics & Governance",
-                description: "Strategic design and implementation of token economic models, governance structures, and stakeholder alignment mechanisms."
+                description: "Strategic design and implementation of token economic models, governance structures, and stakeholder alignment mechanisms.",
+                icon: (
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.467-.22-2.121-.659-1.172-.879-1.172-2.303 0-3.182C10.536 7.78 11.268 7.56 12 7.56c.732 0 1.464.22 2.121.659l.879-.659M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                )
               },
               {
                 title: "Risk, Controls & Reporting",
-                description: "Enterprise-grade risk management frameworks, internal controls design, and board-level reporting structures."
+                description: "Enterprise-grade risk management frameworks, internal controls design, and board-level reporting structures.",
+                icon: (
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                  </svg>
+                )
               },
               {
                 title: "Vendor Selection & Technical DD",
-                description: "Comprehensive vendor evaluation, technical due diligence, and partner selection across the digital asset ecosystem."
+                description: "Comprehensive vendor evaluation, technical due diligence, and partner selection across the digital asset ecosystem.",
+                icon: (
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                  </svg>
+                )
               },
               {
                 title: "Treasury Operations & Custody",
-                description: "Digital asset treasury management, custody solution evaluation, and operational framework implementation."
+                description: "Digital asset treasury management, custody solution evaluation, and operational framework implementation.",
+                icon: (
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                  </svg>
+                )
               }
             ]}
           />

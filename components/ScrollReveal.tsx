@@ -86,7 +86,20 @@ export function ScrollReveal({ leftContent, rightItems, className = '', theme = 
                 >
                   <div className="w-full">
                     <div className="border-l-4 border-accent-500 pl-8">
-                      <h3 className={`text-3xl lg:text-4xl font-bold mb-6 leading-tight transition-all duration-500 ${
+                      {/* Icon - Above and Centered */}
+                      {item.icon && (
+                        <div className="mb-6 flex justify-center -ml-8">
+                          <div className={`w-16 h-16 flex items-center justify-center transition-all duration-500 ${
+                            theme === 'dark'
+                              ? (isActive ? 'text-accent-400' : 'text-neutral-400')
+                              : (isActive ? 'text-accent-600' : 'text-neutral-400')
+                          }`}>
+                            {item.icon}
+                          </div>
+                        </div>
+                      )}
+                      
+                      <h3 className={`text-2xl lg:text-3xl font-bold mb-6 leading-tight text-center transition-all duration-500 ${
                         theme === 'dark' 
                           ? (isActive ? 'text-white' : 'text-neutral-300')
                           : (isActive ? 'text-primary-900' : 'text-neutral-500')
@@ -94,7 +107,7 @@ export function ScrollReveal({ leftContent, rightItems, className = '', theme = 
                         {item.title}
                       </h3>
                       
-                      <p className={`text-xl lg:text-2xl leading-relaxed transition-all duration-500 ${
+                      <p className={`text-lg lg:text-xl leading-relaxed transition-all duration-500 ${
                         theme === 'dark'
                           ? (isActive ? 'text-neutral-200' : 'text-neutral-400')
                           : (isActive ? 'text-neutral-700' : 'text-neutral-400')
