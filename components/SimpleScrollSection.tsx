@@ -77,7 +77,7 @@ export function SimpleScrollSection({ backgroundImage, leftContent, rightItems }
               {/* Initial State - Show intro text */}
               {activeIndex === -1 && (
                 <div className="text-center max-w-2xl mx-auto opacity-100 transition-opacity duration-500">
-                  <p className="text-4xl lg:text-5xl xl:text-6xl text-white leading-tight font-light">
+                  <p className="text-2xl lg:text-3xl xl:text-4xl text-white leading-tight font-light">
                     Alpha Group Investment<br />
                     focuses on four critical areas<br />
                     of institutional finance and<br />

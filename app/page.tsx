@@ -106,57 +106,44 @@ export default function HomePage() {
           <div className="text-center py-8 sm:py-12">
             <Reveal>
               <div className="mb-8">
-                {/* Mobile: Clean bold title */}
-                <h1 className="block sm:hidden text-5xl font-bold tracking-tight text-white mb-4 leading-[0.9]">
-                  Institutional Grade
-                  <span className="block text-3xl bg-gradient-to-r from-accent-400 to-accent-500 bg-clip-text text-transparent font-light mt-1">
-                    In All We Do
+                {/* Mobile: Action-focused title */}
+                <h1 className="block sm:hidden text-4xl font-bold tracking-tight text-white mb-4 leading-tight">
+                  Transforming digital finance.
+                  <span className="block text-lg text-neutral-300 font-light mt-3 leading-relaxed">
+                    Where expert advisory meets dynamic institutional investment—discover your edge in digital assets.
                   </span>
                 </h1>
                 
-                {/* Desktop: Large impactful title */}
-                <h1 className="hidden sm:block text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white mb-6 sm:mb-8 leading-[0.9]">
-                  Institutional Grade
-                  <span className="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-accent-400 to-accent-500 bg-clip-text text-transparent font-light mt-2">
-                    In All We Do
+                {/* Desktop: Action-focused title */}
+                <h1 className="hidden sm:block text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                  Transforming digital finance.
+                  <span className="block text-xl md:text-2xl lg:text-3xl text-neutral-300 font-light mt-6 leading-relaxed max-w-4xl mx-auto">
+                    Where expert advisory meets dynamic institutional investment—discover your edge in digital assets.
                   </span>
                 </h1>
               </div>
             </Reveal>
             
-            <Reveal delay={200}>
-              <div className="mb-8">
-                {/* Mobile: Shorter, simpler text */}
-                <p className="block sm:hidden text-sm text-neutral-300 leading-relaxed mb-6" style={{hyphens: 'none', wordBreak: 'normal', overflowWrap: 'break-word'}}>
-                  Your institutional partner for tokenization, stablecoin scaling, and digital-asset corporate finance.
-                </p>
-                
-                {/* Desktop: Full text */}
-                <p className="hidden sm:block text-lg md:text-xl lg:text-2xl text-neutral-300 leading-relaxed mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto font-light">
-                  Your institutional partner for tokenization, stablecoin scaling, and digital-asset corporate finance.
-                </p>
-              </div>
-            </Reveal>
             
             <Reveal delay={400}>
               <div className="mb-8 sm:mb-12 md:mb-16">
                 {/* Mobile: Side by side full width buttons */}
                 <div className="block sm:hidden flex gap-3">
                   <CTAButton href="/advisory" variant="outline" className="flex-1 py-3 text-sm">
-                    Advisory Services
+                    Get Started
                   </CTAButton>
-                  <CTAButton href="/investment" variant="outline" className="flex-1 py-3 text-sm">
-                    Investment Opportunities
+                  <CTAButton href="/about" variant="outline" className="flex-1 py-3 text-sm">
+                    See Our Work
                   </CTAButton>
                 </div>
                 
                 {/* Desktop: Side by side buttons */}
                 <div className="hidden sm:flex flex-col sm:flex-row gap-4 justify-center">
-                  <CTAButton href="/advisory" variant="outline" size="lg" className="px-6 py-3">
-                    View Institutional Solutions
+                  <CTAButton href="/advisory" variant="outline" size="lg" className="px-8 py-4">
+                    Get Started
                   </CTAButton>
-                  <CTAButton href="/investment" variant="outline" size="lg" className="px-6 py-3">
-                    Investment Opportunities
+                  <CTAButton href="/about" variant="outline" size="lg" className="px-8 py-4">
+                    See Our Work
                   </CTAButton>
                 </div>
               </div>
@@ -171,147 +158,174 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Institutional Excellence */}
+      {/* Institutional Excellence - Split Layout */}
       <Section className="py-12 sm:py-24 lg:py-32">
-        <div className="mobile-container text-center">
-          <Reveal>
-            <div>
-              {/* Mobile: Simple title */}
-              <h2 className="block sm:hidden text-3xl font-bold text-primary-900 mb-4 mobile-text-wrap">
-                Trusted by Global Leaders
-              </h2>
-              <p className="block sm:hidden text-sm text-neutral-600 mb-8 mobile-text-wrap">
-                Our institutional-grade approach delivers measurable outcomes across advisory, investments, and digital assets.
-              </p>
-              
-              {/* Desktop: Full title */}
-              <h2 className="hidden sm:block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary-900 mb-6">
-                Trusted by Global Leaders
-              </h2>
-              <p className="hidden sm:block text-base md:text-lg lg:text-xl text-neutral-600 leading-relaxed mb-12 lg:mb-16 max-w-4xl mx-auto">
-                Our institutional-grade approach delivers measurable outcomes across advisory mandates, strategic investments, and digital asset assurance.
-              </p>
-            </div>
-          </Reveal>
-          
-          {/* Simple Stats - Minimal */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
-            {footprintStats.map((stat, index) => (
-              <ScrollAnimation key={stat.label} animation="scale" delay={index * 150}>
-                <div className="text-center">
-                  <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-900 mb-3">
-                    <CountUp 
-                      end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
-                      suffix={stat.value.replace(/[0-9]/g, '')}
-                      duration={2500}
-                    />
-                  </div>
-                  <div className="text-accent-600 font-semibold text-sm lg:text-base mb-2">
-                    {stat.label}
-                  </div>
-                  <p className="text-neutral-600 text-xs lg:text-sm leading-relaxed">
-                    {stat.description}
-                  </p>
-                </div>
-              </ScrollAnimation>
-            ))}
-          </div>
-          
-        </div>
-      </Section>
-
-      {/* Specialized Expertise - Simple Scroll Section */}
-      <SimpleScrollSection
-        backgroundImage="/media/specialized-expertise-bg.webp"
-        leftContent={
-          <p className="text-3xl lg:text-4xl xl:text-5xl text-white leading-tight font-light">
-            Alpha Group Investment focuses on four critical areas of institutional finance and digital asset innovation.
-          </p>
-        }
-        rightItems={[
-          {
-            title: "Tokenization of Real World Assets",
-            description: "Funds, Commodities, Securities, Real Estate - comprehensive tokenization strategies for institutional asset classes."
-          },
-          {
-            title: "Stablecoin Growth & Institutional Adoption",
-            description: "Strategic frameworks for stablecoin integration, regulatory compliance, and institutional-grade adoption pathways."
-          },
-          {
-            title: "M&A, Reverse Mergers & PIPE Transactions",
-            description: "Expert advisory on mergers & acquisitions, reverse merger structures, and private investment in public equity deals."
-          },
-          {
-            title: "Institutional Structuring & Capital Solutions",
-            description: "Comprehensive capital structuring, institutional fund formation, and sophisticated financing solutions."
-          }
-        ]}
-      />
-
-      {/* Strategic Pillars - Premium */}
-      <Section className="py-12 sm:py-24 lg:py-32">
-        <div className="mobile-container text-center mb-12 sm:mb-20">
-          <Reveal>
-            <div>
-              {/* Mobile: Simple title */}
-              <h2 className="block sm:hidden text-3xl font-bold text-primary-800 mb-4 mobile-text-wrap">
-                Three Pillars of Excellence
-              </h2>
-              <p className="block sm:hidden text-sm text-neutral-600 mb-8 mobile-text-wrap">
-                Our integrated approach delivers institutional-grade solutions across advisory, investments, and digital assets.
-              </p>
-              
-              {/* Desktop: Full title */}
-              <h2 className="hidden sm:block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary-800 mb-4 sm:mb-6">
-                Three Pillars of Excellence
-              </h2>
-              <p className="hidden sm:block text-base md:text-lg lg:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-                Our integrated approach delivers institutional-grade solutions across advisory, investments, and digital asset expertise.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-        
-        <div className="mobile-container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            {pillars.map((pillar, index) => (
-              <ScrollAnimation key={pillar.title} animation="slideUp" delay={index * 200}>
-                <Link href={
-                  pillar.title === 'Advisory' ? '/advisory' :
-                  pillar.title === 'Investments' ? '/investment' :
-                  pillar.title === 'Digital Assets' ? '/digital-assets' : 
-                  `/${pillar.title.toLowerCase()}`
-                } className="group block cursor-pointer text-center">
-                  {/* Minimal Clean Design */}
-                  <div className="p-6 lg:p-8">
-                    {/* Icon - Larger and Centered */}
-                    <div className="mb-6 flex justify-center">
-                      <div className="w-20 h-20 lg:w-24 lg:h-24 flex items-center justify-center text-primary-600 group-hover:text-accent-600 transition-colors duration-300">
-                        {pillar.icon}
-                      </div>
+        <Container>
+          {/* Mobile: Stacked Layout */}
+          <div className="block lg:hidden">
+            <Reveal>
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-primary-900 mb-4">
+                  Trusted by Global Leaders
+                </h2>
+                <p className="text-sm text-neutral-600 leading-relaxed">
+                  Our institutional-grade approach delivers measurable outcomes across advisory mandates, strategic investments, and digital asset assurance.
+                </p>
+              </div>
+            </Reveal>
+            
+            <div className="grid grid-cols-2 gap-6">
+              {footprintStats.map((stat, index) => (
+                <ScrollAnimation key={stat.label} animation="scale" delay={index * 150}>
+                  <div className="text-center">
+                    <div className="text-5xl font-bold text-primary-900 mb-3">
+                      <CountUp 
+                        end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
+                        suffix={stat.value.replace(/[0-9]/g, '')}
+                        duration={2500}
+                      />
                     </div>
-                    
-                    {/* Content */}
-                    <h3 className="text-xl lg:text-2xl font-bold text-primary-900 mb-4 group-hover:text-accent-600 transition-colors duration-300">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-neutral-600 leading-relaxed text-sm lg:text-base">
-                      {pillar.description}
+                    <div className="text-accent-600 font-semibold text-sm mb-2">
+                      {stat.label}
+                    </div>
+                    <p className="text-neutral-600 text-xs leading-tight">
+                      {stat.description}
                     </p>
                   </div>
-                </Link>
-              </ScrollAnimation>
-            ))}
+                </ScrollAnimation>
+              ))}
+            </div>
           </div>
-        </div>
+
+          {/* Desktop: Side by Side Layout */}
+          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            {/* Left Side - Text Content */}
+            <Reveal>
+              <div>
+                <h2 className="text-3xl xl:text-4xl font-bold text-primary-900 mb-6 leading-tight">
+                  Trusted by Global Leaders
+                </h2>
+                <p className="text-lg xl:text-xl text-neutral-600 leading-relaxed">
+                  Our institutional-grade approach delivers measurable outcomes across advisory mandates, strategic investments, and digital asset assurance.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Right Side - 2x2 Stats Grid */}
+            <Reveal delay={200}>
+              <div className="grid grid-cols-2 gap-8">
+                {footprintStats.map((stat, index) => (
+                  <ScrollAnimation key={stat.label} animation="scale" delay={300 + (index * 150)}>
+                    <div className="text-center">
+                      <div className="text-6xl xl:text-7xl font-bold text-primary-900 mb-4">
+                        <CountUp 
+                          end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
+                          suffix={stat.value.replace(/[0-9]/g, '')}
+                          duration={2500}
+                        />
+                      </div>
+                      <div className="text-accent-600 font-semibold text-base xl:text-lg mb-3">
+                        {stat.label}
+                      </div>
+                      <p className="text-neutral-600 text-sm xl:text-base leading-relaxed">
+                        {stat.description}
+                      </p>
+                    </div>
+                  </ScrollAnimation>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </Container>
       </Section>
+
+      {/* Specialized Expertise - 4 Across with Icons */}
+      <Section background="muted" className="py-16 sm:py-20 lg:py-24">
+        <Container>
+          <ScrollAnimation animation="slideUp" delay={0}>
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 mb-16 lg:mb-20">
+                Specialized Expertise
+              </h2>
+              
+              {/* 4 Items Side by Side */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                {/* Tokenization */}
+                <ScrollAnimation animation="slideUp" delay={200}>
+                  <div className="group text-center">
+                    <div className="mb-6 flex justify-center">
+                      <div className="w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center text-primary-600 group-hover:text-accent-600 transition-all duration-500 transform group-hover:scale-110">
+                        <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.467-.22-2.121-.659-1.172-.879-1.172-2.303 0-3.182C10.536 7.78 11.268 7.56 12 7.56c.732 0 1.464.22 2.121.659l.879-.659M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 className="text-lg lg:text-xl font-bold text-primary-900 leading-tight group-hover:text-accent-600 transition-colors duration-300">
+                      Tokenization of Real World Assets
+                    </h3>
+                  </div>
+                </ScrollAnimation>
+                
+                {/* Stablecoin */}
+                <ScrollAnimation animation="slideUp" delay={300}>
+                  <div className="group text-center">
+                    <div className="mb-6 flex justify-center">
+                      <div className="w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center text-primary-600 group-hover:text-accent-600 transition-all duration-500 transform group-hover:scale-110">
+                        <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 className="text-lg lg:text-xl font-bold text-primary-900 leading-tight group-hover:text-accent-600 transition-colors duration-300">
+                      Stablecoin Growth & Institutional Adoption
+                    </h3>
+                  </div>
+                </ScrollAnimation>
+                
+                {/* M&A */}
+                <ScrollAnimation animation="slideUp" delay={400}>
+                  <div className="group text-center">
+                    <div className="mb-6 flex justify-center">
+                      <div className="w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center text-primary-600 group-hover:text-accent-600 transition-all duration-500 transform group-hover:scale-110">
+                        <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 className="text-lg lg:text-xl font-bold text-primary-900 leading-tight group-hover:text-accent-600 transition-colors duration-300">
+                      M&A, Reverse Mergers & PIPE Transactions
+                    </h3>
+                  </div>
+                </ScrollAnimation>
+                
+                {/* Capital Solutions */}
+                <ScrollAnimation animation="slideUp" delay={500}>
+                  <div className="group text-center">
+                    <div className="mb-6 flex justify-center">
+                      <div className="w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center text-primary-600 group-hover:text-accent-600 transition-all duration-500 transform group-hover:scale-110">
+                        <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 className="text-lg lg:text-xl font-bold text-primary-900 leading-tight group-hover:text-accent-600 transition-colors duration-300">
+                      Institutional Structuring & Capital Solutions
+                    </h3>
+                  </div>
+                </ScrollAnimation>
+              </div>
+            </div>
+          </ScrollAnimation>
+        </Container>
+      </Section>
+
 
       {/* Advisory Mandates Teaser */}
       <Section className="py-12 sm:py-24">
         <div className="mobile-container">
           {/* Mobile: Single column layout */}
           <div className="block lg:hidden space-y-6">
-            <Reveal>
+            <ScrollAnimation animation="slideUp" delay={0}>
               <div>
                 <h2 className="text-3xl font-bold text-primary-900 mb-4 mobile-text-wrap">
                   Advisory Mandates, Redefined
@@ -323,21 +337,21 @@ export default function HomePage() {
                   Explore Advisory Services
                 </CTAButton>
               </div>
-            </Reveal>
+            </ScrollAnimation>
             
-            <Reveal delay={200}>
+            <ScrollAnimation animation="scale" delay={200}>
               <div className="w-full h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-lg flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-sm text-neutral-400 font-medium">Advisory services</div>
                   <div className="text-xs text-neutral-500 mt-1">illustration</div>
                 </div>
               </div>
-            </Reveal>
+            </ScrollAnimation>
           </div>
 
           {/* Desktop: Two column layout */}
           <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <Reveal>
+            <ScrollAnimation animation="slideLeft" delay={0}>
               <div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-900 mb-6">
                   Advisory Mandates, Redefined
@@ -352,9 +366,9 @@ export default function HomePage() {
                   Explore Advisory Services
                 </CTAButton>
               </div>
-            </Reveal>
+            </ScrollAnimation>
             
-            <Reveal delay={200}>
+            <ScrollAnimation animation="slideRight" delay={300}>
               <div className="relative">
                 <Image
                   src="/media/advisory-approach-placeholder.webp"
@@ -364,7 +378,7 @@ export default function HomePage() {
                   className="rounded-xl shadow-lg"
                 />
               </div>
-            </Reveal>
+            </ScrollAnimation>
           </div>
         </div>
       </Section>
@@ -454,7 +468,7 @@ export default function HomePage() {
       {/* CTA Banner */}
       <Section className="py-12 sm:py-24">
         <div className="mobile-container text-center">
-          <Reveal>
+          <ScrollAnimation animation="slideUp" delay={0}>
             {/* Mobile: Smaller text */}
             <div className="block sm:hidden">
               <h2 className="text-3xl font-bold text-primary-900 mb-4 mobile-text-wrap">
@@ -485,9 +499,10 @@ export default function HomePage() {
                 </CTAButton>
               </div>
             </div>
-          </Reveal>
+          </ScrollAnimation>
         </div>
       </Section>
     </>
   )
 }
+
