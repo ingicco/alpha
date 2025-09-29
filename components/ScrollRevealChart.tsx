@@ -136,11 +136,9 @@ export function ScrollRevealChart({ leftContent, rightContent, leftItems, classN
 
           {/* Right Content - Fixed Chart */}
           <div className="lg:col-span-2">
-            <div className="sticky top-20 z-10 h-screen flex items-start pt-4">
-              <div className="w-full">
-                <div className="w-full scale-125">
-                  {rightContent}
-                </div>
+            <div className="sticky top-32 z-10 flex items-center justify-center">
+              <div className="w-full max-w-md">
+                {rightContent}
               </div>
             </div>
           </div>
