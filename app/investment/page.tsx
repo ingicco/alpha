@@ -9,66 +9,74 @@ import { BarChart } from '@/components/BarChart'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Strategic Infrastructure Investments',
-  description: 'Research-driven infrastructure investments across transformative technology sectors where extensive analysis meets strategic opportunity.',
+  title: 'Investment Strategy - AGI³',
+  description: 'We back technologies that define the next decade — not as financiers, but as founders of future markets. Investing where the world is heading, not where it stands.',
 }
 
-const investmentThesis = [
+const transformativeLayers = [
   {
-    title: 'Deep Infrastructure Analysis',
-    description: 'We conduct extensive research and analysis on critical infrastructure across AI, quantum computing, biotechnology, and sustainable energy sectors.',
+    title: 'Financial Infrastructure',
+    description: 'The foundational systems that enable next-generation financial services and institutional adoption.',
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H3.75m0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
       </svg>
     )
   },
   {
-    title: 'Research-Driven Investment Decisions',
-    description: 'Our investment decisions are backed by comprehensive research thesis and strategic analysis of transformative technology infrastructure.',
+    title: 'Tokenized Assets & Liquidity Rails',
+    description: 'Infrastructure enabling the tokenization of real-world assets and programmable liquidity systems.',
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
       </svg>
     )
   },
   {
-    title: 'Strategic Infrastructure Focus',
-    description: 'We target critical infrastructure investments that enable the next generation of technological advancement and institutional adoption.',
+    title: 'Artificial Intelligence & Data Networks',
+    description: 'AI infrastructure and data systems that power intelligent financial services and decision-making.',
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.611L5 14.5" />
+      </svg>
+    )
+  },
+  {
+    title: 'RegTech & Institutional On-Ramps',
+    description: 'Regulatory technology and compliance infrastructure that enables institutional participation.',
+    icon: (
+      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     )
   },
 ]
 
-const selectionCriteria = [
+const focusAreas = [
   {
-    title: 'Infrastructure Criticality',
-    description: 'We evaluate how essential the infrastructure is to enabling next-generation technological advancement and institutional adoption.',
-    icon: (
-      <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-2.25-1.313L16.5 7.5m0 2.25l2.25 1.313L21 9.75m-2.25 4.5L16.5 12.75l-2.25 1.313M12 15.75l-2.25-1.313L7.5 15.75m2.25-4.5L7.5 12.75l2.25-1.313M21 7.5V18a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18V7.5m18 0V3.75A2.25 2.25 0 0018.75 1.5H5.25A2.25 2.25 0 003 3.75V7.5m0 0l2.25 1.313L7.5 7.5l2.25 1.313L12 7.5l2.25 1.313L16.5 7.5l2.25-1.313L21 7.5" />
-      </svg>
-    )
-  },
-  {
-    title: 'Technology Maturity & Scalability',
-    description: 'Assessment of technical readiness, scalability potential, and ability to support widespread institutional deployment.',
-    icon: (
-      <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-      </svg>
-    )
-  },
-  {
-    title: 'Market Positioning & Competitive Moats',
-    description: 'Analysis of competitive landscape, defensibility, and long-term strategic positioning within the infrastructure ecosystem.',
+    title: 'Regulation as Value',
+    description: 'We believe compliant ecosystems win.',
     icon: (
       <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+      </svg>
+    )
+  },
+  {
+    title: 'Tokenization as Access',
+    description: 'The world\'s assets will be represented on-chain.',
+    icon: (
+      <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+      </svg>
+    )
+  },
+  {
+    title: 'Liquidity as Power',
+    description: 'Transparent, programmable capital will fuel scale.',
+    icon: (
+      <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
       </svg>
     )
   },
@@ -132,17 +140,17 @@ export default function InvestmentPage() {
             <div className="mb-8">
               {/* Mobile: Action-focused title */}
               <h1 className="block sm:hidden text-4xl font-bold tracking-tight text-white mb-4 leading-tight drop-shadow-lg">
-                Infrastructure-driven investments.
+                Investment Strategy
                 <span className="block text-lg text-neutral-300 font-light mt-3 leading-relaxed">
-                  Where deep research meets strategic infrastructure opportunities across transformative technology sectors.
+                  We back technologies that define the next decade — not as financiers, but as founders of future markets.
                 </span>
               </h1>
               
               {/* Desktop: Action-focused title */}
               <h1 className="hidden sm:block text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-lg">
-                Infrastructure-driven investments.
+                Investment Strategy
                 <span className="block text-xl md:text-2xl lg:text-3xl text-neutral-300 font-light mt-6 leading-relaxed max-w-4xl mx-auto">
-                  Where deep research meets strategic infrastructure opportunities across transformative technology sectors.
+                  We back technologies that define the next decade — not as financiers, but as founders of future markets.
                 </span>
               </h1>
             </div>
@@ -151,20 +159,20 @@ export default function InvestmentPage() {
         </div>
       </section>
 
-      {/* Investment Approach */}
+      {/* Our Approach */}
       <Section background="muted">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <Reveal>
               <div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6 leading-tight">
-                  Research-Driven Infrastructure Investing
+                  Our Approach
                 </h2>
                 <p className="text-lg text-neutral-600 leading-relaxed mb-6">
-                  Our investment approach combines deep technical analysis with comprehensive market research to identify critical infrastructure opportunities across transformative technology sectors.
+                  We back technologies that define the next decade — not as financiers, but as founders of future markets.
                 </p>
                 <p className="text-lg text-neutral-600 leading-relaxed">
-                  Through extensive due diligence and strategic analysis, we target infrastructure investments that enable the next generation of technological advancement and institutional adoption.
+                  AGI³ invests across key transformative layers that are reshaping the future of finance and technology.
                 </p>
               </div>
             </Reveal>
@@ -173,13 +181,12 @@ export default function InvestmentPage() {
               <div>
                 <div className="relative w-full max-w-md mx-auto lg:max-w-none">
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-                    <Image
-                      src="/media/investment-approach.webp"
-                      alt="Professional investment consultation"
-                      fill
-                      className="object-cover rounded-2xl"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    <div className="w-full h-full bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <div className="text-6xl mb-4">🎯</div>
+                        <p className="text-primary-900 font-semibold">Our Approach</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -188,128 +195,122 @@ export default function InvestmentPage() {
         </Container>
       </Section>
 
-      {/* Investment Focus Areas - Horizontal Layout */}
-      <Section className="py-24 lg:py-32" background="muted">
+      {/* Transformative Layers */}
+      <Section className="py-24 lg:py-32" background="white">
         <Container>
           <Reveal>
             <div className="text-center mb-16">
               <p className="text-sm uppercase tracking-wider text-accent-600 font-semibold mb-4">
-                Investment Focus
+                Investment Layers
               </p>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6">
-                  Our Infrastructure Investment Approach
+                  Key Transformative Layers
                 </h2>
                 <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
-                  We deploy capital in critical infrastructure where extensive research reveals strategic opportunities and transformative potential.
+                  AGI³ invests across key transformative layers that are reshaping the future of finance and technology.
                 </p>
             </div>
           </Reveal>
 
-          {/* Horizontal Timeline Layout */}
-          <div className="relative">
-            {/* Connection Line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-accent-200 transform -translate-y-1/2"></div>
-            
-            <div className="grid gap-8 lg:gap-0 lg:grid-cols-3">
-              {investmentThesis.map((thesis, index) => (
-                <Reveal key={thesis.title} delay={index * 200}>
-                  <div className="relative lg:px-8">
-                    {/* Icon Circle */}
-                    <div className="relative z-10 w-20 h-20 bg-white border-4 border-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-accent-600">
-                      {thesis.icon}
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="text-center">
-                      <h3 className="text-xl lg:text-2xl font-bold text-primary-900 mb-4 leading-tight">
-                        {thesis.title}
-                      </h3>
-                      <p className="text-neutral-600 leading-relaxed text-sm lg:text-base">
-                        {thesis.description}
-                      </p>
-                    </div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {transformativeLayers.map((layer, index) => (
+              <Reveal key={layer.title} delay={index * 150}>
+                <div className="text-center p-6 bg-neutral-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+                  {/* Icon */}
+                  <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4 text-accent-600">
+                    {layer.icon}
                   </div>
-                </Reveal>
-              ))}
-            </div>
+                  
+                  {/* Content */}
+                  <h3 className="text-lg font-bold text-primary-900 mb-3 leading-tight">
+                    {layer.title}
+                  </h3>
+                  <p className="text-neutral-600 leading-relaxed text-sm">
+                    {layer.description}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </Section>
 
-      {/* Stage Allocation */}
-      <Section background="white">
+      {/* Focus Areas */}
+      <Section background="muted">
         <Container>
           <div className="text-center mb-16">
             <Reveal>
               <div>
                 <p className="text-sm uppercase tracking-wider text-accent-600 font-semibold mb-4">
-                  Infrastructure Focus
+                  Focus Areas
                 </p>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6">
-                  Strategic Infrastructure Allocation
+                  Our Investment Philosophy
                 </h2>
                 <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
-                  Our research-driven allocation strategy targets critical infrastructure across transformative technology sectors.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-
-          <ScrollRevealChart
-            leftContent={null}
-            rightContent={
-              <BarChart className="max-w-lg mx-auto" />
-            }
-            leftItems={infrastructureCategories.map(category => ({
-              title: category.name,
-              description: category.description,
-              ticketSize: category.ticketSize,
-              focus: category.focus
-            }))}
-          />
-        </Container>
-      </Section>
-
-      {/* Selection Criteria - No Boxes */}
-      <Section background="white">
-        <Container>
-          <div className="text-center mb-16">
-            <Reveal>
-              <div>
-                <p className="text-sm uppercase tracking-wider text-accent-600 font-semibold mb-4">
-                  Selection Criteria
-                </p>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6">
-                  Infrastructure Evaluation Framework
-                </h2>
-                <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
-                  Our infrastructure investment decisions are guided by rigorous analysis across criticality, technology maturity, and market positioning.
+                  Three core beliefs that guide our investment decisions and shape our approach to the future of finance.
                 </p>
               </div>
             </Reveal>
           </div>
 
           <div className="grid gap-12 lg:gap-16 lg:grid-cols-3">
-            {selectionCriteria.map((criteria, index) => (
-              <Reveal key={criteria.title} delay={index * 150}>
+            {focusAreas.map((area, index) => (
+              <Reveal key={area.title} delay={index * 150}>
                 <div className="text-center">
                   {/* Icon - Centered above title */}
                   <div className="flex justify-center mb-6">
                     <div className="w-20 h-20 lg:w-24 lg:h-24 text-accent-600 flex items-center justify-center">
-                      {criteria.icon}
+                      {area.icon}
                     </div>
                   </div>
                   
                   <h3 className="text-xl lg:text-2xl font-bold text-primary-900 mb-4 leading-tight">
-                    {criteria.title}
+                    {area.title}
                   </h3>
                   
-                  <p className="text-neutral-600 leading-relaxed">
-                    {criteria.description}
+                  <p className="text-lg text-neutral-600 leading-relaxed font-medium">
+                    {area.description}
                   </p>
                 </div>
               </Reveal>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Special Situations & Co-Investments */}
+      <Section background="white">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            <Reveal>
+              <div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6 leading-tight">
+                  Special Situations & Co-Investments
+                </h2>
+                <p className="text-lg text-neutral-600 leading-relaxed mb-8">
+                  We co-invest in ventures that align with our thesis — from tokenization startups to public-market entry plays and digital corporate finance opportunities.
+                </p>
+                <p className="text-xl text-primary-900 font-semibold italic leading-relaxed">
+                  We invest where the world is heading, not where it stands.
+                </p>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={200}>
+              <div>
+                <div className="relative w-full max-w-md mx-auto lg:max-w-none">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                    <div className="w-full h-full bg-gradient-to-br from-accent-100 to-primary-100 flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <div className="text-6xl mb-4">🚀</div>
+                        <p className="text-primary-900 font-semibold">Special Situations</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </Section>
@@ -337,7 +338,7 @@ export default function InvestmentPage() {
             <Reveal delay={200}>
               <div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6 leading-tight">
-                  The Alpha Advantage
+                  The AGI³ Advantage
                 </h2>
                 <p className="text-lg text-neutral-600 leading-relaxed mb-8">
                   Portfolio companies gain access to our institutional network of specialized partners across legal, technical, and regulatory domains. This ecosystem delivers competitive advantages that traditional capital providers cannot match.
@@ -399,10 +400,10 @@ export default function InvestmentPage() {
         <div className="text-center">
           <Reveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6">
-              Partner with Alpha Group
+              Partner with AGI³
             </h2>
             <p className="text-lg lg:text-xl text-neutral-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Join our institutional network and access research-driven infrastructure investment opportunities across transformative technology sectors.
+              Join our institutional network and access investment opportunities in the technologies that will define tomorrow.
             </p>
             <div className="flex justify-center">
               <CTAButton href="/contact" variant="outline" size="lg" className="px-8 py-4">

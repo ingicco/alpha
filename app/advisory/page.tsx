@@ -2,73 +2,47 @@ import { Metadata } from 'next'
 import { Section } from '@/components/Section'
 import { Container } from '@/components/Container'
 import { Reveal } from '@/components/Reveal'
-import { ScrollReveal } from '@/components/ScrollReveal'
-import { HorizontalScrollReveal } from '@/components/HorizontalScrollReveal'
 import { CTAButton } from '@/components/CTAButton'
-import OndoStyleCards from '@/components/OndoStyleCards'
+import { ScrollReveal } from '@/components/ScrollReveal'
+import DigitalAssetsCards from '@/components/DigitalAssetsCards'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Institutional Advisory Services',
-  description: 'Institutional advisory redefined. We operate mandates across compliance, governance, treasury, risk, and digital asset strategy with trusted partners.',
+  title: 'Advisory Services - AGI³',
+  description: 'Our selective advisory model: We advise only those we invest in — to help them grow with institutional precision. Our advisory begins where capital meets credibility.',
 }
 
-const focusAreas = [
+const mandateSpectrum = [
   {
-    title: 'Regulatory Readiness',
-    description: 'Comprehensive compliance frameworks aligned with global regulatory standards and emerging digital asset regulations.',
+    title: 'Tokenization Advisory',
+    description: 'From funds and securities to commodities and real estate — We structure tokenization frameworks that meet global regulatory and distribution standards.',
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
       </svg>
     )
   },
   {
-    title: 'Token Economics & Governance',
-    description: 'Strategic design and implementation of token economic models, governance structures, and stakeholder alignment mechanisms.',
+    title: 'Stablecoin & Yield Strategy Advisory',
+    description: 'We guide stablecoin and yield projects through institutional adoption — Covering issuance, governance, reserve design, and risk frameworks.',
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     )
   },
   {
-    title: 'Risk, Controls & Reporting',
-    description: 'Enterprise-grade risk management frameworks, internal controls design, and board-level reporting structures.',
+    title: 'Digital Corporate Finance (M&A, Reverse Mergers, PIPEs)',
+    description: 'We structure and execute Reverse Mergers, Reverse Swaps, and PIPE deals for digital asset treasuries seeking entry into regulated markets like NASDAQ and NYSE.',
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-      </svg>
-    )
-  },
-  {
-    title: 'Vendor Selection & Technical DD',
-    description: 'Comprehensive vendor evaluation, technical due diligence, and partner selection across the digital asset ecosystem.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.611L5 14.5" />
-      </svg>
-    )
-  },
-  {
-    title: 'Treasury Operations & Custody',
-    description: 'Digital asset treasury management, custody solution evaluation, and operational framework implementation.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H6m-3.75 0h16.5m0 0v.375c0 .621-.504 1.125-1.125 1.125H18m3.75 0V6a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 00-1.125 1.125v9.75c0 .621.504 1.125 1.125 1.125h.375m18.75-2.25h.375a1.125 1.125 0 001.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H21m0 2.25h.375c.621 0 1.125.504 1.125 1.125v.375M21 16.5v1.125c0 .621-.504 1.125-1.125 1.125h-.375M21 16.5h.375c.621 0 1.125-.504 1.125 1.125V18" />
+      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
       </svg>
     )
   },
 ]
 
-const outcomes = [
-  'Clear deliverables with defined success metrics',
-  'Accountable timelines with milestone-based progress tracking',
-  'Ongoing oversight and continuous improvement processes',
-  'Board-ready documentation and reporting frameworks',
-  'Regulatory compliance validation and audit preparation',
-  'Stakeholder alignment and change management support'
-]
+
 
 export default function AdvisoryPage() {
   return (
@@ -97,17 +71,17 @@ export default function AdvisoryPage() {
             <div className="mb-8">
               {/* Mobile: Action-focused title */}
               <h1 className="block sm:hidden text-4xl font-bold tracking-tight text-white mb-4 leading-tight drop-shadow-lg">
-                Redefining institutional advisory.
+                Our Selective Advisory Model
                 <span className="block text-lg text-neutral-300 font-light mt-3 leading-relaxed">
-                  Where regulatory expertise meets digital asset innovation—delivering compliant growth at institutional scale.
+                  We don't run an advisory business. We advise only those we invest in — to help them grow with institutional precision.
                 </span>
               </h1>
               
               {/* Desktop: Action-focused title */}
               <h1 className="hidden sm:block text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-lg">
-                Redefining institutional advisory.
+                Our Selective Advisory Model
                 <span className="block text-xl md:text-2xl lg:text-3xl text-neutral-300 font-light mt-6 leading-relaxed max-w-4xl mx-auto">
-                  Where regulatory expertise meets digital asset innovation—delivering compliant growth at institutional scale.
+                  We don't run an advisory business. We advise only those we invest in — to help them grow with institutional precision.
                 </span>
               </h1>
             </div>
@@ -141,13 +115,13 @@ export default function AdvisoryPage() {
             <Reveal>
               <div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6 leading-tight">
-                  Beyond Traditional Consulting
+                  Our Selective Advisory Model
                 </h2>
                 <p className="text-lg text-neutral-600 leading-relaxed mb-6">
-                  Traditional advisory falls short in the digital asset era. Organizations need partners who understand both institutional rigor and blockchain innovation.
+                  We don't run an advisory business. We advise only those we invest in — to help them grow with institutional precision.
                 </p>
-                <p className="text-lg text-neutral-600 leading-relaxed">
-                  Our approach combines deep institutional experience with cutting-edge digital asset expertise, supported by a curated network of best-in-class partners.
+                <p className="text-xl text-primary-900 font-semibold italic leading-relaxed">
+                  Our advisory begins where capital meets credibility.
                 </p>
               </div>
             </Reveal>
@@ -179,13 +153,13 @@ export default function AdvisoryPage() {
             <Reveal>
               <div>
                 <p className="text-sm uppercase tracking-wider text-accent-600 font-semibold mb-4">
-                  Focus Areas
+                  Mandate Spectrum
                 </p>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6">
-                  Comprehensive Mandate Coverage
+                  Our Advisory Services
                 </h2>
                 <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
-                  We operate across all critical areas of modern institutional finance, from traditional governance to digital asset innovation.
+                  We provide specialized advisory services across tokenization, stablecoins, and digital corporate finance for our portfolio companies.
                 </p>
               </div>
             </Reveal>
@@ -199,47 +173,29 @@ export default function AdvisoryPage() {
             }
             rightItems={[
               {
-                title: "Regulatory Readiness",
-                description: "Comprehensive compliance frameworks aligned with global regulatory standards and emerging digital asset regulations.",
+                title: "Tokenization Advisory",
+                description: "From funds and securities to commodities and real estate — We structure tokenization frameworks that meet global regulatory and distribution standards.",
                 icon: (
                   <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
                   </svg>
                 )
               },
               {
-                title: "Token Economics & Governance",
-                description: "Strategic design and implementation of token economic models, governance structures, and stakeholder alignment mechanisms.",
+                title: "Stablecoin & Yield Strategy Advisory",
+                description: "We guide stablecoin and yield projects through institutional adoption — Covering issuance, governance, reserve design, and risk frameworks.",
                 icon: (
                   <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.467-.22-2.121-.659-1.172-.879-1.172-2.303 0-3.182C10.536 7.78 11.268 7.56 12 7.56c.732 0 1.464.22 2.121.659l.879-.659M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 )
               },
               {
-                title: "Risk, Controls & Reporting",
-                description: "Enterprise-grade risk management frameworks, internal controls design, and board-level reporting structures.",
+                title: "Digital Corporate Finance (M&A, Reverse Mergers, PIPEs)",
+                description: "We structure and execute Reverse Mergers, Reverse Swaps, and PIPE deals for digital asset treasuries seeking entry into regulated markets like NASDAQ and NYSE.",
                 icon: (
                   <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-                  </svg>
-                )
-              },
-              {
-                title: "Vendor Selection & Technical DD",
-                description: "Comprehensive vendor evaluation, technical due diligence, and partner selection across the digital asset ecosystem.",
-                icon: (
-                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                  </svg>
-                )
-              },
-              {
-                title: "Treasury Operations & Custody",
-                description: "Digital asset treasury management, custody solution evaluation, and operational framework implementation.",
-                icon: (
-                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
                   </svg>
                 )
               }
@@ -248,7 +204,8 @@ export default function AdvisoryPage() {
         </Container>
       </Section>
 
-      {/* Specialized Advisory Services - True Ondo Style */}
+
+      {/* Digital Assets & Assurance - True Ondo Style */}
       <section className="relative py-16 px-6 md:px-12 lg:px-16">
         {/* Large Rounded Background Image with Padding */}
         <div className="relative w-full h-[85vh] rounded-3xl overflow-hidden">
@@ -267,83 +224,30 @@ export default function AdvisoryPage() {
             {/* Header at Top */}
             <div className="text-center pt-16 pb-8">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
-                Specialized Advisory Services
+                Digital Assets & Assurance
               </h2>
               <p className="text-xl text-neutral-200 max-w-4xl mx-auto leading-relaxed">
-                Comprehensive expertise across tokenization, stablecoins, and digital corporate finance
+                Institutional Confidence in Digital Evolution
+              </p>
+              <p className="text-lg text-neutral-300 max-w-3xl mx-auto leading-relaxed mt-4">
+                AGI³ helps institutional investors, issuers, and platforms build trust frameworks — Through assurance, governance, and compliance.
               </p>
             </div>
 
             {/* Cards Positioned at Bottom */}
             <div className="flex-1 relative">
-              <OndoStyleCards />
+              <DigitalAssetsCards />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Outcomes Section */}
-      <Section
-        background="primary"
-        eyebrow="Outcomes"
-        title="Measurable Results"
-        description="Every mandate is designed to deliver tangible outcomes that drive organizational success and regulatory confidence."
-      >
-        <div className="grid gap-8 md:grid-cols-2">
-          <Reveal>
-            <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">
-                What You Can Expect
-              </h3>
-              <ul className="space-y-4">
-                {outcomes.map((outcome, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <svg className="w-5 h-5 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="ml-3 text-neutral-200 leading-relaxed">
-                      {outcome}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-          
-          <Reveal delay={200}>
-            <div className="bg-primary-800/50 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent-400 mb-2">12-16</div>
-                  <div className="text-white text-sm">Weeks Average</div>
-                  <div className="text-neutral-300 text-xs">Implementation</div>
-                </div>
-                
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent-400 mb-2">100%</div>
-                  <div className="text-white text-sm">Compliance</div>
-                  <div className="text-neutral-300 text-xs">Validation</div>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <p className="text-neutral-200 text-sm leading-relaxed">
-                  Every mandate follows our proven methodology: discovery, framework design, 
-                  implementation, and ongoing oversight with continuous improvement.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </Section>
 
-      {/* Partner Network */}
+      {/* Partners & Ecosystem */}
       <Section
-        eyebrow="Partner Network"
-        title="Best-in-Class Ecosystem"
-        description="We leverage strategic partnerships with leading legal, technical, and regulatory experts to deliver comprehensive solutions."
+        eyebrow="Partners & Ecosystem"
+        title="Built in Partnership"
+        description="AGI³ collaborates with an ecosystem of specialists — Combining regulatory, legal, and technical excellence. Because the future is built in partnership."
       >
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <Reveal>
@@ -389,8 +293,8 @@ export default function AdvisoryPage() {
                   className="grayscale"
                 />
               </div>
-              <h4 className="font-semibold text-primary-900 mb-2">Kinetic</h4>
-              <p className="text-sm text-neutral-600">Infrastructure & Operations</p>
+              <h4 className="font-semibold text-primary-900 mb-2">Kinetic Asset Management</h4>
+              <p className="text-sm text-neutral-600">Asset Management Excellence</p>
             </div>
           </Reveal>
 
@@ -418,11 +322,10 @@ export default function AdvisoryPage() {
           <Reveal>
             <div className="px-6 sm:px-8">
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary-900 mb-4 sm:mb-6">
-                Ready to Transform Your Advisory Approach?
+                Partner with AGI³
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-neutral-600 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
-                Let's discuss how our integrated mandate approach can deliver the outcomes 
-                your organization needs in today's complex regulatory environment.
+                Our advisory begins where capital meets credibility. Join our selective advisory model and grow with institutional precision.
               </p>
               <div className="flex justify-center">
                 <CTAButton href="/contact" variant="outline" size="lg" className="px-6 py-3 text-base font-medium">

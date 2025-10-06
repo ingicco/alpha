@@ -1,16 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-import { Metadata } from 'next'
 import { Section } from '@/components/Section'
 import { Container } from '@/components/Container'
 import { Reveal } from '@/components/Reveal'
 
 const interests = [
-  'Advisory Mandates',
-  'Co-Investment Opportunities', 
-  'Digital Asset Advisory',
-  'Partnership Opportunities',
+  'Investment Opportunities',
+  'Advisory Services',
+  'Tokenization Projects',
+  'Institutional Partnerships',
+  'Ecosystem Collaboration',
   'General Inquiry'
 ]
 
@@ -70,7 +70,7 @@ export default function ContactPage() {
         `Message:\n${formData.message}`
       )
       
-      window.location.href = `mailto:contact@alpha-investments.com?subject=${subject}&body=${body}`
+      window.location.href = `mailto:contact@agi3.ae?subject=${subject}&body=${body}`
       setSubmitStatus('success')
     }
     
@@ -87,19 +87,19 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <Section className="pt-24">
+      <Section className="pt-20 pb-12">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <Reveal>
-              <h1 className="text-4xl font-bold tracking-tight text-primary-900 sm:text-5xl lg:text-6xl mb-6">
-                Let's Start a <span className="text-accent-600">Conversation</span>
-              </h1>
+            <Reveal delay={200}>
+              <p className="text-4xl md:text-5xl lg:text-6xl text-primary-900 font-light leading-tight mb-8">
+                Let's build what comes next.
+              </p>
             </Reveal>
             
-            <Reveal delay={200}>
-              <p className="text-xl text-neutral-600 leading-8 mb-10">
-                Whether you're seeking institutional advisory, exploring co-investment 
-                opportunities, or need digital asset assurance, we're here to help.
+            <Reveal delay={400}>
+              <p className="text-lg text-neutral-600 leading-relaxed mb-6">
+                Have a project that aligns with our thesis?<br />
+                Reach out to explore investment, advisory, or ecosystem collaboration.
               </p>
             </Reveal>
           </div>
@@ -107,17 +107,17 @@ export default function ContactPage() {
       </Section>
 
       {/* Contact Form */}
-      <Section>
+      <Section className="pt-8 pb-16">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal>
               <div>
                 <h2 className="text-2xl font-bold text-primary-900 mb-6">
-                  Get in Touch
+                  Ready to Build the Future?
                 </h2>
                 <p className="text-lg text-neutral-600 leading-relaxed mb-8">
-                  Our team is ready to discuss how Alpha Group Investment can support 
-                  your institutional finance and digital asset initiatives.
+                  AGI³ is ready to discuss how we can support your vision through 
+                  investment, advisory, or ecosystem collaboration.
                 </p>
                 
                 <div className="space-y-6">
@@ -129,7 +129,7 @@ export default function ContactPage() {
                     </div>
                     <div className="ml-3">
                       <h3 className="font-semibold text-primary-900">Email</h3>
-                      <p className="text-neutral-600">contact@alpha-investments.com</p>
+                      <p className="text-neutral-600">contact@agi3.ae</p>
                     </div>
                   </div>
                   
@@ -275,7 +275,7 @@ export default function ContactPage() {
                       disabled={isSubmitting}
                       className="w-full bg-accent-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                      {isSubmitting ? 'Sending...' : 'Start the Conversation'}
                     </button>
                   </form>
                 )}

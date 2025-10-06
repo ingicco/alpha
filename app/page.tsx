@@ -1,17 +1,9 @@
-import { VideoHero } from '@/components/VideoHero'
-import { PingPongVideo } from '@/components/PingPongVideo'
 import { Section } from '@/components/Section'
 import { Container } from '@/components/Container'
 import { CTAButton } from '@/components/CTAButton'
 import { LogoStrip } from '@/components/LogoStrip'
-import { StatList } from '@/components/StatList'
-import { BarChart } from '@/components/BarChart'
-import { AnimatedBarChart } from '@/components/AnimatedBarChart'
-import { CountUp } from '@/components/CountUp'
 import { Reveal } from '@/components/Reveal'
 import { ScrollAnimation } from '@/components/ScrollAnimation'
-import { ScrollReveal } from '@/components/ScrollReveal'
-import { SimpleScrollSection } from '@/components/SimpleScrollSection'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -108,17 +100,17 @@ export default function HomePage() {
               <div className="mb-8">
                 {/* Mobile: Action-focused title */}
                 <h1 className="block sm:hidden text-4xl font-bold tracking-tight text-white mb-4 leading-tight">
-                  Transforming digital finance.
+                  Investing in What the Future Will Remember.
                   <span className="block text-lg text-neutral-300 font-light mt-3 leading-relaxed">
-                    Where expert advisory meets dynamic institutional investment—discover your edge in digital assets.
+                    We are a privately held investment group, deploying our own capital into technologies that will define the next decade from digital assets to real-world tokenization and institutional infrastructure.
                   </span>
                 </h1>
                 
                 {/* Desktop: Action-focused title */}
                 <h1 className="hidden sm:block text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-                  Transforming digital finance.
+                  Investing in What the Future Will Remember.
                   <span className="block text-xl md:text-2xl lg:text-3xl text-neutral-300 font-light mt-6 leading-relaxed max-w-4xl mx-auto">
-                    Where expert advisory meets dynamic institutional investment—discover your edge in digital assets.
+                    We are a privately held investment group, deploying our own capital into technologies that will define the next decade from digital assets to real-world tokenization and institutional infrastructure.
                   </span>
                 </h1>
               </div>
@@ -129,21 +121,21 @@ export default function HomePage() {
               <div className="mb-8 sm:mb-12 md:mb-16">
                 {/* Mobile: Side by side full width buttons */}
                 <div className="block sm:hidden flex gap-3">
-                  <CTAButton href="/advisory" variant="outline" className="flex-1 py-3 text-sm">
-                    Get Started
+                  <CTAButton href="/thesis" variant="outline" className="flex-1 py-3 text-sm">
+                    Discover Our Thesis
                   </CTAButton>
-                  <CTAButton href="/about" variant="outline" className="flex-1 py-3 text-sm">
-                    See Our Work
+                  <CTAButton href="/advisory" variant="outline" className="flex-1 py-3 text-sm">
+                    Partner With Us
                   </CTAButton>
                 </div>
                 
                 {/* Desktop: Side by side buttons */}
                 <div className="hidden sm:flex flex-col sm:flex-row gap-4 justify-center">
-                  <CTAButton href="/advisory" variant="outline" size="lg" className="px-8 py-4">
-                    Get Started
+                  <CTAButton href="/thesis" variant="outline" size="lg" className="px-8 py-4">
+                    Discover Our Thesis
                   </CTAButton>
-                  <CTAButton href="/about" variant="outline" size="lg" className="px-8 py-4">
-                    See Our Work
+                  <CTAButton href="/advisory" variant="outline" size="lg" className="px-8 py-4">
+                    Partner With Us
                   </CTAButton>
                 </div>
               </div>
@@ -157,6 +149,120 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Investment Philosophy */}
+      <Section className="py-12 sm:py-20 lg:py-24">
+        <Container>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Image on Left */}
+            <Reveal>
+              <div className="relative">
+                <Image
+                  src="/media/digital-assets-placeholder.webp"
+                  alt="Digital assets and blockchain innovation"
+                  width={600}
+                  height={400}
+                  className="rounded-2xl shadow-2xl aspect-[3/2] object-cover"
+                />
+              </div>
+            </Reveal>
+            
+            {/* Text on Right */}
+            <Reveal delay={200}>
+              <div className="space-y-8">
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-900 leading-tight">
+                  Our capital is private, patient, and precise.
+                </p>
+                
+                <p className="text-lg sm:text-xl text-neutral-700 leading-relaxed">
+                  We believe investing is both a science and an art — data informs us, vision drives us.
+                </p>
+                
+                <p className="text-lg sm:text-xl text-neutral-700 leading-relaxed">
+                  Our thesis is clear: regulation, tokenization, and liquidity are shaping the new world of finance.
+                </p>
+                
+                <p className="text-lg sm:text-xl text-neutral-700 leading-relaxed">
+                  We invest early in the ideas and ecosystems that make this shift possible.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+
+
+      {/* Core Business Areas */}
+      <Section className="py-12 sm:py-20 lg:py-24">
+        <Container>
+          <Reveal>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 mb-6">
+                Our Core Focus
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {/* Investments */}
+            <ScrollAnimation animation="slideUp" delay={0}>
+              <div className="text-center group">
+                <div className="flex justify-center mb-6">
+                  <div className="text-primary-600 group-hover:text-primary-800 transition-colors duration-300">
+                    <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-primary-900 mb-4">
+                  Investments
+                </h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  Proprietary capital in emerging technologies and institutional infrastructure.
+                </p>
+              </div>
+            </ScrollAnimation>
+
+            {/* Research */}
+            <ScrollAnimation animation="slideUp" delay={200}>
+              <div className="text-center group">
+                <div className="flex justify-center mb-6">
+                  <div className="text-primary-600 group-hover:text-primary-800 transition-colors duration-300">
+                    <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-primary-900 mb-4">
+                  Research
+                </h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  The engine that powers our investment intelligence.
+                </p>
+              </div>
+            </ScrollAnimation>
+
+            {/* Advisory */}
+            <ScrollAnimation animation="slideUp" delay={400}>
+              <div className="text-center group">
+                <div className="flex justify-center mb-6">
+                  <div className="text-primary-600 group-hover:text-primary-800 transition-colors duration-300">
+                    <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-16.5 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-primary-900 mb-4">
+                  Advisory
+                </h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  A selective extension of our conviction, supporting companies we believe in.
+                </p>
+              </div>
+            </ScrollAnimation>
+          </div>
+        </Container>
+      </Section>
 
       {/* Institutional Excellence - Split Layout */}
       <Section className="py-12 sm:py-24 lg:py-32">
@@ -179,11 +285,7 @@ export default function HomePage() {
                 <ScrollAnimation key={stat.label} animation="scale" delay={index * 150}>
                   <div className="text-center">
                     <div className="text-5xl font-bold text-primary-900 mb-3">
-                      <CountUp 
-                        end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
-                        suffix={stat.value.replace(/[0-9]/g, '')}
-                        duration={2500}
-                      />
+                      {stat.value}
                     </div>
                     <div className="text-accent-600 font-semibold text-sm mb-2">
                       {stat.label}
@@ -218,11 +320,7 @@ export default function HomePage() {
                   <ScrollAnimation key={stat.label} animation="scale" delay={300 + (index * 150)}>
                     <div className="text-center">
                       <div className="text-6xl xl:text-7xl font-bold text-primary-900 mb-4">
-                        <CountUp 
-                          end={parseInt(stat.value.replace(/[^0-9]/g, ''))} 
-                          suffix={stat.value.replace(/[0-9]/g, '')}
-                          duration={2500}
-                        />
+                        {stat.value}
                       </div>
                       <div className="text-accent-600 font-semibold text-base xl:text-lg mb-3">
                         {stat.label}
@@ -325,7 +423,23 @@ export default function HomePage() {
         description="Targeted capital deployment across transformative technology sectors."
       >
         <ScrollAnimation animation="scale" className="mb-8">
-          <AnimatedBarChart />
+          <div className="bg-neutral-50 rounded-xl p-8 text-center">
+            <div className="text-2xl font-bold text-primary-900 mb-4">Investment Allocation</div>
+            <div className="grid grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent-600 mb-2">40%</div>
+                <div className="text-sm text-neutral-600">Digital Assets</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent-600 mb-2">35%</div>
+                <div className="text-sm text-neutral-600">Infrastructure</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent-600 mb-2">25%</div>
+                <div className="text-sm text-neutral-600">Advisory</div>
+              </div>
+            </div>
+          </div>
         </ScrollAnimation>
         <ScrollAnimation animation="fadeIn" delay={300}>
           <div className="text-center">
@@ -401,68 +515,52 @@ export default function HomePage() {
       </Section>
 
 
-      {/* Digital Assets Teaser */}
-      <Section className="py-12 sm:py-24">
-        <div className="mobile-container">
-          {/* Mobile: Single column layout */}
-          <div className="block lg:hidden space-y-6">
-            <Reveal>
-              <div className="w-full h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-sm text-neutral-500 font-medium">Digital assets</div>
-                  <div className="text-xs text-neutral-400 mt-1">illustration</div>
-                </div>
-              </div>
-            </Reveal>
-            
-            <Reveal delay={200}>
-              <div>
-                <h2 className="text-3xl font-bold text-primary-900 mb-4 mobile-text-wrap">
-                  Digital Asset Assurance
-                </h2>
-                <p className="text-sm text-neutral-600 leading-relaxed mb-6 mobile-text-wrap">
-                  Institutional-grade advisory and assurance for blockchain initiatives—controls, reporting, and oversight aligned with global standards.
-                </p>
-                <CTAButton href="/digital-assets" variant="outline" className="w-full py-3 text-sm">
-                  Explore Digital Assets
-                </CTAButton>
-              </div>
-            </Reveal>
-          </div>
 
-          {/* Desktop: Two column layout */}
-          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <Reveal>
-              <div className="relative lg:order-2">
-                <Image
-                  src="/media/digital-assets-placeholder.webp"
-                  alt="Digital assets and blockchain illustration"
-                  width={600}
-                  height={400}
-                  className="rounded-xl shadow-lg"
-                />
+      {/* Ecosystem Collaborators */}
+      <Section className="py-12 sm:py-20 lg:py-24 bg-neutral-50">
+        <Container>
+          <Reveal>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 mb-6">
+                Ecosystem Collaborators
+              </h2>
+              <p className="text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed mb-8">
+                In alliance with institutional leaders like Kinetic, The Anomaly Network, NeosLegal, and Chainforce.tech, we help visionary teams scale with credibility and structure.
+              </p>
+              <p className="text-2xl sm:text-3xl font-semibold text-primary-800 italic">
+                Institutional scale meets frontier innovation.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Partner Logos Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 items-center justify-items-center">
+            <ScrollAnimation animation="slideUp" delay={200}>
+              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 w-full h-24 flex items-center justify-center">
+                <span className="text-lg font-bold text-neutral-700">Kinetic</span>
               </div>
-            </Reveal>
+            </ScrollAnimation>
             
-            <Reveal delay={200}>
-              <div className="lg:order-1">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-900 mb-6">
-                  Digital Asset Assurance
-                </h2>
-                <p className="text-base md:text-lg text-neutral-600 leading-relaxed mb-8">
-                  Institutional-grade advisory and assurance for blockchain initiatives—controls, 
-                  reporting, and oversight aligned with global standards. Future-oriented, 
-                  compliance-led approach to digital transformation.
-                </p>
-                <CTAButton href="/digital-assets" variant="outline" size="lg" className="px-6 py-3">
-                  Explore Digital Assets
-                </CTAButton>
+            <ScrollAnimation animation="slideUp" delay={400}>
+              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 w-full h-24 flex items-center justify-center">
+                <span className="text-lg font-bold text-neutral-700">The Anomaly Network</span>
               </div>
-            </Reveal>
+            </ScrollAnimation>
+            
+            <ScrollAnimation animation="slideUp" delay={600}>
+              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 w-full h-24 flex items-center justify-center">
+                <span className="text-lg font-bold text-neutral-700">NeosLegal</span>
+              </div>
+            </ScrollAnimation>
+            
+            <ScrollAnimation animation="slideUp" delay={800}>
+              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 w-full h-24 flex items-center justify-center">
+                <span className="text-lg font-bold text-neutral-700">Chainforce.tech</span>
+              </div>
+            </ScrollAnimation>
           </div>
-        </div>
+        </Container>
       </Section>
-
 
       {/* CTA Banner */}
       <Section className="py-12 sm:py-24">
@@ -470,31 +568,24 @@ export default function HomePage() {
           <ScrollAnimation animation="slideUp" delay={0}>
             {/* Mobile: Smaller text */}
             <div className="block sm:hidden">
-              <h2 className="text-3xl font-bold text-primary-900 mb-4 mobile-text-wrap">
-                Ready to collaborate on mandates or co-investments?
+              <h2 className="text-3xl font-bold text-primary-900 mb-6 mobile-text-wrap">
+                We don't chase trends. We build what comes next.
               </h2>
-              <p className="text-sm text-neutral-600 mb-6 mobile-text-wrap">
-                Join our ecosystem of institutional partners and portfolio companies driving the future of finance and technology.
-              </p>
               <div>
-                <CTAButton href="/contact" variant="outline" className="w-full py-3 text-sm">
-                  Start a Conversation
+                <CTAButton href="/thesis" variant="outline" className="w-full py-3 text-sm">
+                  Explore AGI³
                 </CTAButton>
               </div>
             </div>
 
             {/* Desktop: Larger text */}
             <div className="hidden sm:block">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-900 mb-6">
-                Ready to collaborate on mandates or co-investments?
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 mb-8 leading-tight">
+                We don't chase trends. We build what comes next.
               </h2>
-              <p className="text-base md:text-lg lg:text-xl text-neutral-600 mb-8 lg:mb-10 max-w-3xl mx-auto">
-                Join our ecosystem of institutional partners and portfolio companies 
-                driving the future of finance and technology.
-              </p>
               <div className="flex justify-center">
-                <CTAButton href="/contact" variant="outline" size="lg" className="px-6 py-3">
-                  Start a Conversation
+                <CTAButton href="/thesis" variant="outline" size="lg" className="px-8 py-4">
+                  Explore AGI³
                 </CTAButton>
               </div>
             </div>

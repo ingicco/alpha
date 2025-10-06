@@ -132,79 +132,320 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Hero Section - Story-driven with Scroll Color Effect */}
-      <Section className="pt-24 pb-16 sm:pb-24 lg:pb-32">
+      {/* Hero Section - About Us */}
+      <Section className="pt-24 pb-16 sm:pb-24 lg:pb-32 relative overflow-hidden">
         <Container>
-          <div className="text-center max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <Reveal>
-              <div className="mb-8 sm:mb-10">
-                {/* Mobile: Compelling story title with scroll effect */}
-                <h1 className="block sm:hidden text-4xl font-bold tracking-tight mb-6 leading-tight transition-colors duration-700 text-primary-900 hover:text-accent-600">
-                  Built for the Future of Finance
-                </h1>
-                
-                {/* Desktop: Larger story title with scroll effect */}
-                <h1 className="hidden sm:block text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight transition-colors duration-700 text-primary-900 hover:text-accent-600">
-                  Built for the Future of Finance
-                </h1>
+              <div>
+                <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-2xl">
+                  Discover the story behind AGI³ and our mission to invest in the technologies that will define tomorrow.
+                </p>
               </div>
             </Reveal>
             
             <Reveal delay={200}>
-              <div className="mb-10 sm:mb-12">
-                {/* Mobile: Compelling story - larger text */}
-                <p className="block sm:hidden text-lg text-neutral-600 leading-relaxed transition-colors duration-500">
-                  We saw a gap in the market. Traditional finance was too slow to embrace digital innovation. Digital-first companies lacked institutional discipline. Alpha Group Investment was founded to bridge this divide.
-                </p>
-                
-                {/* Desktop: Full story - larger text */}
-                <p className="hidden sm:block text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-4xl mx-auto transition-colors duration-500">
-                  We saw a gap in the market. Traditional finance was too slow to embrace digital innovation. Digital-first companies lacked institutional discipline. Alpha Group Investment was founded to bridge this divide, combining decades of institutional expertise with cutting-edge digital asset knowledge.
-                </p>
+              <div className="relative">
+                <div className="rounded-xl shadow-lg aspect-[3/4] bg-neutral-200 w-full max-w-md mx-auto flex items-center justify-center">
+                  <div className="text-center text-neutral-500">
+                    <div className="text-4xl mb-2">📊</div>
+                    <p className="text-sm font-medium">Hero Image</p>
+                    <p className="text-xs">400x500px</p>
+                  </div>
+                </div>
               </div>
             </Reveal>
           </div>
         </Container>
       </Section>
 
-      {/* Our Story Section */}
-      <Section background="muted" className="py-16 sm:py-24 lg:py-32">
+      {/* Who We Are Section */}
+      <Section className="py-16 sm:py-24 lg:py-32 bg-neutral-50">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <Reveal>
-              <div>
-                <p className="text-base uppercase tracking-wider text-accent-600 font-semibold mb-6 transition-colors duration-500">Our Story</p>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 mb-10 leading-tight transition-colors duration-700 hover:text-accent-600">
-                  Where Expertise Meets Opportunity
-                </h2>
+              <div className="relative">
+                <div className="rounded-xl shadow-lg aspect-[3/4] bg-neutral-200 w-full max-w-md mx-auto flex items-center justify-center">
+                  <div className="text-center text-neutral-500">
+                    <div className="text-4xl mb-2">🏢</div>
+                    <p className="text-sm font-medium">Who We Are</p>
+                    <p className="text-xs">400x500px</p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={200}>
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6 leading-tight">
+                    Who We Are
+                  </h2>
+                </div>
                 
-                <div className="space-y-8 text-xl md:text-2xl text-neutral-600 leading-relaxed">
-                  <p className="transition-colors duration-500 hover:text-primary-700">
-                    <strong className="text-primary-900 transition-colors duration-300">The problem was clear:</strong> Traditional financial institutions couldn't move fast enough to capture digital asset opportunities. Meanwhile, crypto-native companies lacked the institutional discipline needed for serious capital.
+                <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
+                  <p>
+                    Alpha Group Investments (AGI³) is a principal investment group dedicated to the technologies of tomorrow.
                   </p>
                   
-                  <p className="transition-colors duration-500 hover:text-primary-700">
-                    <strong className="text-primary-900 transition-colors duration-300">We saw the solution:</strong> A new kind of financial partner that could speak both languages fluently. One that understood both the rigor of institutional governance and the transformative potential of blockchain technology.
+                  <p>
+                    We invest our own capital, not as fund managers, but as builders of conviction.
                   </p>
                   
-                  <p className="transition-colors duration-500 hover:text-primary-700">
-                    <strong className="text-primary-900 transition-colors duration-300">Today, Alpha Group Investment</strong> stands at this intersection, helping forward-thinking organizations navigate the convergence of traditional and digital finance with confidence and precision.
+                  <p>
+                    Every investment we make is a statement of belief:
                   </p>
+                  
+                  <div className="border-l-4 border-neutral-300 pl-6 py-2">
+                    <p className="text-xl font-medium text-neutral-800 italic">
+                      That the future belongs to those who design it.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Our Philosophy Section */}
+      <Section className="py-16 sm:py-24 lg:py-32 bg-white">
+        <Container>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <Reveal>
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6 leading-tight">
+                    Our Philosophy
+                  </h2>
+                </div>
+                
+                <div className="space-y-6">
+                  <p className="text-lg text-neutral-600 leading-relaxed">
+                    Investing is a <strong className="text-neutral-900">science</strong> — measured, analytical, and data-driven.
+                  </p>
+                  
+                  <p className="text-lg text-neutral-600 leading-relaxed">
+                    It is also an <strong className="text-neutral-900">art</strong> — intuitive, human, and imaginative.
+                  </p>
+                  
+                  <div className="bg-neutral-50 rounded-xl p-6 mt-8">
+                    <p className="text-xl font-semibold text-neutral-900 mb-3">
+                      At AGI³, we merge both worlds.
+                    </p>
+                    <p className="text-lg text-neutral-600">
+                      We look beyond valuation to see institutional potential, regulatory alignment, and scalable liquidity.
+                    </p>
+                  </div>
                 </div>
               </div>
             </Reveal>
             
             <Reveal delay={200}>
               <div className="relative">
-                <div className="w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-700 hover:scale-105">
-                  <Image
-                    src="/media/about-vision.webp"
-                    alt="Alpha Group Investment story and vision"
-                    fill
-                    className="object-cover rounded-3xl"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+                <div className="rounded-xl shadow-lg aspect-[3/4] bg-neutral-200 w-full max-w-md mx-auto flex items-center justify-center">
+                  <div className="text-center text-neutral-500">
+                    <div className="text-4xl mb-2">🎯</div>
+                    <p className="text-sm font-medium">Our Philosophy</p>
+                    <p className="text-xs">400x500px</p>
+                  </div>
                 </div>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Our Structure Section */}
+      <Section className="py-16 sm:py-24 lg:py-32 bg-neutral-50">
+        <Container>
+          <div className="max-w-5xl mx-auto">
+            <Reveal>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-8 leading-tight">
+                  Our Structure
+                </h2>
+                
+                <p className="text-xl text-neutral-600 leading-relaxed mb-12 max-w-3xl mx-auto">
+                  We operate through three connected pillars that form the foundation of our investment philosophy:
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Hierarchy Diagram */}
+            <div className="relative">
+              {/* Top Level - AGI³ */}
+              <Reveal delay={200}>
+                <div className="text-center mb-16">
+                  <div className="inline-block bg-primary-900 text-white rounded-2xl px-8 py-6 shadow-lg">
+                    <h3 className="text-2xl font-bold mb-2">AGI³</h3>
+                    <p className="text-primary-100 text-sm">Alpha Group Investments</p>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Connection Lines */}
+              <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-px h-16 bg-primary-300"></div>
+              <div className="absolute top-40 left-1/4 right-1/4 h-px bg-primary-300"></div>
+              <div className="absolute top-40 left-1/4 w-px h-8 bg-primary-300"></div>
+              <div className="absolute top-40 left-1/2 transform -translate-x-1/2 w-px h-8 bg-primary-300"></div>
+              <div className="absolute top-40 right-1/4 w-px h-8 bg-primary-300"></div>
+
+              {/* Three Pillars */}
+              <div className="grid md:grid-cols-3 gap-8 lg:gap-12 pt-12">
+                {/* Pillar 1 - Investment Arm */}
+                <Reveal delay={400}>
+                  <div className="text-center h-full">
+                    <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-primary-200 hover:border-accent-400 transition-colors duration-300 h-full flex flex-col">
+                      <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                        <div className="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">01</span>
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-primary-900 mb-3">
+                        Investment Arm
+                      </h3>
+                      <p className="text-neutral-600 leading-relaxed text-sm flex-grow">
+                        Deploying proprietary capital into emerging technologies — digital assets, AI, tokenization, and financial infrastructure.
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+
+                {/* Pillar 2 - Research & Advisory */}
+                <Reveal delay={500}>
+                  <div className="text-center h-full">
+                    <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-primary-200 hover:border-accent-400 transition-colors duration-300 h-full flex flex-col">
+                      <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                        <div className="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">02</span>
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-primary-900 mb-3">
+                        Research & Advisory Engine
+                      </h3>
+                      <p className="text-neutral-600 leading-relaxed text-sm flex-grow">
+                        Our internal think-tank drives insights across market structure, regulation, and technology. It fuels our thesis and identifies institutional pathways for growth.
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+
+                {/* Pillar 3 - Institutional Ecosystem */}
+                <Reveal delay={600}>
+                  <div className="text-center h-full">
+                    <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-primary-200 hover:border-accent-400 transition-colors duration-300 h-full flex flex-col">
+                      <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                        <div className="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">03</span>
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-primary-900 mb-3">
+                        Institutional Ecosystem Advisory
+                      </h3>
+                      <p className="text-neutral-600 leading-relaxed text-sm flex-grow">
+                        Because we are deeply invested, we selectively advise companies we believe in, supporting their growth through tokenization, compliance, and structured capital solutions.
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              </div>
+
+              {/* Bottom Connection */}
+              <Reveal delay={700}>
+                <div className="text-center mt-12 pt-8 border-t border-primary-200">
+                  <p className="text-primary-700 font-medium">
+                    Integrated & Synergistic Approach
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Our Vision with AGI³ Section */}
+      <Section className="py-16 sm:py-24 lg:py-32 bg-white">
+        <Container>
+          <div className="max-w-4xl mx-auto text-center">
+            <Reveal>
+              <div className="mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-8 leading-tight">
+                  Our Vision with AGI³
+                </h2>
+                
+                <p className="text-xl text-neutral-600 leading-relaxed">
+                  The AGI³ symbolizes our evolution and commitment to the future of finance.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Large AGI³ Display */}
+            <Reveal delay={200}>
+              <div className="mb-16">
+                <div className="text-8xl md:text-9xl font-bold text-primary-900 mb-8 tracking-tight">
+                  <span id="agi-text" className="transition-all duration-300">AGI</span><span id="cubed-text" className="transition-all duration-300">³</span>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Explanation Grid */}
+            <div className="grid md:grid-cols-2 gap-12 mb-16">
+              <Reveal delay={400}>
+                <div 
+                  className="text-left cursor-pointer group"
+                  onMouseEnter={() => {
+                    const agiText = document.getElementById('agi-text');
+                    if (agiText) agiText.style.textShadow = '0 0 30px rgba(245, 158, 11, 0.6)';
+                  }}
+                  onMouseLeave={() => {
+                    const agiText = document.getElementById('agi-text');
+                    if (agiText) agiText.style.textShadow = 'none';
+                  }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-primary-900 text-white rounded-lg flex items-center justify-center font-bold text-xs mr-4 group-hover:bg-accent-600 transition-colors duration-300">
+                      AGI
+                    </div>
+                    <h3 className="text-2xl font-bold text-primary-900 group-hover:text-accent-600 transition-colors duration-300">Alpha Group Investments</h3>
+                  </div>
+                  <p className="text-lg text-neutral-600 leading-relaxed group-hover:text-primary-700 transition-colors duration-300">
+                    Intelligence, foresight, and conviction. Our foundation built on decades of investment expertise and strategic thinking.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal delay={600}>
+                <div 
+                  className="text-left cursor-pointer group"
+                  onMouseEnter={() => {
+                    const cubedText = document.getElementById('cubed-text');
+                    if (cubedText) cubedText.style.textShadow = '0 0 30px rgba(245, 158, 11, 0.6)';
+                  }}
+                  onMouseLeave={() => {
+                    const cubedText = document.getElementById('cubed-text');
+                    if (cubedText) cubedText.style.textShadow = 'none';
+                  }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-primary-900 text-white rounded-lg flex items-center justify-center font-bold text-sm mr-4 group-hover:bg-accent-600 transition-colors duration-300">
+                      3
+                    </div>
+                    <h3 className="text-2xl font-bold text-primary-900 group-hover:text-accent-600 transition-colors duration-300">The Power of Three</h3>
+                  </div>
+                  <p className="text-lg text-neutral-600 leading-relaxed group-hover:text-primary-700 transition-colors duration-300">
+                    Web3, tokenization, and exponential growth. The three forces reshaping the future of finance and technology.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Vision Statement */}
+            <Reveal delay={800}>
+              <div className="bg-neutral-50 rounded-2xl p-8 md:p-12">
+                <p className="text-2xl md:text-3xl font-semibold text-neutral-900 italic leading-relaxed">
+                  "We invest today in what will be mainstream tomorrow."
+                </p>
               </div>
             </Reveal>
           </div>
@@ -220,7 +461,7 @@ export default function AboutPage() {
               <div>
                 <p className="text-base uppercase tracking-wider text-accent-600 font-semibold mb-6 transition-colors duration-500">Meet the Team</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 mb-10 leading-tight transition-colors duration-700 hover:text-accent-600">
-                  The People Behind Alpha
+                  The People Behind AGI³
                 </h2>
                 <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-4xl mx-auto transition-colors duration-500 hover:text-primary-700">
                   Our success comes from our people. Industry veterans, digital asset pioneers, and institutional finance experts who've spent decades building the expertise you need to succeed in tomorrow's financial landscape.
