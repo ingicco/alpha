@@ -384,7 +384,7 @@ export default function AboutPage() {
             <Reveal delay={200}>
               <div className="mb-16">
                 <div className="text-8xl md:text-9xl font-bold text-primary-900 mb-8 tracking-tight">
-                  <span id="agi-text" className="transition-all duration-300">AGI</span><span id="cubed-text" className="transition-all duration-300">³</span>
+                  <span id="agi-text" className="transition-all duration-500 ease-out">AGI</span><span id="cubed-text" className="transition-all duration-500 ease-out">³</span>
                 </div>
               </div>
             </Reveal>
@@ -396,11 +396,17 @@ export default function AboutPage() {
                   className="text-left cursor-pointer group"
                   onMouseEnter={() => {
                     const agiText = document.getElementById('agi-text');
-                    if (agiText) agiText.style.textShadow = '0 0 30px rgba(245, 158, 11, 0.6)';
+                    if (agiText) {
+                      agiText.style.textShadow = '0 0 20px rgba(245, 158, 11, 0.3), 0 0 40px rgba(245, 158, 11, 0.1)';
+                      agiText.style.color = '#f59e0b';
+                    }
                   }}
                   onMouseLeave={() => {
                     const agiText = document.getElementById('agi-text');
-                    if (agiText) agiText.style.textShadow = 'none';
+                    if (agiText) {
+                      agiText.style.textShadow = 'none';
+                      agiText.style.color = '#1e3a8a';
+                    }
                   }}
                 >
                   <div className="flex items-center mb-4">
@@ -420,11 +426,17 @@ export default function AboutPage() {
                   className="text-left cursor-pointer group"
                   onMouseEnter={() => {
                     const cubedText = document.getElementById('cubed-text');
-                    if (cubedText) cubedText.style.textShadow = '0 0 30px rgba(245, 158, 11, 0.6)';
+                    if (cubedText) {
+                      cubedText.style.textShadow = '0 0 20px rgba(245, 158, 11, 0.3), 0 0 40px rgba(245, 158, 11, 0.1)';
+                      cubedText.style.color = '#f59e0b';
+                    }
                   }}
                   onMouseLeave={() => {
                     const cubedText = document.getElementById('cubed-text');
-                    if (cubedText) cubedText.style.textShadow = 'none';
+                    if (cubedText) {
+                      cubedText.style.textShadow = 'none';
+                      cubedText.style.color = '#1e3a8a';
+                    }
                   }}
                 >
                   <div className="flex items-center mb-4">
@@ -581,7 +593,7 @@ export default function AboutPage() {
           <div className="text-center max-w-5xl mx-auto">
             <Reveal>
               <div>
-                <p className="text-base uppercase tracking-wider text-accent-400 font-semibold mb-6 transition-colors duration-500">Why Alpha</p>
+                <p className="text-base uppercase tracking-wider text-accent-400 font-semibold mb-6 transition-colors duration-500">Why AGI³</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-10 leading-tight transition-colors duration-700 hover:text-accent-400">
                   Your Success Is Our Mission
                 </h2>
@@ -595,7 +607,7 @@ export default function AboutPage() {
                   </p>
                   
                   <p className="transition-colors duration-500 hover:text-white">
-                    <strong className="text-white transition-colors duration-300">When you work with Alpha,</strong> you're not just hiring advisors or investors. You're gaining partners who have skin in the game and a track record of turning vision into reality.
+                    <strong className="text-white transition-colors duration-300">When you work with AGI³,</strong> you're not just hiring advisors or investors. You're gaining partners who have skin in the game and a track record of turning vision into reality.
                   </p>
                 </div>
               </div>
@@ -614,7 +626,7 @@ export default function AboutPage() {
                   Ready to Build the Future Together?
                 </h2>
                 <p className="text-xl md:text-2xl text-neutral-600 mb-12 leading-relaxed transition-colors duration-500 hover:text-primary-700">
-                  The convergence of traditional finance and digital assets is happening now. The question isn't whether to participate, but who to partner with. Let's explore how Alpha can accelerate your success in this new landscape.
+                  The convergence of traditional finance and digital assets is happening now. The question isn't whether to participate, but who to partner with. Let's explore how AGI³ can accelerate your success in this new landscape.
                 </p>
                 <div className="flex justify-center">
                   <CTAButton href="/contact" variant="outline" size="lg" className="px-10 py-5 text-lg transition-all duration-300 hover:scale-105">

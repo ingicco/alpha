@@ -285,52 +285,6 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      {/* Additional Information */}
-      <Section background="muted">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto">
-            <Reveal>
-              <h2 className="text-2xl font-bold text-primary-900 mb-6">
-                Ready to Get Started?
-              </h2>
-              <p className="text-lg text-neutral-600 mb-8">
-                Our team brings decades of experience in institutional finance, 
-                digital assets, and regulatory compliance. Let's discuss how we 
-                can support your organization's objectives.
-              </p>
-              
-              <div className="grid gap-6 md:grid-cols-3">
-                <div className="text-center">
-                  <h3 className="font-semibold text-primary-900 mb-2">
-                    Advisory Mandates
-                  </h3>
-                  <p className="text-sm text-neutral-600">
-                    Institutional advisory across compliance, governance, and digital asset strategy
-                  </p>
-                </div>
-                
-                <div className="text-center">
-                  <h3 className="font-semibold text-primary-900 mb-2">
-                    Co-Investment
-                  </h3>
-                  <p className="text-sm text-neutral-600">
-                    Pre-IPO, secondary, and startup investment opportunities
-                  </p>
-                </div>
-                
-                <div className="text-center">
-                  <h3 className="font-semibold text-primary-900 mb-2">
-                    Digital Asset Assurance
-                  </h3>
-                  <p className="text-sm text-neutral-600">
-                    Compliance frameworks and technical due diligence for blockchain initiatives
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </Section>
     </>
   )
 }

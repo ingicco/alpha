@@ -18,8 +18,8 @@ const transformativeLayers = [
     title: 'Financial Infrastructure',
     description: 'The foundational systems that enable next-generation financial services and institutional adoption.',
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H3.75m0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+      <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
       </svg>
     )
   },
@@ -27,8 +27,8 @@ const transformativeLayers = [
     title: 'Tokenized Assets & Liquidity Rails',
     description: 'Infrastructure enabling the tokenization of real-world assets and programmable liquidity systems.',
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+      <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
       </svg>
     )
   },
@@ -36,8 +36,8 @@ const transformativeLayers = [
     title: 'Artificial Intelligence & Data Networks',
     description: 'AI infrastructure and data systems that power intelligent financial services and decision-making.',
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.611L5 14.5" />
+      <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-16.5 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z" />
       </svg>
     )
   },
@@ -45,8 +45,8 @@ const transformativeLayers = [
     title: 'RegTech & Institutional On-Ramps',
     description: 'Regulatory technology and compliance infrastructure that enables institutional participation.',
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+      <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0z" />
       </svg>
     )
   },
@@ -212,20 +212,22 @@ export default function InvestmentPage() {
             </div>
           </Reveal>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
             {transformativeLayers.map((layer, index) => (
               <Reveal key={layer.title} delay={index * 150}>
-                <div className="text-center p-6 bg-neutral-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4 text-accent-600">
-                    {layer.icon}
+                <div className="text-center group">
+                  {/* Icon - Clean, no background */}
+                  <div className="flex justify-center mb-8">
+                    <div className="text-primary-600 group-hover:text-accent-600 transition-colors duration-300">
+                      {layer.icon}
+                    </div>
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-lg font-bold text-primary-900 mb-3 leading-tight">
+                  <h3 className="text-xl font-bold text-primary-900 mb-4 leading-tight">
                     {layer.title}
                   </h3>
-                  <p className="text-neutral-600 leading-relaxed text-sm">
+                  <p className="text-neutral-600 leading-relaxed">
                     {layer.description}
                   </p>
                 </div>
@@ -254,27 +256,34 @@ export default function InvestmentPage() {
             </Reveal>
           </div>
 
-          <div className="grid gap-12 lg:gap-16 lg:grid-cols-3">
-            {focusAreas.map((area, index) => (
-              <Reveal key={area.title} delay={index * 150}>
-                <div className="text-center">
-                  {/* Icon - Centered above title */}
-                  <div className="flex justify-center mb-6">
-                    <div className="w-20 h-20 lg:w-24 lg:h-24 text-accent-600 flex items-center justify-center">
-                      {area.icon}
+          {/* Clean Philosophy Layout */}
+          <div className="max-w-4xl mx-auto">
+            <div className="grid gap-16 lg:gap-20">
+              {focusAreas.map((area, index) => (
+                <Reveal key={area.title} delay={index * 150}>
+                  <div className="text-center">
+                    {/* Large Number Badge */}
+                    <div className="flex justify-center mb-8">
+                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center shadow-lg">
+                        <span className="text-2xl font-bold text-white">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </div>
                     </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-3xl lg:text-4xl font-bold text-primary-900 mb-6 leading-tight">
+                      {area.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-xl text-neutral-600 leading-relaxed font-medium max-w-2xl mx-auto">
+                      {area.description}
+                    </p>
                   </div>
-                  
-                  <h3 className="text-xl lg:text-2xl font-bold text-primary-900 mb-4 leading-tight">
-                    {area.title}
-                  </h3>
-                  
-                  <p className="text-lg text-neutral-600 leading-relaxed font-medium">
-                    {area.description}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>

@@ -20,7 +20,7 @@ const digitalAssetsFocus = [
   },
   {
     id: 'reserve',
-    title: 'Reserve Transparency and Verification',
+    title: 'Transparency and Verification',
     description: 'Comprehensive reserve management and transparency frameworks.',
     points: [
       'Reserve Auditing',
@@ -102,13 +102,7 @@ export default function DigitalAssetsCards() {
 
   return (
     <div className="absolute bottom-0 left-0 right-0 px-8 pb-8">
-      {/* Header Section - Fixed Position */}
-      <div className="text-center mb-12">
-        <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Our Focus</h3>
-        <p className="text-accent-400 text-base font-semibold italic leading-relaxed max-w-xl mx-auto">
-          Assurance isn't an afterthought; it's the foundation of adoption.
-        </p>
-      </div>
+      {/* Header Section - Removed */}
 
       {/* Single Row of Cards at Bottom - Centered */}
       <div className="flex gap-6 items-end justify-center mb-8 max-w-6xl mx-auto">
@@ -128,7 +122,7 @@ export default function DigitalAssetsCards() {
               <div
                 className={`relative overflow-hidden transition-all duration-500 ease-out ${
                   isActive 
-                    ? 'bg-white rounded-3xl shadow-2xl h-72 p-6' 
+                    ? 'bg-white rounded-3xl shadow-2xl h-56 p-5' 
                     : 'bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl h-20 p-4 hover:bg-white/20'
                 }`}
               >

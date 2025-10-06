@@ -88,7 +88,7 @@ export default function ThesisPage() {
               <div className="mb-8">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
                   Our Investment Thesis
-                  <span className="block text-xl md:text-2xl lg:text-3xl text-neutral-300 font-light mt-6 leading-relaxed max-w-4xl mx-auto">
+                  <span className="block text-xl md:text-2xl lg:text-3xl text-white font-medium mt-6 leading-relaxed max-w-4xl mx-auto">
                     The convergence of regulation, tokenization, and liquidity is creating unprecedented opportunities in the new world of finance.
                   </span>
                 </h1>
@@ -209,15 +209,15 @@ export default function ThesisPage() {
       </Section>
 
       {/* Market Opportunity */}
-      <Section className="py-12 sm:py-20 lg:py-24 bg-primary-950 text-white">
+      <Section className="py-12 sm:py-20 lg:py-24 bg-white">
         <Container>
           <div className="text-center">
             <Reveal>
               <div className="mb-12">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-primary-900">
                   The Opportunity Ahead
                 </h2>
-                <p className="text-xl text-neutral-300 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-xl text-primary-900 max-w-4xl mx-auto leading-relaxed font-medium">
                   We are at the beginning of the largest transformation in financial infrastructure since the creation of modern banking. The convergence of technology, regulation, and institutional adoption creates a once-in-a-generation investment opportunity.
                 </p>
               </div>
@@ -226,16 +226,16 @@ export default function ThesisPage() {
             <Reveal delay={400}>
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">$2.3T</div>
-                  <div className="text-neutral-300">Digital Asset Market Cap</div>
+                  <div className="text-4xl font-bold text-accent-600 mb-2">$2.3T</div>
+                  <div className="text-primary-900 font-medium">Digital Asset Market Cap</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">$867B</div>
-                  <div className="text-neutral-300">Tokenizable Assets</div>
+                  <div className="text-4xl font-bold text-accent-600 mb-2">$867B</div>
+                  <div className="text-primary-900 font-medium">Tokenizable Assets</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">156</div>
-                  <div className="text-neutral-300">Countries with Crypto Regulation</div>
+                  <div className="text-4xl font-bold text-accent-600 mb-2">156</div>
+                  <div className="text-primary-900 font-medium">Countries with Crypto Regulation</div>
                 </div>
               </div>
             </Reveal>
