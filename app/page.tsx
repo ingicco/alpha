@@ -417,39 +417,6 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Strategic Investment Focus */}
-      <Section
-        title="Strategic Investment Focus"
-        description="Targeted capital deployment across transformative technology sectors."
-      >
-        <ScrollAnimation animation="scale" className="mb-8">
-          <div className="bg-neutral-50 rounded-xl p-8 text-center">
-            <div className="text-2xl font-bold text-primary-900 mb-4">Investment Allocation</div>
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent-600 mb-2">40%</div>
-                <div className="text-sm text-neutral-600">Digital Assets</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent-600 mb-2">35%</div>
-                <div className="text-sm text-neutral-600">Infrastructure</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent-600 mb-2">25%</div>
-                <div className="text-sm text-neutral-600">Advisory</div>
-              </div>
-            </div>
-          </div>
-        </ScrollAnimation>
-        <ScrollAnimation animation="fadeIn" delay={300}>
-          <div className="text-center">
-            <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
-              We strategically invest in breakthrough technologies across AI infrastructure, 
-              quantum computing, biotechnology, and sustainable energy sectors.
-            </p>
-          </div>
-        </ScrollAnimation>
-      </Section>
 
       {/* Advisory Mandates Teaser */}
       <Section className="py-12 sm:py-24">
