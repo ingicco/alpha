@@ -72,7 +72,7 @@ export default function ThesisPage() {
         <div className="absolute inset-0">
           <div className="absolute inset-6 md:inset-12 lg:inset-16 top-4 bottom-4">
             <Image
-              src="/media/thesis-hero.webp"
+              src="/media/investment-hero-bg.webp"
               alt="Investment Thesis"
               fill
               className="object-cover rounded-2xl"
@@ -160,7 +160,7 @@ export default function ThesisPage() {
             <Reveal delay={200}>
               <div className="relative">
                 <Image
-                  src="/media/investment-philosophy.webp"
+              src="/media/investment-approach.webp"
                   alt="Investment Philosophy"
                   width={600}
                   height={750}
