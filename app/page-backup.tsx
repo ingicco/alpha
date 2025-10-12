@@ -86,9 +86,9 @@ export default function HomePage() {
               <div className="mb-12">
                 {/* Clean, large title */}
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white mb-8 leading-[0.9]">
-                  Strategic Capital
+                  Radiant future
                   <br />
-                  <span className="text-5xl md:text-7xl lg:text-8xl font-light text-white">Digital Innovation</span>
+                  <span className="text-4xl md:text-6xl lg:text-7xl font-normal text-accent-400">Empowering innovation</span>
                 </h1>
               </div>
             </Reveal>
@@ -139,146 +139,6 @@ export default function HomePage() {
           </div>
         </Container>
       </Section>
-
-      {/* Excellence Redefined - Side by Side Layout */}
-      <div className="relative bg-white">
-        <div className="lg:grid lg:grid-cols-2 lg:min-h-screen">
-          {/* Left side - Sticky title */}
-          <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:justify-center bg-white">
-            <Container>
-              <div className="text-center px-8 py-16 lg:py-0">
-                <Reveal>
-                  <h2 className="text-6xl md:text-7xl lg:text-9xl font-extralight text-black leading-tight mb-6">
-                    Excellence
-                    <br />
-                    Redefined
-                  </h2>
-                </Reveal>
-                <Reveal delay={200}>
-                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-md mx-auto font-light">
-                    Where institutional precision meets digital innovation
-                  </p>
-                </Reveal>
-              </div>
-            </Container>
-          </div>
-
-          {/* Right side - Scrolling content */}
-          <div className="">
-            {/* Section 1 - Tokenization */}
-            <div className="min-h-screen bg-black flex items-center py-20">
-              <Container>
-                <div className="max-w-2xl">
-                  <ScrollAnimation animation="slideUp" delay={0}>
-                    <div className="mb-8">
-                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg bg-gray-800">
-                        <div className="w-full h-96 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-4xl font-light text-white mb-2">01</div>
-                            <div className="text-lg text-white">Image Placeholder</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
-                          Tokenization Leadership
-                        </h3>
-                        <p className="text-lg text-white leading-relaxed">
-                          Bridging traditional assets with digital infrastructure for institutional capital deployment.
-                        </p>
-                      </div>
-                    </div>
-                  </ScrollAnimation>
-                </div>
-              </Container>
-            </div>
-
-            {/* Section 2 - Digital Infrastructure */}
-            <div className="min-h-screen bg-gray-900 flex items-center py-20">
-              <Container>
-                <div className="max-w-2xl">
-                  <ScrollAnimation animation="slideUp" delay={200}>
-                    <div className="mb-8">
-                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg bg-gray-800">
-                        <div className="w-full h-96 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-4xl font-light text-white mb-2">02</div>
-                            <div className="text-lg text-white">Image Placeholder</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
-                          Digital Infrastructure Excellence
-                        </h3>
-                        <p className="text-lg text-white leading-relaxed">
-                          Institutional-grade digital asset infrastructure meeting the highest standards of security and compliance.
-                        </p>
-                      </div>
-                    </div>
-                  </ScrollAnimation>
-                </div>
-              </Container>
-            </div>
-
-            {/* Section 3 - Strategic Capital */}
-            <div className="min-h-screen bg-black flex items-center py-20">
-              <Container>
-                <div className="max-w-2xl">
-                  <ScrollAnimation animation="slideUp" delay={400}>
-                    <div className="mb-8">
-                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg bg-gray-800">
-                        <div className="w-full h-96 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-4xl font-light text-white mb-2">03</div>
-                            <div className="text-lg text-white">Image Placeholder</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
-                          Strategic Capital Deployment
-                        </h3>
-                        <p className="text-lg text-white leading-relaxed">
-                          Patient, precise capital strategically deployed for maximum long-term value creation.
-                        </p>
-                      </div>
-                    </div>
-                  </ScrollAnimation>
-                </div>
-              </Container>
-            </div>
-
-            {/* Section 4 - Global Network */}
-            <div className="min-h-screen bg-gray-900 flex items-center py-20">
-              <Container>
-                <div className="max-w-2xl">
-                  <ScrollAnimation animation="slideUp" delay={600}>
-                    <div className="mb-8">
-                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg bg-gray-800">
-                        <div className="w-full h-96 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-4xl font-light text-white mb-2">04</div>
-                            <div className="text-lg text-white">Image Placeholder</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
-                          Global Network Access
-                        </h3>
-                        <p className="text-lg text-white leading-relaxed">
-                          Extensive network of institutional partners and technology leaders accelerating growth globally.
-                        </p>
-                      </div>
-                    </div>
-                  </ScrollAnimation>
-                </div>
-              </Container>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Core Focus - Scrolling Text */}
       <div className="py-12 sm:py-20 lg:py-24 w-screen relative left-1/2 right-1/2 -mx-[50vw]">

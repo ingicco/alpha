@@ -89,14 +89,14 @@
     display: none;  /* Chrome, Safari and Opera */
   }
 
-  /* Infinite scroll animation */
+  /* Infinite scroll animation - faster */
   .animate-scroll {
-    animation: scroll 30s linear infinite;
+    animation: scroll 25s linear infinite;
   }
   
-  /* Slow infinite scroll animation for team members */
+  /* Slow infinite scroll animation - slower */
   .animate-scroll-slow {
-    animation: scroll-slow 20s linear infinite;
+    animation: scroll-slow 40s linear infinite;
   }
   
   @keyframes scroll {

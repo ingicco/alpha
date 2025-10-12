@@ -15,14 +15,20 @@ export function Footer() {
       {/* Main footer content */}
       <div className="mobile-container py-12 sm:py-16">
         <div className="flex flex-col items-center text-center gap-6">
-          <div>
-            <Image
-              src="/alpha-logo.png"
-              alt="Alpha Group Investment"
-              width={200}
-              height={65}
-              className="h-16 w-auto"
-            />
+          {/* Logo and Large AGI³ Text */}
+          <div className="flex items-center gap-8">
+            <div>
+              <Image
+                src="/alpha-logo.png"
+                alt="AGI³"
+                width={400}
+                height={200}
+                className="h-32 md:h-40 lg:h-56 xl:h-64 w-auto"
+              />
+            </div>
+            <div className="text-9xl md:text-[10rem] lg:text-[14rem] xl:text-[16rem] font-extralight text-white leading-none tracking-tight">
+              AGI³
+            </div>
           </div>
           <div className="text-base text-neutral-300 leading-relaxed">
             <p>Institutional-grade advisory, investments, and digital asset</p>
@@ -36,7 +42,7 @@ export function Footer() {
         <div className="mobile-container py-4">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-neutral-400">
-              © {currentYear} Alpha Group Investment. All rights reserved.
+              © {currentYear} AGI³. All rights reserved.
             </p>
             
             <div className="flex items-center gap-6">

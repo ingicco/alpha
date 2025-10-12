@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
-import { Container } from './Container'
 import { clsx } from 'clsx'
 
 const navigation = [
@@ -20,11 +19,31 @@ const navigation = [
 export function NavBar() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  // Handle scroll effect for sticky navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setIsScrolled(scrollTop > 50)
+    }
+
+    // Set initial state
+    handleScroll()
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Debug state changes
   useEffect(() => {
     console.log('Mobile menu state changed:', mobileMenuOpen)
   }, [mobileMenuOpen])
+
+  // Debug scroll state
+  useEffect(() => {
+    console.log('Scroll state changed:', isScrolled, 'scrollY:', window.scrollY)
+  }, [isScrolled])
 
   // Handle body scroll lock when mobile menu is open
   useEffect(() => {
@@ -59,10 +78,20 @@ export function NavBar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-primary-900/95 backdrop-blur-xl border-b border-primary-800/50 shadow-sm">
-        <Container>
-          <nav className="flex items-center justify-between py-6" aria-label="Global">
-            <div className="flex lg:flex-1">
+      <header 
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style={{
+          backgroundColor: isScrolled ? 'rgba(30, 58, 138, 0.95)' : 'transparent',
+          backdropFilter: isScrolled ? 'blur(12px)' : 'none',
+          boxShadow: isScrolled ? '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' : 'none'
+        }}
+      >
+          <nav className={clsx(
+            "flex items-center justify-center relative transition-all duration-300 mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl",
+            isScrolled ? "py-4" : "py-8"
+          )} aria-label="Global">
+            {/* Logo - Absolute positioned to left */}
+            <div className="absolute left-0">
               <Link href="/" className="-m-1.5 p-1.5 group">
                 <span className="sr-only">Alpha Group Investment</span>
                 <Image
@@ -76,10 +105,11 @@ export function NavBar() {
               </Link>
             </div>
             
-            <div className="flex lg:hidden">
+            {/* Mobile menu button - Absolute positioned to right */}
+            <div className="absolute right-0 flex lg:hidden">
               <button
                 type="button"
-                className="-m-2.5 inline-flex items-center justify-center rounded-md p-3 text-white hover:bg-primary-800 hover:text-accent-400 transition-colors border border-transparent hover:border-primary-700"
+                className="text-white hover:bg-white/10 -m-2.5 inline-flex items-center justify-center rounded-md p-3 transition-colors"
                 onClick={() => {
                   console.log('Hamburger clicked, current state:', mobileMenuOpen)
                   setMobileMenuOpen(!mobileMenuOpen)
@@ -94,28 +124,35 @@ export function NavBar() {
               </button>
             </div>
             
-            <div className="hidden lg:flex lg:gap-x-10">
+            {/* Centered Navigation */}
+            <div className="hidden lg:flex lg:gap-x-12">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={clsx(
-                    'text-sm font-semibold leading-6 transition-all duration-200 relative group py-2',
-                    pathname === item.href
-                      ? 'text-accent-400'
-                      : 'text-white hover:text-accent-400'
-                  )}
+                  className="relative group py-2 px-1"
                 >
-                  {item.name}
+                  {/* Simple text with clean hover */}
+              <span className={clsx(
+                'text-base font-medium transition-colors duration-300',
+                pathname === item.href
+                  ? 'text-white'
+                  : (isScrolled 
+                      ? 'text-white/80 hover:text-white' 
+                      : 'text-white/80 hover:text-white')
+              )}>
+                    {item.name}
+                  </span>
+                  
+                  {/* Underline */}
                   <span className={clsx(
-                    'absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent-400 to-accent-500 transform transition-transform duration-200',
+                    'absolute bottom-0 left-0 w-full h-0.5 bg-white transform transition-all duration-300 origin-left',
                     pathname === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                   )} />
                 </Link>
               ))}
             </div>
           </nav>
-        </Container>
       </header>
 
       {/* Mobile menu - Outside of header for full screen overlay */}
