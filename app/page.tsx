@@ -129,11 +129,9 @@ export default function HomePage() {
         </Container>
 
         {/* Scrolling Logos - Full Width at Bottom */}
-        <Reveal delay={600}>
-          <div className="absolute bottom-2 left-0 right-0 w-full z-50 bg-black/20">
-            <LogoStrip logos={partnerLogos} className="opacity-80" />
-          </div>
-        </Reveal>
+        <div className="absolute bottom-0 left-0 right-0 w-full z-50 bg-black/30 py-4">
+          <LogoStrip logos={partnerLogos} className="opacity-100" />
+        </div>
       </section>
 
       {/* Investment Philosophy - Clean Modern Design */}
@@ -478,7 +476,21 @@ export default function HomePage() {
         <div className="mobile-container">
           {/* Mobile: Single column layout */}
           <div className="block lg:hidden space-y-6">
+            {/* Mobile Image */}
             <ScrollAnimation animation="slideUp" delay={0}>
+              <div className="relative mb-6">
+                <Image
+                  src="/media/advisory-consulting.webp"
+                  alt="Advisory Mandates"
+                  width={600}
+                  height={400}
+                  className="rounded-2xl shadow-lg w-full"
+                />
+              </div>
+            </ScrollAnimation>
+            
+            {/* Mobile Text Content */}
+            <ScrollAnimation animation="slideUp" delay={200}>
               <div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-900 mb-4 mobile-text-wrap leading-tight">
                   Institutional Advisory Excellence
