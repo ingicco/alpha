@@ -99,10 +99,10 @@ export default function HomePage() {
             <Reveal>
               <div className="mb-12">
                 {/* Clean, large title */}
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white mb-8 leading-[0.9]">
+                <h1 className="font-light tracking-tight text-white mb-8 leading-[0.9]" style={{ fontSize: 'clamp(3rem, 8vw, 12rem)' }}>
                   Strategic Capital
                   <br />
-                  <span className="text-5xl md:text-7xl lg:text-8xl font-light text-white">Digital Innovation</span>
+                  <span className="font-light text-white" style={{ fontSize: 'clamp(3rem, 8vw, 12rem)' }}>Digital Innovation</span>
                 </h1>
               </div>
             </Reveal>
@@ -167,10 +167,10 @@ export default function HomePage() {
             {/* Right Side - Text Content */}
             <Reveal delay={200}>
               <div className="text-center lg:text-left">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-primary-900 mb-8 leading-tight">
+                <h2 className="font-light text-primary-900 mb-8 leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 6rem)' }}>
                   Our capital is private, patient, and precise.
                 </h2>
-                <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed font-normal">
+                <p className="text-neutral-600 leading-relaxed font-normal" style={{ fontSize: 'clamp(1.125rem, 2vw, 2rem)' }}>
                   We deploy strategic capital with institutional precision, focusing on transformative opportunities in digital assets and emerging technologies.
                 </p>
               </div>
@@ -187,7 +187,7 @@ export default function HomePage() {
             <Container>
               <div className="text-center px-8 py-16 lg:py-0">
                 <Reveal>
-                  <h2 className="text-6xl md:text-7xl lg:text-9xl font-extralight text-black leading-tight mb-6">
+                  <h2 className="font-extralight text-black leading-tight mb-6" style={{ fontSize: 'clamp(3.5rem, 9vw, 14rem)' }}>
                     Excellence
                     <br />
                     Redefined
@@ -328,7 +328,7 @@ export default function HomePage() {
         {/* First line - faster */}
         <div className="overflow-hidden whitespace-nowrap mb-4">
           <div className="inline-flex animate-scroll">
-            <div className="flex items-center space-x-16 text-6xl md:text-8xl lg:text-9xl font-light text-black">
+            <div className="flex items-center space-x-16 font-light text-black" style={{ fontSize: 'clamp(3rem, 8vw, 12rem)' }}>
               <span>Investments</span>
               <span className="text-black">—</span>
               <span>Research</span>
@@ -354,7 +354,7 @@ export default function HomePage() {
         {/* Second line - slower */}
         <div className="overflow-hidden whitespace-nowrap">
           <div className="inline-flex animate-scroll-slow">
-            <div className="flex items-center space-x-16 text-6xl md:text-8xl lg:text-9xl font-light text-black">
+            <div className="flex items-center space-x-16 font-light text-black" style={{ fontSize: 'clamp(3rem, 8vw, 12rem)' }}>
               <span>Strategic</span>
               <span className="text-black">—</span>
               <span>Capital</span>
@@ -583,7 +583,7 @@ export default function HomePage() {
         <Container>
           <div className="text-center max-w-4xl mx-auto">
             <Reveal>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-primary-900 mb-8 leading-tight">
+              <h2 className="font-light text-primary-900 mb-8 leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 6rem)' }}>
                 Ready to transform your digital asset strategy?
               </h2>
             </Reveal>
