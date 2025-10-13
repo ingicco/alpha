@@ -11,7 +11,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-primary-900 text-white">
+    <footer className="text-white" style={{ backgroundColor: 'rgb(30, 58, 138)' }}>
       {/* Main footer content */}
       <div className="mobile-container py-12 sm:py-16">
         <div className="flex flex-col items-center text-center gap-8">
