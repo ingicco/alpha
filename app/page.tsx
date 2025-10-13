@@ -209,7 +209,7 @@ export default function HomePage() {
             </div>
 
             {/* Section 2 - Digital Infrastructure */}
-            <div className="min-h-screen bg-gray-900 flex items-center py-20">
+            <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
                 <div className="max-w-2xl">
                   <ScrollAnimation animation="slideUp" delay={200}>
@@ -267,7 +267,7 @@ export default function HomePage() {
             </div>
 
             {/* Section 4 - Global Network */}
-            <div className="min-h-screen bg-gray-900 flex items-center py-20">
+            <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
                 <div className="max-w-2xl">
                   <ScrollAnimation animation="slideUp" delay={600}>
