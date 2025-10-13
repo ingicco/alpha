@@ -596,17 +596,24 @@ export default function HomePage() {
             
             <Reveal delay={400}>
               <Link href="/contact" className="group relative inline-block">
-                <div className="relative overflow-hidden bg-primary-900 text-white px-12 py-8 transition-all duration-500 group-hover:bg-accent-600 border border-primary-900 group-hover:border-accent-600">
-                  <div className="text-center space-y-2">
+                <div className="relative overflow-hidden bg-primary-900 text-white w-80 h-80 transition-all duration-500 group-hover:bg-primary-700 border border-primary-900 group-hover:border-primary-700">
+                  {/* Arrow in top-right corner */}
+                  <div className="absolute top-6 right-6 transition-transform duration-500 group-hover:translate-x-2 group-hover:-translate-y-2">
+                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
+                  
+                  {/* Contact info at top */}
+                  <div className="absolute top-6 left-6 text-left">
                     <div className="text-sm text-white/80 font-light">contact@agi3.ae</div>
                     <div className="text-sm text-white/80 font-light">+971 4 123 4567</div>
-                    <div className="flex items-center justify-center mt-4">
-                      <span className="text-2xl font-medium mr-4">Let's Talk</span>
-                      <div className="transition-transform duration-500 group-hover:translate-x-2">
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                        </svg>
-                      </div>
+                  </div>
+                  
+                  {/* "Let's Talk" taking up most of the width at bottom */}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="text-4xl font-medium leading-tight">
+                      Let's Talk
                     </div>
                   </div>
                 </div>
