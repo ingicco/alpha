@@ -30,7 +30,8 @@ export function LogoStrip({ logos, className }: LogoStripProps) {
               alt={`${logo.name} logo`}
               width={logo.width}
               height={logo.height}
-              className="h-4 w-auto sm:h-6 lg:h-8 filter brightness-0 invert opacity-40"
+              className="w-auto filter brightness-0 invert opacity-40"
+              style={{ height: 'clamp(1rem, 2vw, 3rem)' }}
             />
           </div>
         ))}

@@ -167,7 +167,7 @@ export default function HomePage() {
             {/* Right Side - Text Content */}
             <Reveal delay={200}>
               <div className="text-center lg:text-left">
-                <h2 className="font-light text-primary-900 mb-8 leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 6rem)' }}>
+                <h2 className="font-light text-primary-900 mb-8 leading-tight" style={{ fontSize: 'clamp(2rem, 4vw, 4rem)' }}>
                   Our capital is private, patient, and precise.
                 </h2>
                 <p className="text-neutral-600 leading-relaxed font-normal" style={{ fontSize: 'clamp(1.125rem, 2vw, 2rem)' }}>
@@ -216,7 +216,8 @@ export default function HomePage() {
                           alt="Tokenization Leadership"
                           width={800}
                           height={384}
-                          className="w-full h-96 object-cover"
+                          className="w-full object-cover"
+                          style={{ height: 'clamp(20rem, 25vw, 35rem)' }}
                         />
                       </div>
                       <div>
@@ -245,7 +246,8 @@ export default function HomePage() {
                           alt="Digital Infrastructure Excellence"
                           width={800}
                           height={384}
-                          className="w-full h-96 object-cover"
+                          className="w-full object-cover"
+                          style={{ height: 'clamp(20rem, 25vw, 35rem)' }}
                         />
                       </div>
                       <div>
@@ -274,7 +276,8 @@ export default function HomePage() {
                           alt="Strategic Capital Deployment"
                           width={800}
                           height={384}
-                          className="w-full h-96 object-cover"
+                          className="w-full object-cover"
+                          style={{ height: 'clamp(20rem, 25vw, 35rem)' }}
                         />
                       </div>
                       <div>
@@ -303,7 +306,8 @@ export default function HomePage() {
                           alt="Global Network Access"
                           width={800}
                           height={384}
-                          className="w-full h-96 object-cover"
+                          className="w-full object-cover"
+                          style={{ height: 'clamp(20rem, 25vw, 35rem)' }}
                         />
                       </div>
                       <div>
@@ -510,7 +514,8 @@ export default function HomePage() {
                   alt="Advisory Mandates"
                   width={600}
                   height={400}
-                  className="rounded-2xl shadow-lg w-full"
+                  className="rounded-2xl shadow-lg w-full object-cover"
+                  style={{ height: 'clamp(15rem, 20vw, 25rem)' }}
                 />
               </div>
             </ScrollAnimation>
@@ -547,7 +552,8 @@ export default function HomePage() {
                     alt="Advisory Mandates"
                     width={600}
                     height={400}
-                    className="rounded-2xl shadow-lg"
+                    className="rounded-2xl shadow-lg w-full object-cover"
+                    style={{ height: 'clamp(15rem, 20vw, 25rem)' }}
                   />
                 </div>
               </ScrollAnimation>
