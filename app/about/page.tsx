@@ -132,81 +132,90 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Hero Section - About Us */}
-      <Section className="pt-24 pb-16 sm:pb-24 lg:pb-32 relative overflow-hidden">
-        <Container>
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <Reveal>
-              <div>
-                <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-2xl">
-                  Discover the story behind AGI³ and our mission to invest in the technologies that will define tomorrow.
-                </p>
-              </div>
-            </Reveal>
-            
-            <Reveal delay={200}>
-              <div className="relative">
-                <div className="rounded-xl shadow-lg aspect-[3/4] bg-neutral-200 w-full max-w-md mx-auto flex items-center justify-center">
-                  <div className="text-center text-neutral-500">
-                    <div className="text-4xl mb-2">📊</div>
-                    <p className="text-sm font-medium">Hero Image</p>
-                    <p className="text-xs">400x500px</p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </Section>
+      {/* Hero Section - Full Screen */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/media/about-vision.webp"
+            alt="About AGI³"
+            fill
+            className="object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
 
-      {/* Who We Are Section */}
-      <Section className="py-16 sm:py-24 lg:py-32 bg-neutral-50">
+        {/* Content */}
         <Container>
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="relative z-10 text-center">
             <Reveal>
-              <div className="relative">
-                <div className="rounded-xl shadow-lg aspect-[3/4] bg-neutral-200 w-full max-w-md mx-auto flex items-center justify-center">
-                  <div className="text-center text-neutral-500">
-                    <div className="text-4xl mb-2">🏢</div>
-                    <p className="text-sm font-medium">Who We Are</p>
-                    <p className="text-xs">400x500px</p>
-                  </div>
-                </div>
-              </div>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-8 leading-[0.9]">
+                Building the Future
+                <br />
+                <span className="text-accent-400">of Finance</span>
+              </h1>
             </Reveal>
-            
             <Reveal delay={200}>
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6 leading-tight">
-                    Who We Are
-                  </h2>
-                </div>
-                
-                <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
-                  <p>
-                    Alpha Group Investments (AGI³) is a principal investment group dedicated to the technologies of tomorrow.
-                  </p>
-                  
-                  <p>
-                    We invest our own capital, not as fund managers, but as builders of conviction.
-                  </p>
-                  
-                  <p>
-                    Every investment we make is a statement of belief:
-                  </p>
-                  
-                  <div className="border-l-4 border-neutral-300 pl-6 py-2">
-                    <p className="text-xl font-medium text-neutral-800 italic">
-                      That the future belongs to those who design it.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto font-light">
+                Discover the story behind AGI³ and our mission to invest in the technologies that will define tomorrow
+              </p>
             </Reveal>
           </div>
         </Container>
-      </Section>
+      </section>
+
+      {/* Who We Are - Excellence Style */}
+      <div className="relative bg-white">
+        <div className="lg:grid lg:grid-cols-2 lg:min-h-screen">
+          {/* Left side - Sticky title */}
+          <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:justify-center bg-white">
+            <Container>
+              <div className="text-center px-8 py-16 lg:py-0">
+                <Reveal>
+                  <h2 className="text-6xl md:text-7xl lg:text-9xl font-extralight text-black leading-tight mb-6">
+                    Who
+                    <br />
+                    We Are
+                  </h2>
+                </Reveal>
+                <Reveal delay={200}>
+                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-md mx-auto font-light">
+                    Principal investors building conviction through capital
+                  </p>
+                </Reveal>
+              </div>
+            </Container>
+          </div>
+
+          {/* Right side - Content */}
+          <div className="">
+            <div className="min-h-screen bg-black flex items-center py-20">
+              <Container>
+                <div className="max-w-2xl">
+                  <ScrollAnimation animation="slideUp" delay={0}>
+                    <div className="mb-8">
+                      <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
+                        Builders of Conviction
+                      </h3>
+                      <p className="text-lg text-white leading-relaxed mb-8">
+                        Alpha Group Investments (AGI³) is a principal investment group dedicated to the technologies of tomorrow.
+                      </p>
+                      <p className="text-lg text-white leading-relaxed mb-8">
+                        We invest our own capital, not as fund managers, but as builders of conviction. Every investment we make is a statement of belief:
+                      </p>
+                      <div className="border-l-4 border-accent-400 pl-6 py-4 bg-gray-900 rounded-r-2xl">
+                        <p className="text-xl font-light text-white italic">
+                          That the future belongs to those who design it.
+                        </p>
+                      </div>
+                    </div>
+                  </ScrollAnimation>
+                </div>
+              </Container>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Our Philosophy Section */}
       <Section className="py-16 sm:py-24 lg:py-32 bg-white">
@@ -465,18 +474,17 @@ export default function AboutPage() {
       </Section>
 
       {/* Leadership Section */}
-      <Section className="py-16 sm:py-24 lg:py-32">
+      <Section className="py-24 lg:py-32 bg-black">
         <Container>
           {/* Section Header */}
-          <div className="text-center mb-16 lg:mb-20">
+          <div className="text-center mb-20 lg:mb-24">
             <Reveal>
               <div>
-                <p className="text-base uppercase tracking-wider text-accent-600 font-semibold mb-6 transition-colors duration-500">Meet the Team</p>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 mb-10 leading-tight transition-colors duration-700 hover:text-accent-600">
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-8 leading-tight">
                   The People Behind AGI³
                 </h2>
-                <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-4xl mx-auto transition-colors duration-500 hover:text-primary-700">
-                  Our success comes from our people. Industry veterans, digital asset pioneers, and institutional finance experts who've spent decades building the expertise you need to succeed in tomorrow's financial landscape.
+                <p className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-4xl mx-auto font-light">
+                  Industry veterans, digital asset pioneers, and institutional finance experts building tomorrow's financial landscape
                 </p>
               </div>
             </Reveal>
@@ -511,7 +519,7 @@ export default function AboutPage() {
                     </div>
                     
                     {/* Name */}
-                    <h3 className="text-sm sm:text-base font-bold text-primary-900 mb-2 leading-tight mobile-text-wrap transition-colors duration-300 group-hover:text-accent-600">
+                    <h3 className="text-sm sm:text-base font-light text-white mb-2 leading-tight mobile-text-wrap transition-colors duration-300 group-hover:text-accent-400">
                       <div>
                         <div>{leader.name.split(' ').slice(0, -1).join(' ')}</div>
                         <div>{leader.name.split(' ').slice(-1)[0]}</div>
@@ -519,7 +527,7 @@ export default function AboutPage() {
                     </h3>
                     
                     {/* Position */}
-                    <p className="text-sm text-neutral-600 font-medium mobile-text-wrap transition-colors duration-300 group-hover:text-primary-700">
+                    <p className="text-sm text-white/70 font-light mobile-text-wrap transition-colors duration-300 group-hover:text-white">
                       {leader.role}
                     </p>
                   </div>
@@ -567,7 +575,7 @@ export default function AboutPage() {
                       </div>
                       
                       {/* Name */}
-                      <h3 className="text-xl font-bold text-primary-900 mb-3 leading-tight max-w-44 h-14 flex items-center justify-center text-center transition-colors duration-300 group-hover:text-accent-600">
+                      <h3 className="text-xl font-light text-white mb-3 leading-tight max-w-44 h-14 flex items-center justify-center text-center transition-colors duration-300 group-hover:text-accent-400">
                         <div>
                           <div>{leader.name.split(' ').slice(0, -1).join(' ')}</div>
                           <div>{leader.name.split(' ').slice(-1)[0]}</div>
@@ -575,7 +583,7 @@ export default function AboutPage() {
                       </h3>
                       
                       {/* Position */}
-                      <p className="text-base text-neutral-600 font-medium max-w-44 transition-colors duration-300 group-hover:text-primary-700">
+                      <p className="text-base text-white/70 font-light max-w-44 transition-colors duration-300 group-hover:text-white">
                         {leader.role}
                       </p>
                     </div>
