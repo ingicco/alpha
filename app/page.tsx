@@ -141,25 +141,14 @@ export default function HomePage() {
             {/* Left Side - Image */}
             <Reveal>
               <div className="relative">
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-neutral-100 flex items-center justify-center">
-                  {/* Placeholder for image - replace with actual image */}
-                  <div className="text-center text-neutral-400">
-                    <svg className="w-16 h-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                    </svg>
-                    <p className="text-sm font-medium">Image Placeholder</p>
-                    <p className="text-xs">Replace with your photo</p>
-                  </div>
-                  {/* 
-                  Replace the placeholder above with:
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/media/your-image.webp"
+                    src="/media/investment-philosophy.png"
                     alt="Strategic Capital Investment"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  */}
                 </div>
               </div>
             </Reveal>
