@@ -141,9 +141,9 @@ export default function HomePage() {
             {/* Left Side - Image */}
             <Reveal>
               <div className="relative">
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                   <Image
-                    src="/media/investment-philosophy.png"
+                    src="/media/capital-investment.webp"
                     alt="Strategic Capital Investment"
                     fill
                     className="object-cover"
