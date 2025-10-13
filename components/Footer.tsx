@@ -14,25 +14,30 @@ export function Footer() {
     <footer className="bg-primary-900 text-white">
       {/* Main footer content */}
       <div className="mobile-container py-12 sm:py-16">
-        <div className="flex flex-col items-center text-center gap-6">
-          {/* Logo and Large AGI³ Text */}
-          <div className="flex items-center gap-8">
-            <div>
+        <div className="flex flex-col items-center text-center gap-8">
+          {/* Large AGI³ Text */}
+          <div className="text-9xl md:text-[10rem] lg:text-[14rem] xl:text-[16rem] font-extralight text-white leading-none tracking-tight">
+            AGI³
+          </div>
+          
+          {/* Logo and Description */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
+            {/* Small Logo */}
+            <div className="flex-shrink-0">
               <Image
                 src="/alpha-logo.png"
                 alt="AGI³"
-                width={400}
-                height={200}
-                className="h-32 md:h-40 lg:h-56 xl:h-64 w-auto"
+                width={120}
+                height={60}
+                className="h-16 md:h-20 w-auto"
               />
             </div>
-            <div className="text-9xl md:text-[10rem] lg:text-[14rem] xl:text-[16rem] font-extralight text-white leading-none tracking-tight">
-              AGI³
+            
+            {/* Description Text */}
+            <div className="text-base text-neutral-300 leading-relaxed text-center sm:text-left">
+              <p>Institutional-grade advisory, investments, and digital asset</p>
+              <p>assurance for forward-thinking organizations.</p>
             </div>
-          </div>
-          <div className="text-base text-neutral-300 leading-relaxed">
-            <p>Institutional-grade advisory, investments, and digital asset</p>
-            <p>assurance for forward-thinking organizations.</p>
           </div>
         </div>
       </div>
