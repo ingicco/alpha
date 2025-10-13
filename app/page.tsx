@@ -595,12 +595,16 @@ export default function HomePage() {
             </Reveal>
             
             <Reveal delay={400}>
-              <Link href="/contact" className="group inline-flex items-center gap-3 bg-primary-900 text-white px-8 py-4 text-lg font-medium rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500">
-                <span className="font-medium">Let's Talk</span>
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center transition-transform duration-500 group-hover:translate-x-2">
-                  <svg className="w-4 h-4 text-primary-900" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
+              <Link href="/contact" className="group relative inline-block">
+                <div className="relative overflow-hidden bg-primary-900 text-white px-8 py-6 text-lg font-medium transition-all duration-500 group-hover:bg-accent-600 border border-primary-900 group-hover:border-accent-600">
+                  <div className="flex items-center justify-between">
+                    <span className="font-medium">Let's Talk</span>
+                    <div className="ml-8 transition-transform duration-500 group-hover:translate-x-2">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </Reveal>
