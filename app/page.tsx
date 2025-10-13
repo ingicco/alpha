@@ -134,20 +134,46 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Investment Philosophy - Clean Modern Design */}
+      {/* Investment Philosophy - Two Column Layout with Image */}
       <Section className="py-16 sm:py-24 lg:py-32">
         <Container>
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Side - Image */}
             <Reveal>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-primary-900 mb-8 leading-tight">
-                Our capital is private, patient, and precise.
-              </h2>
+              <div className="relative">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-neutral-100 flex items-center justify-center">
+                  {/* Placeholder for image - replace with actual image */}
+                  <div className="text-center text-neutral-400">
+                    <svg className="w-16 h-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                    </svg>
+                    <p className="text-sm font-medium">Image Placeholder</p>
+                    <p className="text-xs">Replace with your photo</p>
+                  </div>
+                  {/* 
+                  Replace the placeholder above with:
+                  <Image
+                    src="/media/your-image.webp"
+                    alt="Strategic Capital Investment"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  */}
+                </div>
+              </div>
             </Reveal>
-            
+
+            {/* Right Side - Text Content */}
             <Reveal delay={200}>
-              <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-3xl mx-auto font-normal">
-                We deploy strategic capital with institutional precision, focusing on transformative opportunities in digital assets and emerging technologies.
-              </p>
+              <div className="text-center lg:text-left">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-primary-900 mb-8 leading-tight">
+                  Our capital is private, patient, and precise.
+                </h2>
+                <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed font-normal">
+                  We deploy strategic capital with institutional precision, focusing on transformative opportunities in digital assets and emerging technologies.
+                </p>
+              </div>
             </Reveal>
           </div>
         </Container>
