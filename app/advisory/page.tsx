@@ -110,25 +110,32 @@ export default function AdvisoryPage() {
       {/* Beyond Traditional Consulting - Ondo Style Layout */}
       <Section background="muted">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Side - Content */}
             <Reveal>
-              <div>
+              <div className="text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6 leading-tight">
-                  Our Selective Advisory Model
+                  Advisory Mandates, Redefined
                 </h2>
                 <p className="text-lg text-neutral-600 leading-relaxed mb-6">
-                  We don't run an advisory business. We advise only those we invest in — to help them grow with institutional precision.
+                  We operate institutional mandates across compliance, governance, treasury, risk, and digital asset strategy with our trusted network of legal and technical partners.
                 </p>
-                <p className="text-xl text-primary-900 font-semibold italic leading-relaxed">
-                  Our advisory begins where capital meets credibility.
-                </p>
+                <div className="flex justify-center lg:justify-start">
+                  <div className="inline-flex items-center gap-3 bg-primary-900 text-white px-6 py-3 rounded-full hover:bg-primary-800 transition-colors duration-300">
+                    <span className="font-medium">Explore Advisory Services</span>
+                    <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                      <svg className="w-3 h-3 text-primary-900" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Reveal>
 
             {/* Right Side - Portrait Image */}
             <Reveal delay={200}>
-              <div>
+              <div className="order-first lg:order-last">
                 <div className="relative w-full max-w-md mx-auto lg:max-w-none">
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                     <Image
