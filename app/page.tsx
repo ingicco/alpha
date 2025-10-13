@@ -111,7 +111,7 @@ export default function HomePage() {
               <div className="mb-16">
                 {/* Single prominent CTA button */}
                 <div className="flex justify-center">
-                  <button className="group bg-white text-gray-900 px-8 py-4 text-lg font-medium rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500 flex items-center gap-3">
+                  <Link href="/investment" className="group bg-white text-gray-900 px-8 py-4 text-lg font-medium rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500 flex items-center gap-3">
                     {/* Text stays dark */}
                     <span className="font-medium">Our solutions</span>
                     
@@ -121,18 +121,19 @@ export default function HomePage() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                       </svg>
                     </div>
-                  </button>
+                  </Link>
                 </div>
-              </div>
-            </Reveal>
-            
-            <Reveal delay={600}>
-              <div className="absolute -bottom-8 left-0 right-0">
-                <LogoStrip logos={partnerLogos} className="opacity-60" />
               </div>
             </Reveal>
           </div>
         </Container>
+
+        {/* Scrolling Logos - Full Width at Bottom */}
+        <Reveal delay={600}>
+          <div className="absolute bottom-0 left-0 right-0 w-full">
+            <LogoStrip logos={partnerLogos} className="opacity-60" />
+          </div>
+        </Reveal>
       </section>
 
       {/* Investment Philosophy - Clean Modern Design */}

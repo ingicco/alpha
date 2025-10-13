@@ -18,8 +18,8 @@ export function LogoStrip({ logos, className }: LogoStripProps) {
   const duplicatedLogos = [...logos, ...logos]
 
   return (
-    <div className={clsx('py-4 sm:py-8 overflow-hidden', className)}>
-      <div className="flex animate-scroll">
+    <div className={clsx('py-4 sm:py-8 overflow-hidden w-full', className)}>
+      <div className="flex animate-scroll w-full">
         {duplicatedLogos.map((logo, index) => (
           <div
             key={`${logo.name}-${index}`}
