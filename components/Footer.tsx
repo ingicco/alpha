@@ -61,13 +61,6 @@ export function Footer() {
                 </Link>
               ))}
               
-              {/* Contact Link */}
-              <Link
-                href="/contact"
-                className="text-sm text-neutral-400 hover:text-neutral-300 transition-colors"
-              >
-                Contact
-              </Link>
               
               {/* LinkedIn Icon Only */}
               <a

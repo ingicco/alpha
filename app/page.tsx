@@ -129,7 +129,7 @@ export default function HomePage() {
         </Container>
 
         {/* Scrolling Logos - Full Width at Bottom */}
-        <div className="absolute bottom-0 left-0 right-0 w-full z-50 bg-black/30 py-4">
+        <div className="absolute bottom-0 left-0 right-0 w-full z-50 py-4">
           <LogoStrip logos={partnerLogos} className="opacity-100" />
         </div>
       </section>
@@ -596,13 +596,17 @@ export default function HomePage() {
             
             <Reveal delay={400}>
               <Link href="/contact" className="group relative inline-block">
-                <div className="relative overflow-hidden bg-primary-900 text-white px-8 py-6 text-lg font-medium transition-all duration-500 group-hover:bg-accent-600 border border-primary-900 group-hover:border-accent-600">
-                  <div className="flex items-center justify-between">
-                    <span className="font-medium">Let's Talk</span>
-                    <div className="ml-8 transition-transform duration-500 group-hover:translate-x-2">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                      </svg>
+                <div className="relative overflow-hidden bg-primary-900 text-white px-12 py-8 transition-all duration-500 group-hover:bg-accent-600 border border-primary-900 group-hover:border-accent-600">
+                  <div className="text-center space-y-2">
+                    <div className="text-sm text-white/80 font-light">contact@agi3.ae</div>
+                    <div className="text-sm text-white/80 font-light">+971 4 123 4567</div>
+                    <div className="flex items-center justify-center mt-4">
+                      <span className="text-2xl font-medium mr-4">Let's Talk</span>
+                      <div className="transition-transform duration-500 group-hover:translate-x-2">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
