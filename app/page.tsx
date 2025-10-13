@@ -515,7 +515,7 @@ export default function HomePage() {
                   width={600}
                   height={400}
                   className="rounded-2xl shadow-lg w-full object-cover"
-                  style={{ height: 'clamp(15rem, 25vw, 35rem)' }}
+                  style={{ height: 'clamp(25rem, 40vw, 60rem)' }}
                 />
               </div>
             </ScrollAnimation>
@@ -553,7 +553,7 @@ export default function HomePage() {
                     width={600}
                     height={400}
                     className="rounded-2xl shadow-lg w-full object-cover"
-                    style={{ height: 'clamp(15rem, 25vw, 35rem)' }}
+                    style={{ height: 'clamp(25rem, 40vw, 60rem)' }}
                   />
                 </div>
               </ScrollAnimation>
