@@ -62,7 +62,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section - Clean & Minimal */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video
@@ -130,8 +130,8 @@ export default function HomePage() {
 
         {/* Scrolling Logos - Full Width at Bottom */}
         <Reveal delay={600}>
-          <div className="absolute bottom-0 left-0 right-0 w-full z-20">
-            <LogoStrip logos={partnerLogos} className="opacity-60" />
+          <div className="absolute bottom-2 left-0 right-0 w-full z-50 bg-black/20">
+            <LogoStrip logos={partnerLogos} className="opacity-80" />
           </div>
         </Reveal>
       </section>
@@ -481,10 +481,10 @@ export default function HomePage() {
             <ScrollAnimation animation="slideUp" delay={0}>
               <div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-900 mb-4 mobile-text-wrap leading-tight">
-                  Advisory Mandates, Redefined
+                  Institutional Advisory Excellence
                 </h2>
                 <p className="text-base text-neutral-600 leading-relaxed mb-8 mobile-text-wrap">
-                  We operate institutional mandates across compliance, governance, treasury, risk, and digital asset strategy with our trusted network of legal and technical partners.
+                  Comprehensive advisory services across compliance, governance, treasury management, and digital asset strategy—delivered through our trusted network of institutional partners.
                 </p>
                 <Link href="/advisory" className="group inline-flex items-center gap-3 bg-primary-900 text-white px-6 py-3 text-base font-medium rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500">
                   <span className="font-medium">Explore Advisory Services</span>
