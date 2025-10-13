@@ -192,7 +192,7 @@ export default function AboutPage() {
             <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
                 <div className="max-w-2xl">
-                  <ScrollAnimation animation="slideUp" delay={0}>
+                  <Reveal delay={0}>
                     <div className="mb-8">
                       <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
                         Builders of Conviction
@@ -209,7 +209,7 @@ export default function AboutPage() {
                         </p>
                       </div>
                     </div>
-                  </ScrollAnimation>
+                  </Reveal>
                 </div>
               </Container>
             </div>
