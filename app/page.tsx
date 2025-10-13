@@ -604,15 +604,15 @@ export default function HomePage() {
                     </svg>
                   </div>
                   
-                  {/* Contact info at top */}
-                  <div className="absolute top-6 left-6 text-left">
+                  {/* Contact info centered at top */}
+                  <div className="absolute top-6 left-6 right-6 text-center">
                     <div className="text-sm text-white/80 font-light">contact@agi3.ae</div>
                     <div className="text-sm text-white/80 font-light">+971 4 123 4567</div>
                   </div>
                   
-                  {/* "Let's Talk" taking up most of the width at bottom */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="text-4xl font-medium leading-tight">
+                  {/* "Let's Talk" large at bottom */}
+                  <div className="absolute bottom-6 left-6 right-6 text-center">
+                    <div className="text-6xl font-bold leading-none">
                       Let's Talk
                     </div>
                   </div>
