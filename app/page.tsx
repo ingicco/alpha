@@ -500,11 +500,11 @@ export default function HomePage() {
             <div className="lg:order-2">
               <ScrollAnimation animation="slideLeft" delay={200}>
                 <div>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-900 mb-8 leading-tight">
-                    Advisory Mandates, Redefined
+                  <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-primary-900 mb-8 leading-tight">
+                    Institutional Advisory Excellence
                   </h2>
-                  <p className="text-lg text-neutral-600 leading-relaxed mb-8">
-                    We operate institutional mandates across compliance, governance, treasury, risk, and digital asset strategy with our trusted network of legal and technical partners.
+                  <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed mb-8 font-light">
+                    Comprehensive advisory services across compliance, governance, treasury management, and digital asset strategy—delivered through our trusted network of institutional partners.
                   </p>
                   <Link href="/advisory" className="group inline-flex items-center gap-3 bg-primary-900 text-white px-6 py-3 text-base font-medium rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500">
                     <span className="font-medium">Explore Advisory Services</span>
