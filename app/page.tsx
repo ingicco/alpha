@@ -70,13 +70,27 @@ export default function HomePage() {
             muted
             loop
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
             poster="/media/hero-poster.jpg"
+            onError={(e) => {
+              console.log('Video failed to load, using fallback');
+              // Fallback to poster image if video fails to load
+              const video = e.target as HTMLVideoElement;
+              video.style.display = 'none';
+              const fallbackDiv = video.nextElementSibling as HTMLDivElement;
+              if (fallbackDiv) {
+                fallbackDiv.style.backgroundImage = 'url(/media/hero-poster.jpg)';
+                fallbackDiv.style.backgroundSize = 'cover';
+                fallbackDiv.style.backgroundPosition = 'center';
+              }
+            }}
+            onLoadStart={() => console.log('Video loading started')}
+            onCanPlay={() => console.log('Video can play')}
           >
-            <source src="/media/hero.webm" type="video/webm" />
             <source src="/media/hero.mp4" type="video/mp4" />
           </video>
-          {/* Dark overlay for text readability */}
+          {/* Fallback background and dark overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
