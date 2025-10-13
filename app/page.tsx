@@ -99,10 +99,10 @@ export default function HomePage() {
             <Reveal>
               <div className="mb-12">
                 {/* Clean, large title */}
-                <h1 className="font-light tracking-tight text-white mb-8 leading-[0.9]" style={{ fontSize: 'clamp(3rem, 8vw, 12rem)' }}>
+                <h1 className="font-light tracking-tight text-white mb-8 leading-[0.9]" style={{ fontSize: 'clamp(3rem, 6vw, 8rem)' }}>
                   Strategic Capital
                   <br />
-                  <span className="font-light text-white" style={{ fontSize: 'clamp(3rem, 8vw, 12rem)' }}>Digital Innovation</span>
+                  <span className="font-light text-white" style={{ fontSize: 'clamp(3rem, 6vw, 8rem)' }}>Digital Innovation</span>
                 </h1>
               </div>
             </Reveal>
