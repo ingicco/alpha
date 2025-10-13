@@ -207,7 +207,7 @@ export default function HomePage() {
             {/* Section 1 - Tokenization */}
             <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
-                <div className="max-w-2xl mx-auto text-center lg:text-left">
+                <div className="max-w-2xl mx-auto text-center">
                   <ScrollAnimation animation="slideUp" delay={0}>
                     <div className="mb-8">
                       <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
@@ -236,7 +236,7 @@ export default function HomePage() {
             {/* Section 2 - Digital Infrastructure */}
             <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
-                <div className="max-w-2xl mx-auto text-center lg:text-left">
+                <div className="max-w-2xl mx-auto text-center">
                   <ScrollAnimation animation="slideUp" delay={200}>
                     <div className="mb-8">
                       <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
@@ -265,7 +265,7 @@ export default function HomePage() {
             {/* Section 3 - Strategic Capital */}
             <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
-                <div className="max-w-2xl mx-auto text-center lg:text-left">
+                <div className="max-w-2xl mx-auto text-center">
                   <ScrollAnimation animation="slideUp" delay={400}>
                     <div className="mb-8">
                       <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
@@ -294,7 +294,7 @@ export default function HomePage() {
             {/* Section 4 - Global Network */}
             <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
-                <div className="max-w-2xl mx-auto text-center lg:text-left">
+                <div className="max-w-2xl mx-auto text-center">
                   <ScrollAnimation animation="slideUp" delay={600}>
                     <div className="mb-8">
                       <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
