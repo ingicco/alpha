@@ -182,7 +182,7 @@ export default function HomePage() {
             {/* Section 1 - Tokenization */}
             <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
-                <div className="max-w-2xl">
+                <div className="max-w-2xl mx-auto text-center lg:text-left">
                   <ScrollAnimation animation="slideUp" delay={0}>
                     <div className="mb-8">
                       <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
@@ -195,10 +195,10 @@ export default function HomePage() {
                         />
                       </div>
                       <div>
-                        <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 lg:mb-6">
                           Tokenization Leadership
                         </h3>
-                        <p className="text-lg text-white leading-relaxed">
+                        <p className="text-base sm:text-lg text-white leading-relaxed">
                           Bridging traditional assets with digital infrastructure for institutional capital deployment.
                         </p>
                       </div>
@@ -211,7 +211,7 @@ export default function HomePage() {
             {/* Section 2 - Digital Infrastructure */}
             <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
-                <div className="max-w-2xl">
+                <div className="max-w-2xl mx-auto text-center lg:text-left">
                   <ScrollAnimation animation="slideUp" delay={200}>
                     <div className="mb-8">
                       <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
@@ -224,10 +224,10 @@ export default function HomePage() {
                         />
                       </div>
                       <div>
-                        <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 lg:mb-6">
                           Digital Infrastructure Excellence
                         </h3>
-                        <p className="text-lg text-white leading-relaxed">
+                        <p className="text-base sm:text-lg text-white leading-relaxed">
                           Institutional-grade digital asset infrastructure meeting the highest standards of security and compliance.
                         </p>
                       </div>
@@ -240,7 +240,7 @@ export default function HomePage() {
             {/* Section 3 - Strategic Capital */}
             <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
-                <div className="max-w-2xl">
+                <div className="max-w-2xl mx-auto text-center lg:text-left">
                   <ScrollAnimation animation="slideUp" delay={400}>
                     <div className="mb-8">
                       <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
@@ -253,10 +253,10 @@ export default function HomePage() {
                         />
                       </div>
                       <div>
-                        <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 lg:mb-6">
                           Strategic Capital Deployment
                         </h3>
-                        <p className="text-lg text-white leading-relaxed">
+                        <p className="text-base sm:text-lg text-white leading-relaxed">
                           Patient, precise capital strategically deployed for maximum long-term value creation.
                         </p>
                       </div>
@@ -269,7 +269,7 @@ export default function HomePage() {
             {/* Section 4 - Global Network */}
             <div className="min-h-screen bg-black flex items-center py-20">
               <Container>
-                <div className="max-w-2xl">
+                <div className="max-w-2xl mx-auto text-center lg:text-left">
                   <ScrollAnimation animation="slideUp" delay={600}>
                     <div className="mb-8">
                       <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
@@ -282,10 +282,10 @@ export default function HomePage() {
                         />
                       </div>
                       <div>
-                        <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 lg:mb-6">
                           Global Network Access
                         </h3>
-                        <p className="text-lg text-white leading-relaxed">
+                        <p className="text-base sm:text-lg text-white leading-relaxed">
                           Extensive network of institutional partners and technology leaders accelerating growth globally.
                         </p>
                       </div>
