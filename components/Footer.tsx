@@ -21,15 +21,15 @@ export function Footer() {
           </div>
           
           {/* Logo and Description */}
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
-            {/* Small Logo */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-8">
+            {/* Logo aligned with text */}
             <div className="flex-shrink-0">
               <Image
                 src="/alpha-logo.png"
                 alt="AGI³"
-                width={80}
-                height={40}
-                className="h-8 w-auto"
+                width={120}
+                height={60}
+                className="h-12 w-auto"
               />
             </div>
             
