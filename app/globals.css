@@ -14,6 +14,13 @@
     overflow-x: hidden;
   }
 
+  /* Mobile bottom navigation spacing */
+  @media (max-width: 1023px) {
+    body {
+      padding-bottom: 80px; /* Space for bottom navigation */
+    }
+  }
+
   /* Focus styles for accessibility */
   *:focus-visible {
     @apply outline-2 outline-offset-2 outline-primary-600;
