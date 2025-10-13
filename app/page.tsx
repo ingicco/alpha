@@ -185,13 +185,14 @@ export default function HomePage() {
                 <div className="max-w-2xl">
                   <ScrollAnimation animation="slideUp" delay={0}>
                     <div className="mb-8">
-                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg bg-gray-800">
-                        <div className="w-full h-96 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-4xl font-light text-white mb-2">01</div>
-                            <div className="text-lg text-white">Image Placeholder</div>
-                          </div>
-                        </div>
+                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
+                        <Image
+                          src="/media/tokenization-leadership.webp"
+                          alt="Tokenization Leadership"
+                          width={800}
+                          height={384}
+                          className="w-full h-96 object-cover"
+                        />
                       </div>
                       <div>
                         <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
@@ -213,13 +214,14 @@ export default function HomePage() {
                 <div className="max-w-2xl">
                   <ScrollAnimation animation="slideUp" delay={200}>
                     <div className="mb-8">
-                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg bg-gray-800">
-                        <div className="w-full h-96 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-4xl font-light text-white mb-2">02</div>
-                            <div className="text-lg text-white">Image Placeholder</div>
-                          </div>
-                        </div>
+                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
+                        <Image
+                          src="/media/digital-infrastructure.webp"
+                          alt="Digital Infrastructure Excellence"
+                          width={800}
+                          height={384}
+                          className="w-full h-96 object-cover"
+                        />
                       </div>
                       <div>
                         <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
@@ -241,13 +243,14 @@ export default function HomePage() {
                 <div className="max-w-2xl">
                   <ScrollAnimation animation="slideUp" delay={400}>
                     <div className="mb-8">
-                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg bg-gray-800">
-                        <div className="w-full h-96 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-4xl font-light text-white mb-2">03</div>
-                            <div className="text-lg text-white">Image Placeholder</div>
-                          </div>
-                        </div>
+                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
+                        <Image
+                          src="/media/strategic-capital.webp"
+                          alt="Strategic Capital Deployment"
+                          width={800}
+                          height={384}
+                          className="w-full h-96 object-cover"
+                        />
                       </div>
                       <div>
                         <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
@@ -269,13 +272,14 @@ export default function HomePage() {
                 <div className="max-w-2xl">
                   <ScrollAnimation animation="slideUp" delay={600}>
                     <div className="mb-8">
-                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg bg-gray-800">
-                        <div className="w-full h-96 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-4xl font-light text-white mb-2">04</div>
-                            <div className="text-lg text-white">Image Placeholder</div>
-                          </div>
-                        </div>
+                      <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
+                        <Image
+                          src="/media/global-network.webp"
+                          alt="Global Network Access"
+                          width={800}
+                          height={384}
+                          className="w-full h-96 object-cover"
+                        />
                       </div>
                       <div>
                         <h3 className="text-4xl md:text-5xl font-light text-white mb-6">
