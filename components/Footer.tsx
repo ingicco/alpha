@@ -21,20 +21,20 @@ export function Footer() {
           </div>
           
           {/* Logo and Description */}
-          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-8">
-            {/* Logo aligned with text */}
+          <div className="flex flex-row items-center justify-center gap-4 sm:gap-8 w-full max-w-2xl">
+            {/* Logo on left */}
             <div className="flex-shrink-0">
               <Image
                 src="/alpha-logo.png"
                 alt="AGI³"
-                width={120}
-                height={60}
-                className="h-12 w-auto"
+                width={80}
+                height={40}
+                className="h-8 sm:h-12 w-auto"
               />
             </div>
             
-            {/* Description Text */}
-            <div className="text-base text-neutral-300 leading-relaxed text-center sm:text-left">
+            {/* Description Text on right */}
+            <div className="text-sm sm:text-base text-neutral-300 leading-relaxed text-left flex-1">
               <p>Institutional-grade advisory, investments, and digital asset</p>
               <p>assurance for forward-thinking organizations.</p>
             </div>
