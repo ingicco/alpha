@@ -21,7 +21,7 @@ export function Footer() {
           </div>
           
           {/* Logo and Description */}
-          <div className="flex flex-row items-center justify-center gap-4 sm:gap-8 w-full max-w-2xl">
+          <div className="flex flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-3xl">
             {/* Logo on left */}
             <div className="flex-shrink-0">
               <Image
@@ -33,10 +33,10 @@ export function Footer() {
               />
             </div>
             
-            {/* Description Text on right */}
-            <div className="text-sm sm:text-base text-neutral-300 leading-relaxed text-left flex-1">
-              <p>Institutional-grade advisory, investments, and digital asset</p>
-              <p>assurance for forward-thinking organizations.</p>
+            {/* Description Text on right - fixed width to prevent awkward breaks */}
+            <div className="text-sm sm:text-base text-neutral-300 leading-relaxed text-left">
+              <div className="whitespace-nowrap">Institutional-grade advisory, investments, and digital asset</div>
+              <div className="whitespace-nowrap">assurance for forward-thinking organizations.</div>
             </div>
           </div>
         </div>
