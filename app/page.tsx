@@ -130,7 +130,7 @@ export default function HomePage() {
 
         {/* Scrolling Logos - Full Width at Bottom */}
         <Reveal delay={600}>
-          <div className="absolute bottom-0 left-0 right-0 w-full">
+          <div className="absolute bottom-0 left-0 right-0 w-full z-20">
             <LogoStrip logos={partnerLogos} className="opacity-60" />
           </div>
         </Reveal>

@@ -115,10 +115,10 @@ export default function AdvisoryPage() {
             <Reveal>
               <div className="text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-6 leading-tight">
-                  Advisory Mandates, Redefined
+                  Institutional Advisory Excellence
                 </h2>
                 <p className="text-lg text-neutral-600 leading-relaxed mb-6">
-                  We operate institutional mandates across compliance, governance, treasury, risk, and digital asset strategy with our trusted network of legal and technical partners.
+                  Comprehensive advisory services across compliance, governance, treasury management, and digital asset strategy—delivered through our trusted network of institutional partners.
                 </p>
                 <div className="flex justify-center lg:justify-start">
                   <div className="inline-flex items-center gap-3 bg-primary-900 text-white px-6 py-3 rounded-full hover:bg-primary-800 transition-colors duration-300">
